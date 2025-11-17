@@ -17,52 +17,44 @@ export const siteConfig = {
   logoLight: "/logo-light.svg",
   logoDark: "/logo-dark.svg",
 
-  // 颜色主题
+  // 颜色主题 - 与静态网站保持一致
   colors: {
-    primary: "#FF6600", // 橙色主色（德视安品牌色）
-    secondary: "#0f172a", // 深色
-    accent: "#FF8833", // 橙色亮点
+    primary: "#0066cc", // 主蓝色
+    primaryDark: "#004d99", // 深蓝色
+    primaryLight: "#3399ff", // 浅蓝色
+    secondary: "#00a8e8", // 辅助蓝色
+    accent: "#ff6b35", // 强调色
+    headerBg: "#051b33", // Header/Footer深蓝背景
     background: "#ffffff",
-    foreground: "#1f2937",
-    muted: "#6b7280",
-    border: "#e5e7eb",
+    backgroundLight: "#f9f9f9",
+    backgroundGray: "#f5f5f5",
+    foreground: "#333333",
+    textSecondary: "#666666",
+    textLight: "#999999",
+    border: "#e0e0e0",
   },
 
-  // 导航菜单 - 德视安网站结构
+  // 导航菜单 - React 标准路由
   navigation: [
     { 
       label: "首页", 
       href: "/" 
     },
     {
-      label: "关于德视安",
-      children: [
-        {
-          items: [
-            { label: "公司简介", href: "/about/company" },
-            { label: "发展历程", href: "/about/history" },
-            { label: "企业文化", href: "/about/culture" },
-            { label: "荣誉资质", href: "/about/honors" },
-            { label: "战略合作", href: "/about/partners" },
-          ]
-        }
-      ]
-    },
-    {
       label: "产品中心",
       children: [
         {
           items: [
-            { label: "数字医护对讲系统", href: "/products/digital-intercom" },
-            { label: "二线制医护对讲系统", href: "/products/two-wire-intercom" },
-            { label: "无线呼叫系统", href: "/products/wireless-call" },
-            { label: "无线输液呼叫系统", href: "/products/wireless-infusion" },
-            { label: "ICU探视对讲系统", href: "/products/icu-intercom" },
-            { label: "数字时钟系统", href: "/products/digital-clock" },
-            { label: "排队叫号系统", href: "/products/queue-system" },
-            { label: "信息发布系统", href: "/products/info-display" },
-            { label: "智慧康养系统", href: "/products/healthcare-system" },
-            { label: "智能照明系统", href: "/products/smart-lighting" },
+            { label: "数字医护对讲系统", href: "/digital-medical-intercom" },
+            { label: "二线制医护对讲系统", href: "/two-wire-medical-intercom" },
+            { label: "无线呼叫系统", href: "/wireless-call-system" },
+            { label: "无线输液呼叫系统", href: "/wireless-infusion-call" },
+            { label: "ICU探视对讲系统", href: "/icu-visit-intercom" },
+            { label: "数字时钟系统", href: "/digital-clock-system" },
+            { label: "排队叫号系统", href: "/queuing-system" },
+            { label: "信息发布系统", href: "/info-display-system" },
+            { label: "智慧康养系统", href: "/smart-aging-system" },
+            { label: "智能照明系统", href: "/smart-lighting-system" },
           ]
         }
       ]
@@ -72,9 +64,9 @@ export const siteConfig = {
       children: [
         {
           items: [
-            { label: "智慧医院解决方案", href: "/solutions/hospital" },
-            { label: "智慧康养解决方案", href: "/solutions/healthcare" },
-            { label: "智能照明解决方案", href: "/solutions/lighting" },
+            { label: "智慧医院", href: "/smart-hospital" },
+            { label: "智慧康养", href: "/smart-healthcare" },
+            { label: "智能照明", href: "/smart-lighting" },
           ]
         }
       ]
@@ -84,21 +76,32 @@ export const siteConfig = {
       children: [
         {
           items: [
-            { label: "资讯中心", href: "/news" },
-          ]
-        },
-        {
-          title: "视频中心",
-          items: [
-            { label: "宣传视频", href: "/news/videos/promo" },
-            { label: "企业文化", href: "/news/videos/culture" },
+            { label: "成功案例", href: "/info-center" },
           ]
         }
       ]
     },
     {
       label: "人才招聘",
-      href: "/procurement"
+      children: [
+        {
+          items: [
+            { label: "招聘职位", href: "/recruitment" },
+            { label: "人才理念", href: "/talent-philosophy" },
+          ]
+        }
+      ]
+    },
+    {
+      label: "关于我们",
+      children: [
+        {
+          items: [
+            { label: "公司简介", href: "/company-profile" },
+            { label: "联系我们", href: "/contact-us" },
+          ]
+        }
+      ]
     },
   ] as MenuItem[],
 
@@ -164,97 +167,74 @@ export const siteConfig = {
     ],
   },
 
-  // 轮播图配置
+  // 轮播图配置 - 与静态网站一致
   carousel: [
     {
       id: 1,
-      image: "/banner/banner1.jpg",
-      title: "匠心15年势不可挡",
-      subtitle: "15 YEARS OF INGENUITY",
-      description: "BE A TREND WHICH CANNOT BE HALTED",
+      image: "/images/banner1-1.jpg",
+      title: "",
+      subtitle: "",
+      description: "",
     },
     {
       id: 2,
-      image: "/banner/banner2.jpg",
-      title: "德视安WITMED",
-      subtitle: "智慧医院",
-      description: "致力于满足医护人员、患者及医院管理层的多方需求",
+      image: "/images/banner2-1.jpg",
+      title: "",
+      subtitle: "",
+      description: "",
     },
     {
       id: 3,
-      image: "/banner/banner3.jpg",
-      title: "德视安SSC",
-      subtitle: "智慧养老",
-      description: "助力家庭、社区及机构实现高效、安全的智慧化养老",
+      image: "/images/banner3-1.jpg",
+      title: "",
+      subtitle: "",
+      description: "",
     },
     {
       id: 4,
-      image: "/banner/banner4.jpg",
-      title: "德视安IOT",
-      subtitle: "SMART LIGHTING 智能照明",
-      description: "DSA(KNX)智能照明系统依托KNX技术实现高可靠节能降本与环境优化管理",
+      image: "/images/banner4-1.jpg",
+      title: "",
+      subtitle: "",
+      description: "",
+    },
+  ],
+  
+  // 解决方案配置 - 与静态网站一致
+  solutions: [
+    {
+      id: 1,
+      title: "智慧医院解决方案",
+      description: "涵盖医护对讲、病房管理、排队叫号、信息发布等系统，提升医院管理效率和患者就医体验。",
+      image: "/images/solution1-1.jpg",
+      href: "/smart-hospital",
+    },
+    {
+      id: 2,
+      title: "智慧康养解决方案",
+      description: "涵盖康养对讲、疗养管理、智能照护、信息发布等系统，提升康养机构管理效率和服务质量。",
+      image: "/images/solution2-1.jpg",
+      href: "/smart-healthcare",
+    },
+    {
+      id: 3,
+      title: "智能照明解决方案",
+      description: "为各类场所提供专业的智能照明控制方案，包括场景控制、自动调节、节能环保等功能。",
+      image: "/images/solution3-1.jpg",
+      href: "/smart-lighting",
     },
   ],
 
-  // 页脚配置
+  // 页脚配置 - 与静态网站一致
   footer: {
     companyInfo: {
       name: "德视安",
-      description: "楼宇对讲、智能家居",
-      address: "中国 北京",
-      zipCode: "100000",
-      phone: "400-XXX-XXXX",
-      phoneLabel: "客服电话",
+      description: "",
+      productionCenter: "生产研发中心：广州市经济开发区蓝玉四街九号广州科技园",
+      salesCenter: "销售服务中心：成都市成华区成华大道十里店路213号龙光世纪中心",
+      phone: "028-85251272",
+      phoneLabel: "服务中心电话",
     },
-    links: [
-      {
-        title: "关于我们",
-        items: [
-          { label: "公司简介", href: "/about/company" },
-          { label: "发展历程", href: "/about/history" },
-          { label: "企业文化", href: "/about/culture" },
-          { label: "品牌荣誉", href: "/about/honors" },
-        ],
-      },
-      {
-        title: "产品中心",
-        items: [
-          { label: "数字医护对讲系统", href: "/products/digital-intercom" },
-          { label: "二线制医护对讲系统", href: "/products/two-wire-intercom" },
-          { label: "无线呼叫系统", href: "/products/wireless-call" },
-          { label: "ICU探视对讲系统", href: "/products/icu-intercom" },
-          { label: "排队叫号系统", href: "/products/queue-system" },
-          { label: "智慧康养系统", href: "/products/healthcare-system" },
-        ],
-      },
-      {
-        title: "解决方案",
-        items: [
-          { label: "智慧医院解决方案", href: "/solutions/hospital" },
-          { label: "智慧康养解决方案", href: "/solutions/healthcare" },
-          { label: "智能照明解决方案", href: "/solutions/lighting" },
-        ],
-      },
-      {
-        title: "资讯中心",
-        items: [
-          { label: "资讯中心", href: "/news" },
-          { label: "视频中心", href: "/news/videos" },
-        ],
-      },
-      {
-        title: "招采信息",
-        items: [
-          { label: "招采信息", href: "/procurement" },
-        ],
-      },
-    ],
-    social: [
-      { name: "微信", qrCode: "/placeholder.jpg" },
-      { name: "抖音", qrCode: "/placeholder.jpg" },
-    ],
-    copyright: "All rights reserved. 德视安科技有限公司 版权所有",
-    icp: "京ICP备XXXXXXXX号",
+    copyright: "© 2025 成都德视安科技有限公司. 保留所有权利.",
   },
 }
 

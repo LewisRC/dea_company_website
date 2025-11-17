@@ -3,40 +3,60 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* CSS变量 - 配色方案（与静态网站完全一致） */
 :root {
+  /* 主色调 */
+  --primary-color: #0066cc;
+  --primary-dark: #004d99;
+  --primary-light: #3399ff;
+  
+  /* 辅助色 */
+  --secondary-color: #00a8e8;
+  --accent-color: #ff6b35;
+  
+  /* 中性色 */
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-light: #999999;
+  --background-light: #f9f9f9;
+  --background-gray: #f5f5f5;
+  --background-white: #ffffff;
+  --border-color: #e0e0e0;
+  
+  /* Header/Footer 背景 */
+  --header-bg: #051b33;
+  
+  /* 成功、警告、错误色 */
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --error-color: #f44336;
+  
+  /* 阴影 */
+  --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 15px rgba(0, 0, 0, 0.15);
+  --shadow-dark: 0 8px 25px rgba(0, 0, 0, 0.15);
+  
+  /* Tailwind 兼容变量 */
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: #333333;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #FF6600;
+  --primary: #0066cc;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: #FF8833;
+  --accent: #ff6b35;
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
 }
 
 .dark {
@@ -59,23 +79,10 @@
   --border: oklch(0.269 0 0);
   --input: oklch(0.269 0 0);
   --ring: oklch(0.439 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
 }
 
 @theme inline {
-  --font-sans: "Geist", "Geist Fallback";
+  --font-sans: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -96,36 +103,54 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
+  
   body {
-    @apply bg-background text-foreground;
+    font-family: 'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans GB', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-primary);
+    font-size: 32px;
+    position: relative;
+    font-weight: 600;
+  }
+  
+  h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 15px auto 0;
   }
 }
 
-/* 添加自定义动画 */
+/* 所有动画效果 - 与静态网站完全一致 */
 @layer utilities {
+  /* 页面加载动画 */
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -144,7 +169,7 @@
   /* 轮播图由近及远缩放效果 */
   @keyframes zoomOut {
     from {
-      transform: scale(1.15);
+      transform: scale(1.05);
     }
     to {
       transform: scale(1);
@@ -154,32 +179,177 @@
   .animate-zoom-out {
     animation: zoomOut 8s ease-out forwards;
   }
-
-  /* 平滑滚动 */
-  html {
-    scroll-behavior: smooth;
+  
+  /* 滚动动画 - 完整实现 */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .animate-on-scroll.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* 滚动到视图动画 */
+  .scroll-animation {
+    animation: pulse 0.5s ease;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+  }
+  
+  /* 按钮悬停效果 */
+  button,
+  .btn {
+    transition: all 0.3s ease;
+  }
+  
+  button:hover,
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:active,
+  .btn:active {
+    transform: translateY(0);
   }
 }
 
 /* 自定义主色类 */
 @layer utilities {
   .text-primary {
-    color: var(--primary);
+    color: var(--primary-color);
+  }
+  
+  .text-primary-dark {
+    color: var(--primary-dark);
   }
   
   .bg-primary {
-    background-color: var(--primary);
+    background-color: var(--primary-color);
+  }
+  
+  .bg-primary-dark {
+    background-color: var(--primary-dark);
+  }
+  
+  .bg-header {
+    background-color: var(--header-bg);
   }
   
   .hover\:text-primary:hover {
-    color: var(--primary);
+    color: var(--primary-color);
   }
   
   .hover\:bg-primary:hover {
-    background-color: var(--primary);
+    background-color: var(--primary-color);
   }
   
   .border-primary {
-    border-color: var(--primary);
+    border-color: var(--primary-color);
+  }
+}
+
+/* 按钮样式 */
+@layer components {
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--background-white);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+
+  .btn:active {
+    transform: translateY(0);
+  }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* 容器 */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+  .container {
+    width: 90%;
+    max-width: 1140px;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+  
+  h2 {
+    font-size: 28px;
+  }
+  
+  /* 轮播图响应式 */
+  #hero-banner,
+  section[style*="marginTop"] {
+    height: 50vh !important;
+    min-height: 400px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 40px 0;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  /* 轮播图响应式 - 小屏幕 */
+  #hero-banner,
+  section[style*="marginTop"] {
+    height: 40vh !important;
+    min-height: 300px !important;
   }
 }

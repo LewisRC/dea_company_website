@@ -1,33 +1,29 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { siteConfig } from "@/config/site-config"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
-
 export const metadata: Metadata = {
-  title: siteConfig.siteName,
-  description: siteConfig.siteDescription,
-  generator: "v0.app",
+  title: "德视安 - 楼宇对讲、智能家居解决方案提供商",
+  description: "德视安是领先的楼宇对讲、智能家居及医护对讲等智能设备的研发设计、生产制造和销售企业，专注于为智慧社区和智慧医院提供整体解决方案",
+  keywords: "德视安,楼宇对讲,智能家居,医护对讲,新风系统,智慧通行,智能门锁,智慧社区,智慧医院",
+  authors: [{ name: "成都德视安科技有限公司" }],
+  robots: "index, follow",
+  openGraph: {
+    title: "德视安 - 楼宇对讲、智能家居解决方案提供商",
+    description: "德视安是领先的楼宇对讲、智能家居及医护对讲等智能设备的研发设计、生产制造和销售企业",
+    type: "website",
+    locale: "zh_CN",
+    siteName: "德视安",
+  },
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
+        url: "/images/logo2-1.png",
+        type: "image/png",
       },
     ],
-    apple: "/apple-icon.png",
   },
 }
 
