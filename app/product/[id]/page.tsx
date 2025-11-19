@@ -4,11 +4,12 @@ import { productDetailsData } from "@/config/product-details-data"
 import { notFound } from "next/navigation"
 
 type Props = {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const product = productDetailsData[params.id]
+  const { id } = await params
+  const product = productDetailsData[id]
   
   if (!product) {
     return {
@@ -23,8 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default function ProductDetailPage({ params }: Props) {
-  const product = productDetailsData[params.id]
+export default async function ProductDetailPage({ params }: Props) {
+  const { id } = await params
+  const product = productDetailsData[id]
 
   if (!product) {
     notFound()
