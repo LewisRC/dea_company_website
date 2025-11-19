@@ -51,64 +51,64 @@ export const wirelessCallProducts: ProductItem[] = [
 
 // 无线输液呼叫系统产品
 export const wirelessInfusionProducts: ProductItem[] = [
-  { id: 44, name: "无线输液呼叫器", image: "/images/wireless-infusion-call/product44.jpg", href: "/product/44" },
-  { id: 45, name: "无线输液接收主机", image: "/images/wireless-infusion-call/product45.jpg", href: "/product/45" },
+  { id: 44, name: "无线呼叫器", image: "/images/wireless-infusion-call/product44.jpg", href: "/product/44" },
+  { id: 45, name: "无线接收机", image: "/images/wireless-infusion-call/product45.jpg", href: "/product/45" },
 ];
 
 // ICU探视对讲系统产品
 export const icuVisitProducts: ProductItem[] = [
-  { id: 46, name: "ICU门口探视对讲主机", image: "/images/icu-visit/product46.jpg", href: "/product/46" },
-  { id: 47, name: "ICU病床分机", image: "/images/icu-visit/product47.jpg", href: "/product/47" },
-  { id: 48, name: "ICU探视分机", image: "/images/icu-visit/product48.jpg", href: "/product/48" },
-  { id: 49, name: "ICU管理主机", image: "/images/icu-visit/product49.jpg", href: "/product/49" },
+  { id: 46, name: "15.6寸床头分机(病床探视)", image: "/images/icu-visit/product46.jpg", href: "/product/46" },
+  { id: 47, name: "10.1寸床头分机(病床探视)", image: "/images/icu-visit/product47.jpg", href: "/product/47" },
+  { id: 48, name: "支臂", image: "/images/icu-visit/product48.jpg", href: "/product/48" },
+  { id: 49, name: "探视推车", image: "/images/icu-visit/product49.jpg", href: "/product/49" },
 ];
 
 // 数字时钟系统产品
 export const digitalClockProducts: ProductItem[] = [
-  { id: 50, name: "数字时钟（双面）", image: "/images/digital-clock/product50.jpg", href: "/product/50" },
-  { id: 51, name: "数字时钟（单面）", image: "/images/digital-clock/product51.jpg", href: "/product/51" },
-  { id: 52, name: "母钟主机", image: "/images/digital-clock/product52.jpg", href: "/product/52" },
-  { id: 53, name: "LED数字时钟", image: "/images/digital-clock/product53.jpg", href: "/product/53" },
-  { id: 54, name: "液晶数字时钟", image: "/images/digital-clock/product54.jpg", href: "/product/54" },
+  { id: 50, name: "NTP电子时钟(单面)", image: "/images/digital-clock/product50.jpg", href: "/product/50" },
+  { id: 51, name: "NTP电子时钟(双面)", image: "/images/digital-clock/product51.jpg", href: "/product/51" },
+  { id: 52, name: "NTP电子时钟(单面)", image: "/images/digital-clock/product52.jpg", href: "/product/52" },
+  { id: 53, name: "NTP电子时钟(双面)", image: "/images/digital-clock/product53.jpg", href: "/product/53" },
+  { id: 54, name: "NTP时间服务器中心母钟", image: "/images/digital-clock/product54.jpg", href: "/product/54" },
 ];
 
 // 排队叫号系统产品
 export const queuingProducts: ProductItem[] = [
-  { id: 55, name: "叫号主机", image: "/images/queuing/product55.jpg", href: "/product/55" },
-  { id: 56, name: "综合显示屏", image: "/images/queuing/product56.jpg", href: "/product/56" },
-  { id: 57, name: "窗口显示屏", image: "/images/queuing/product57.jpg", href: "/product/57" },
-  { id: 58, name: "评价器", image: "/images/queuing/product58.jpg", href: "/product/58" },
-  { id: 59, name: "取号机", image: "/images/queuing/product59.jpg", href: "/product/59" },
-  { id: 60, name: "呼叫器", image: "/images/queuing/product60.jpg", href: "/product/60" },
+  { id: 55, name: "19寸智能一体机", image: "/images/queuing/product55.jpg", href: "/product/55" },
+  { id: 56, name: "32寸智能一体机", image: "/images/queuing/product56.jpg", href: "/product/56" },
+  { id: 57, name: "22寸智能一体机（取号/触摸屏）", image: "/images/queuing/product57.jpg", href: "/product/57" },
+  { id: 58, name: "22寸智能一体机（打印/触摸屏）", image: "/images/queuing/product58.jpg", href: "/product/58" },
+  { id: 59, name: "10寸呼叫机（触摸屏）", image: "/images/queuing/product59.jpg", href: "/product/59" },
+  { id: 60, name: "窗口对讲呼叫机", image: "/images/queuing/product60.jpg", href: "/product/60" },
 ];
 
 // 信息发布系统产品
 export const infoDisplayProducts: ProductItem[] = [
-  { id: 61, name: "信息发布服务器", image: "/images/info-display/product61.jpg", href: "/product/61" },
-  { id: 62, name: "信息发布终端", image: "/images/info-display/product62.jpg", href: "/product/62" },
+  { id: 61, name: "43寸智能一体机(立式)", image: "/images/info-display/product61.jpg", href: "/product/61" },
+  { id: 62, name: "43寸智能一体机(卧式)", image: "/images/info-display/product62.jpg", href: "/product/62" },
 ];
 
 // 智慧康养系统产品
 export const smartAgingProducts: ProductItem[] = [
-  { id: 63, name: "康养管理主机", image: "/images/smart-aging/product63.jpg", href: "/product/63" },
-  { id: 64, name: "康养门口机", image: "/images/smart-aging/product64.jpg", href: "/product/64" },
-  { id: 65, name: "康养床头机", image: "/images/smart-aging/product65.jpg", href: "/product/65" },
-  { id: 66, name: "康养走廊屏", image: "/images/smart-aging/product66.jpg", href: "/product/66" },
-  { id: 67, name: "康养呼叫器", image: "/images/smart-aging/product67.jpg", href: "/product/67" },
-  { id: 68, name: "康养拉绳", image: "/images/smart-aging/product68.jpg", href: "/product/68" },
-  { id: 69, name: "康养门灯", image: "/images/smart-aging/product69.jpg", href: "/product/69" },
-  { id: 70, name: "康养管理软件", image: "/images/smart-aging/product70.jpg", href: "/product/70" },
+  { id: 63, name: "定位胸牌", image: "/images/smart-aging/product63.jpg", href: "/product/63" },
+  { id: 64, name: "智能手环", image: "/images/smart-aging/product64.jpg", href: "/product/64" },
+  { id: 65, name: "毫米跌倒雷达波", image: "/images/smart-aging/product65.jpg", href: "/product/65" },
+  { id: 66, name: "智能睡眠监测垫", image: "/images/smart-aging/product66.jpg", href: "/product/66" },
+  { id: 67, name: "AI语音紧急呼叫按钮", image: "/images/smart-aging/product67.jpg", href: "/product/67" },
+  { id: 68, name: "便携式检测一体机", image: "/images/smart-aging/product68.jpg", href: "/product/68" },
+  { id: 69, name: "水浸探测器", image: "/images/smart-aging/product69.jpg", href: "/product/69" },
+  { id: 70, name: "家用可燃气体探测器", image: "/images/smart-aging/product70.jpg", href: "/product/70" },
 ];
 
 // 智能照明系统产品
 export const smartLightingProducts: ProductItem[] = [
-  { id: 71, name: "智能照明主机", image: "/images/smart-lighting/product71.jpg", href: "/product/71" },
-  { id: 72, name: "智能调光面板", image: "/images/smart-lighting/product72.jpg", href: "/product/72" },
-  { id: 73, name: "智能开关面板", image: "/images/smart-lighting/product73.jpg", href: "/product/73" },
-  { id: 74, name: "智能窗帘控制器", image: "/images/smart-lighting/product74.jpg", href: "/product/74" },
-  { id: 75, name: "智能传感器", image: "/images/smart-lighting/product75.jpg", href: "/product/75" },
-  { id: 76, name: "智能网关", image: "/images/smart-lighting/product76.jpg", href: "/product/76" },
-  { id: 77, name: "智能照明软件", image: "/images/smart-lighting/product77.jpg", href: "/product/77" },
-  { id: 78, name: "智能照明配件", image: "/images/smart-lighting/product78.jpg", href: "/product/78" },
+  { id: 71, name: "KNX开关执行器", image: "/images/smart-lighting/product71.jpg", href: "/product/71" },
+  { id: 72, name: "KNX开关执行器", image: "/images/smart-lighting/product72.jpg", href: "/product/72" },
+  { id: 73, name: "KNX开关执行器", image: "/images/smart-lighting/product73.jpg", href: "/product/73" },
+  { id: 74, name: "KNX总线电源(960MA)", image: "/images/smart-lighting/product74.jpg", href: "/product/74" },
+  { id: 75, name: "KNX智能面板(6键金属拉丝/喷砂可选)", image: "/images/smart-lighting/product75.jpg", href: "/product/75" },
+  { id: 76, name: "KNX传感器(移动/照度二合一)", image: "/images/smart-lighting/product76.jpg", href: "/product/76" },
+  { id: 77, name: "KNX智能屏(4寸触摸屏)", image: "/images/smart-lighting/product77.jpg", href: "/product/77" },
+  { id: 78, name: "KNXIP接口网关", image: "/images/smart-lighting/product78.jpg", href: "/product/78" },
 ];
 
