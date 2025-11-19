@@ -1,4 +1,4 @@
-// 产品详情数据
+// 产品详情数据 - 完全匹配HTML项目
 export const productDetailsData: Record<string, {
   name: string;
   category: string;
@@ -6,271 +6,732 @@ export const productDetailsData: Record<string, {
   image: string;
   params: Array<{ label: string; value: string }>;
 }> = {
-  // 数字医护对讲系统产品
-  'product1': {
+  // 数字医护对讲系统产品 (1-14)
+  '1': {
     name: '10.1寸护士站管理机',
     category: '数字医护对讲系统',
     categoryLink: '/digital-medical-intercom',
     image: '/images/medical/product1.jpg',
     params: [
-      { label: '屏幕尺寸', value: '10.1英寸IPS触摸屏' },
+      { label: '产品尺寸', value: '356×210×31.8mm' },
+      { label: '屏幕尺寸', value: '10.1寸IPS高清屏' },
       { label: '分辨率', value: '1280×800' },
-      { label: '处理器', value: '四核ARM Cortex-A17' },
-      { label: '内存', value: '2GB DDR3' },
-      { label: '存储', value: '8GB eMMC' },
-      { label: '网络', value: '10/100M自适应以太网' },
-      { label: '电源', value: 'DC 12V' },
     ]
   },
-  'product2': {
+  '2': {
     name: '15.6寸护士站管理机',
     category: '数字医护对讲系统',
     categoryLink: '/digital-medical-intercom',
     image: '/images/medical/product2.jpg',
     params: [
-      { label: '屏幕尺寸', value: '15.6英寸IPS触摸屏' },
+      { label: '产品尺寸', value: '375×245×22mm' },
+      { label: '屏幕尺寸', value: '15.6寸IPS高清屏' },
       { label: '分辨率', value: '1920×1080' },
-      { label: '处理器', value: '四核ARM Cortex-A17' },
-      { label: '内存', value: '2GB DDR3' },
-      { label: '存储', value: '8GB eMMC' },
-      { label: '网络', value: '10/100M自适应以太网' },
-      { label: '电源', value: 'DC 12V' },
     ]
   },
-  'product3': {
-    name: '病床分机',
+  '3': {
+    name: '网络多媒体控制器',
     category: '数字医护对讲系统',
     categoryLink: '/digital-medical-intercom',
     image: '/images/medical/product3.jpg',
     params: [
-      { label: '屏幕尺寸', value: '7英寸IPS触摸屏' },
-      { label: '分辨率', value: '1024×600' },
-      { label: '摄像头', value: '200万像素' },
-      { label: '麦克风', value: '内置高灵敏度麦克风' },
-      { label: '扬声器', value: '内置2W扬声器' },
-      { label: '网络', value: '10/100M自适应以太网' },
-      { label: '电源', value: 'POE供电' },
+      { label: 'CPU', value: 'RK3128四核' },
+      { label: '内存', value: '1GB' },
+      { label: '存储', value: '8GB,TF卡可扩展32GB' },
     ]
   },
-  'product4': {
-    name: '走廊显示屏',
+  '4': {
+    name: '55寸护士站交互大屏',
     category: '数字医护对讲系统',
     categoryLink: '/digital-medical-intercom',
     image: '/images/medical/product4.jpg',
     params: [
-      { label: '屏幕尺寸', value: '10.1英寸IPS显示屏' },
-      { label: '分辨率', value: '1280×800' },
-      { label: '显示内容', value: '病房信息、呼叫状态' },
-      { label: '网络', value: '10/100M自适应以太网' },
-      { label: '安装方式', value: '壁挂式' },
-      { label: '电源', value: 'DC 12V' },
+      { label: '产品尺寸', value: '1309×780×72mm' },
+      { label: '分辨率', value: '1920×1080' },
     ]
   },
-  'product5': {
-    name: '门口机',
+  '5': {
+    name: '走廊显示屏(LED)',
     category: '数字医护对讲系统',
     categoryLink: '/digital-medical-intercom',
     image: '/images/medical/product5.jpg',
     params: [
-      { label: '屏幕尺寸', value: '7英寸IPS触摸屏' },
-      { label: '分辨率', value: '1024×600' },
-      { label: '摄像头', value: '200万像素广角摄像头' },
-      { label: '麦克风', value: '内置降噪麦克风' },
-      { label: '扬声器', value: '内置3W扬声器' },
-      { label: '网络', value: '10/100M自适应以太网' },
-      { label: '电源', value: 'POE供电' },
-      { label: '防护等级', value: 'IP54' },
+      { label: '产品尺寸', value: '852×186×49.5mm' },
+      { label: 'LED亮度', value: '≥900cd/m²' },
+      { label: '分辨率', value: '128×64' },
     ]
   },
-  'product6': {
-    name: '医生手持终端',
+  '6': {
+    name: '走廊显示屏(液晶)',
     category: '数字医护对讲系统',
     categoryLink: '/digital-medical-intercom',
     image: '/images/medical/product6.jpg',
     params: [
-      { label: '屏幕尺寸', value: '5英寸触摸屏' },
-      { label: '分辨率', value: '1280×720' },
-      { label: '操作系统', value: 'Android 9.0' },
-      { label: '网络', value: 'WiFi 802.11 a/b/g/n/ac' },
-      { label: '电池', value: '3000mAh锂电池' },
-      { label: '续航时间', value: '8小时' },
-      { label: '充电方式', value: 'Type-C快充' },
+      { label: '产品尺寸', value: '852×186×49.5mm' },
+      { label: 'LED亮度', value: '≥900cd/m²' },
+      { label: '分辨率', value: '128×64' },
+    ]
+  },
+  '7': {
+    name: '7寸病区门口机',
+    category: '数字医护对讲系统',
+    categoryLink: '/digital-medical-intercom',
+    image: '/images/medical/product7.jpg',
+    params: [
+      { label: '产品尺寸', value: '148.5×363×47mm' },
+      { label: '屏幕尺寸', value: '7寸电容触摸屏' },
+      { label: '分辨率', value: '600×1024' },
+    ]
+  },
+  '8': {
+    name: '10.1寸房间门口机(横)',
+    category: '数字医护对讲系统',
+    categoryLink: '/digital-medical-intercom',
+    image: '/images/medical/product8.jpg',
+    params: [
+      { label: '产品尺寸', value: '267×240×22mm' },
+      { label: '屏幕尺寸', value: '10.1寸电容触摸屏' },
+      { label: '分辨率', value: '1024×600' },
+    ]
+  },
+  '9': {
+    name: '7寸智能交互床头屏',
+    category: '数字医护对讲系统',
+    categoryLink: '/digital-medical-intercom',
+    image: '/images/medical/product9.jpg',
+    params: [
+      { label: '产品尺寸', value: '215.1×151×103mm' },
+      { label: '屏幕尺寸', value: '7寸电容触摸屏' },
+      { label: '分辨率', value: '204×600' },
+    ]
+  },
+  '10': {
+    name: '10.1寸智能交互床头屏',
+    category: '数字医护对讲系统',
+    categoryLink: '/digital-medical-intercom',
+    image: '/images/medical/product10.jpg',
+    params: [
+      { label: '产品尺寸', value: '265×165×22mm' },
+      { label: '屏幕尺寸', value: '10.1寸触摸屏' },
+      { label: '分辨率', value: '1280×800' },
+    ]
+  },
+  '11': {
+    name: '10.1寸病房智能门口机(竖)',
+    category: '数字医护对讲系统',
+    categoryLink: '/digital-medical-intercom',
+    image: '/images/medical/product11.jpg',
+    params: [
+      { label: '产品尺寸', value: '165×265×22mm' },
+      { label: '屏幕尺寸', value: '10.1寸触摸屏' },
+      { label: '分辨率', value: '800×1280' },
+    ]
+  },
+  '12': {
+    name: '15.6寸病房智能门口机',
+    category: '数字医护对讲系统',
+    categoryLink: '/digital-medical-intercom',
+    image: '/images/medical/product12.jpg',
+    params: [
+      { label: '产品尺寸', value: '245×375×22mm' },
+      { label: '屏幕尺寸', value: '15.6寸触摸屏' },
+      { label: '分辨率', value: '1080×1920' },
+    ]
+  },
+  '13': {
+    name: '床头分机(无屏)',
+    category: '数字医护对讲系统',
+    categoryLink: '/digital-medical-intercom',
+    image: '/images/medical/product13.jpg',
+    params: [
+      { label: '产品尺寸', value: '138×90×12mm' },
+      { label: '供电方式', value: '支持PoE供电和独立供电' },
+    ]
+  },
+  '14': {
+    name: '卫生间紧急呼叫器',
+    category: '数字医护对讲系统',
+    categoryLink: '/digital-medical-intercom',
+    image: '/images/medical/product14.jpg',
+    params: [
+      { label: '产品尺寸', value: '96×65×30mm' },
+      { label: '供电方式', value: '电池' },
     ]
   },
 
-  // 二线制医护对讲系统产品
-  'two-wire-product1': {
-    name: '护士站主机',
+  // 二线制医护对讲系统产品 (15-20)
+  '15': {
+    name: '床头分机',
     category: '二线制医护对讲系统',
     categoryLink: '/two-wire-medical-intercom',
-    image: '/images/two-wire-medical/product1.jpg',
+    image: '/images/two-wire-medical/product15.jpg',
     params: [
-      { label: '屏幕尺寸', value: '10.1英寸触摸屏' },
-      { label: '接入容量', value: '最多64个分机' },
-      { label: '通话方式', value: '双向对讲' },
-      { label: '显示功能', value: '呼叫信息、时间、房号' },
-      { label: '音频', value: '内置扬声器和麦克风' },
-      { label: '安装方式', value: '台式/壁挂' },
-      { label: '电源', value: 'DC 24V' },
+      { label: '产品尺寸', value: '145×89×15mm' },
+      { label: '供电方式', value: '二芯供电' },
     ]
   },
-  'two-wire-product2': {
-    name: '病房分机',
+  '16': {
+    name: '厕所按钮',
     category: '二线制医护对讲系统',
     categoryLink: '/two-wire-medical-intercom',
-    image: '/images/two-wire-medical/product2.jpg',
+    image: '/images/two-wire-medical/product16.jpg',
     params: [
-      { label: '显示屏', value: '3.5英寸LCD屏' },
-      { label: '呼叫按键', value: '紧急呼叫、普通呼叫' },
-      { label: '音频', value: '内置扬声器和麦克风' },
-      { label: '指示灯', value: 'LED状态指示' },
-      { label: '安装方式', value: '壁挂式' },
-      { label: '电源', value: '总线供电' },
+      { label: '产品尺寸', value: '86×86×32mm' },
+      { label: '供电方式', value: '二芯供电' },
     ]
   },
-  'two-wire-product3': {
-    name: '卫生间防水分机',
+  '17': {
+    name: '门灯',
     category: '二线制医护对讲系统',
     categoryLink: '/two-wire-medical-intercom',
-    image: '/images/two-wire-medical/product3.jpg',
+    image: '/images/two-wire-medical/product17.jpg',
     params: [
-      { label: '呼叫按键', value: '防水紧急按钮' },
-      { label: '指示灯', value: 'LED状态指示' },
-      { label: '防护等级', value: 'IP65' },
-      { label: '材质', value: '防水ABS塑料' },
-      { label: '安装方式', value: '壁挂式' },
-      { label: '电源', value: '总线供电' },
+      { label: '产品尺寸', value: '97.5×85.5×41mm' },
+      { label: '供电方式', value: '二芯供电' },
     ]
   },
-  'two-wire-product4': {
-    name: '门口机',
+  '18': {
+    name: '走廊显示屏',
     category: '二线制医护对讲系统',
     categoryLink: '/two-wire-medical-intercom',
-    image: '/images/two-wire-medical/product4.jpg',
+    image: '/images/two-wire-medical/product18.jpg',
     params: [
-      { label: '显示屏', value: '2.8英寸LCD屏' },
-      { label: '门铃按键', value: '触摸式按键' },
-      { label: '显示内容', value: '房间号、呼叫状态' },
-      { label: '指示灯', value: 'RGB三色灯' },
-      { label: '安装方式', value: '嵌入式/壁挂式' },
-      { label: '电源', value: '总线供电' },
+      { label: '产品尺寸', value: '800×200×45mm' },
+      { label: '供电方式', value: '单独供电' },
+    ]
+  },
+  '19': {
+    name: '信息管理主机',
+    category: '二线制医护对讲系统',
+    categoryLink: '/two-wire-medical-intercom',
+    image: '/images/two-wire-medical/product19.jpg',
+    params: [
+      { label: '产品尺寸', value: '300×240×45mm' },
+      { label: '传输方式', value: '网线和二芯线传输' },
+      { label: '供电方式', value: '220V市电' },
+    ]
+  },
+  '20': {
+    name: '网络多媒体控制器',
+    category: '二线制医护对讲系统',
+    categoryLink: '/two-wire-medical-intercom',
+    image: '/images/two-wire-medical/product20.jpg',
+    params: [
+      { label: 'CPU', value: 'intel四核' },
+      { label: '内存/存储', value: '4GB/32GB' },
+      { label: '电源', value: 'AC 220V输入' },
     ]
   },
 
-  // 无线呼叫系统产品
-  'wireless-product1': {
-    name: '无线主机',
+  // 无线呼叫系统产品 (21-43) - 注意：HTML中ID是33-43，但图片命名是product21-31
+  '21': {
+    name: '无线呼叫器（床头）',
     category: '无线呼叫系统',
     categoryLink: '/wireless-call-system',
-    image: '/images/wireless-call/product1.jpg',
+    image: '/images/wireless-call/product21.jpg',
     params: [
-      { label: '屏幕尺寸', value: '7英寸触摸屏' },
-      { label: '接收频率', value: '433MHz' },
-      { label: '接收距离', value: '100米（开阔地）' },
-      { label: '接入容量', value: '最多999个呼叫器' },
-      { label: '显示内容', value: '呼叫信息、时间' },
-      { label: '提示方式', value: '声音+屏幕显示' },
-      { label: '电源', value: 'DC 5V USB供电' },
+      { label: '调制方式', value: 'FM调频' },
+      { label: '发射功率', value: '12毫瓦' },
+      { label: '收发频率', value: '315.6MHz' },
     ]
   },
-  'wireless-product2': {
+  '22': {
+    name: '无线呼叫器（拉绳）',
+    category: '无线呼叫系统',
+    categoryLink: '/wireless-call-system',
+    image: '/images/wireless-call/product22.jpg',
+    params: [
+      { label: '产品尺寸', value: '95×65×3mm' },
+      { label: '调制方式', value: 'FSK调频' },
+      { label: '收发频率', value: '315.6MHz' },
+    ]
+  },
+  '23': {
+    name: '门灯（无线语音报警）',
+    category: '无线呼叫系统',
+    categoryLink: '/wireless-call-system',
+    image: '/images/wireless-call/product23.jpg',
+    params: [
+      { label: '接收频率', value: '430.225MHz' },
+      { label: '解码方式', value: 'POCSAG' },
+      { label: '供电方式', value: '220V交流电源' },
+    ]
+  },
+  '24': {
+    name: '无线发射主机',
+    category: '无线呼叫系统',
+    categoryLink: '/wireless-call-system',
+    image: '/images/wireless-call/product24.jpg',
+    params: [
+      { label: '产品尺寸', value: '250×250×60mm' },
+      { label: '接收频率', value: '315.600MHz' },
+      { label: '发射频率', value: '430.225MHz' },
+    ]
+  },
+  '25': {
+    name: '无线联动主机',
+    category: '无线呼叫系统',
+    categoryLink: '/wireless-call-system',
+    image: '/images/wireless-call/product25.jpg',
+    params: [
+      { label: '通信方式', value: 'USB通讯' },
+      { label: '接收频率', value: '315.6MHz' },
+      { label: '接收灵敏度', value: '-115dBm' },
+    ]
+  },
+  '26': {
+    name: '走廊显示屏（无线）',
+    category: '无线呼叫系统',
+    categoryLink: '/wireless-call-system',
+    image: '/images/wireless-call/product26.jpg',
+    params: [
+      { label: '产品尺寸', value: '800×200×45mm' },
+      { label: '供电方式', value: '单独供电' },
+    ]
+  },
+  '27': {
+    name: '数字显示屏（无线）',
+    category: '无线呼叫系统',
+    categoryLink: '/wireless-call-system',
+    image: '/images/wireless-call/product27.jpg',
+    params: [
+      { label: '产品尺寸', value: '279×209×25mm' },
+      { label: '工作频率', value: '315.6MHz' },
+    ]
+  },
+  '28': {
+    name: '无线接收手表',
+    category: '无线呼叫系统',
+    categoryLink: '/wireless-call-system',
+    image: '/images/wireless-call/product28.jpg',
+    params: [
+      { label: '显示屏', value: '蓝色OLED' },
+      { label: '分辨率', value: '128×64' },
+    ]
+  },
+  '29': {
+    name: '无线增压器',
+    category: '无线呼叫系统',
+    categoryLink: '/wireless-call-system',
+    image: '/images/wireless-call/product29.jpg',
+    params: [
+      { label: '发射功率', value: '≤27dB' },
+      { label: '接收灵敏度', value: '优于-107dBm' },
+      { label: '供电电压', value: 'DC12V' },
+    ]
+  },
+  '30': {
+    name: '床头分机（4G款基础版）',
+    category: '无线呼叫系统',
+    categoryLink: '/wireless-call-system',
+    image: '/images/wireless-call/product30.jpg',
+    params: [
+      { label: '供电方式', value: '适配器供电' },
+    ]
+  },
+  '31': {
+    name: '信息管理主机（4G款）',
+    category: '无线呼叫系统',
+    categoryLink: '/wireless-call-system',
+    image: '/images/wireless-call/product31.jpg',
+    params: [
+      { label: '供电方式', value: '适配器供电' },
+    ]
+  },
+
+  // 无线输液呼叫系统产品 (44-45)
+  '44': {
     name: '无线呼叫器',
-    category: '无线呼叫系统',
-    categoryLink: '/wireless-call-system',
-    image: '/images/wireless-call/product2.jpg',
+    category: '无线输液呼叫系统',
+    categoryLink: '/wireless-infusion-call',
+    image: '/images/wireless-infusion-call/product44.jpg',
     params: [
-      { label: '按键数量', value: '单键/三键可选' },
-      { label: '发射频率', value: '433MHz' },
-      { label: '发射距离', value: '100米（开阔地）' },
-      { label: '电池类型', value: 'CR2032纽扣电池' },
-      { label: '电池寿命', value: '1-2年' },
-      { label: '防护等级', value: 'IP54' },
-      { label: '安装方式', value: '壁挂/台式' },
+      { label: '供电方式', value: '可充锂电池' },
     ]
   },
-  'wireless-product3': {
-    name: '手表接收器',
-    category: '无线呼叫系统',
-    categoryLink: '/wireless-call-system',
-    image: '/images/wireless-call/product3.jpg',
+  '45': {
+    name: '无线接收机',
+    category: '无线输液呼叫系统',
+    categoryLink: '/wireless-infusion-call',
+    image: '/images/wireless-infusion-call/product45.jpg',
     params: [
-      { label: '屏幕尺寸', value: '1.3英寸OLED屏' },
-      { label: '接收频率', value: '433MHz' },
-      { label: '接收距离', value: '80米（开阔地）' },
-      { label: '提示方式', value: '振动+屏幕+声音' },
-      { label: '电池容量', value: '300mAh' },
-      { label: '续航时间', value: '7天' },
-      { label: '充电方式', value: '磁吸充电' },
-      { label: '防水等级', value: 'IP67' },
+      { label: '发射功率', value: '≤27Db' },
+      { label: '接收灵敏度', value: '优于-107DBM' },
+      { label: '供电电压', value: 'DC12V' },
     ]
   },
 
-  // 为所有其他产品ID创建基本数据（使用ID作为key）
-  ...Array.from({ length: 78 }, (_, i) => i + 1).reduce((acc, id) => {
-    // 跳过已经定义的产品
-    if (['product1', 'product2', 'product3', 'two-wire-product1', 'two-wire-product2', 'two-wire-product3', 'two-wire-product4', 'wireless-product1', 'wireless-product2', 'wireless-product3'].includes(`${id}`)) {
-      return acc;
-    }
-    
-    // 根据ID范围确定产品类别
-    let category = '';
-    let categoryLink = '';
-    let imageFolder = '';
-    
-    if (id <= 14) {
-      category = '数字医护对讲系统';
-      categoryLink = '/digital-medical-intercom';
-      imageFolder = 'medical';
-    } else if (id <= 20) {
-      category = '二线制医护对讲系统';
-      categoryLink = '/two-wire-medical-intercom';
-      imageFolder = 'two-wire-medical';
-    } else if (id <= 31) {
-      category = '无线呼叫系统';
-      categoryLink = '/wireless-call-system';
-      imageFolder = 'wireless-call';
-    } else if (id <= 45) {
-      category = '无线输液呼叫系统';
-      categoryLink = '/wireless-infusion-call';
-      imageFolder = 'wireless-infusion-call';
-    } else if (id <= 49) {
-      category = 'ICU探视对讲系统';
-      categoryLink = '/icu-visit-intercom';
-      imageFolder = 'icu-visit';
-    } else if (id <= 54) {
-      category = '数字时钟系统';
-      categoryLink = '/digital-clock-system';
-      imageFolder = 'digital-clock';
-    } else if (id <= 60) {
-      category = '排队叫号系统';
-      categoryLink = '/queuing-system';
-      imageFolder = 'queuing';
-    } else if (id <= 62) {
-      category = '信息发布系统';
-      categoryLink = '/info-display-system';
-      imageFolder = 'info-display';
-    } else if (id <= 70) {
-      category = '智慧康养系统';
-      categoryLink = '/smart-aging-system';
-      imageFolder = 'smart-aging';
-    } else {
-      category = '智能照明系统';
-      categoryLink = '/smart-lighting-system';
-      imageFolder = 'smart-lighting';
-    }
-    
-    acc[String(id)] = {
-      name: `产品${id}`,
-      category,
-      categoryLink,
-      image: `/images/${imageFolder}/product${id}.jpg`,
-      params: [
-        { label: '产品型号', value: `DSA-${String(id).padStart(3, '0')}` },
-        { label: '产品类别', value: category },
-        { label: '产品状态', value: '在售' },
-      ]
-    };
-    
-    return acc;
-  }, {} as typeof productDetailsData),
-}
+  // ICU探视对讲系统产品 (46-49)
+  '46': {
+    name: '15.6寸床头分机(病床探视)',
+    category: 'ICU探视对讲系统',
+    categoryLink: '/icu-visit-intercom',
+    image: '/images/icu-visit/product46.jpg',
+    params: [
+      { label: '产品尺寸', value: '375×245×22mm' },
+      { label: '屏幕尺寸', value: '15.6寸触摸屏' },
+      { label: '分辨率', value: '1920×1080' },
+    ]
+  },
+  '47': {
+    name: '10.1寸床头分机(病床探视)',
+    category: 'ICU探视对讲系统',
+    categoryLink: '/icu-visit-intercom',
+    image: '/images/icu-visit/product47.jpg',
+    params: [
+      { label: '产品尺寸', value: '265×165×22mm' },
+      { label: '屏幕尺寸', value: '10.1寸触摸屏' },
+      { label: '分辨率', value: '1280×800' },
+    ]
+  },
+  '48': {
+    name: '支臂',
+    category: 'ICU探视对讲系统',
+    categoryLink: '/icu-visit-intercom',
+    image: '/images/icu-visit/product48.jpg',
+    params: [
+      { label: '臂长', value: '1080mm' },
+      { label: '升降幅度', value: '上10mm下365mm' },
+      { label: '连接杆', value: '365°转动' },
+    ]
+  },
+  '49': {
+    name: '探视推车',
+    category: 'ICU探视对讲系统',
+    categoryLink: '/icu-visit-intercom',
+    image: '/images/icu-visit/product49.jpg',
+    params: [
+      { label: '篮筐尺寸', value: '88×155×170mm' },
+      { label: '台面尺寸', value: '460×490mm' },
+      { label: '底座尺寸', value: '492×525mm' },
+    ]
+  },
+
+  // 数字时钟系统产品 (50-54)
+  '50': {
+    name: 'NTP电子时钟(单面)',
+    category: '数字时钟系统',
+    categoryLink: '/digital-clock-system',
+    image: '/images/digital-clock/product50.jpg',
+    params: [
+      { label: '产品尺寸', value: '86×65mm' },
+      { label: '产品寿命', value: '≥10W小时' },
+      { label: '供电方式', value: '220v供电NTP校时' },
+    ]
+  },
+  '51': {
+    name: 'NTP电子时钟(双面)',
+    category: '数字时钟系统',
+    categoryLink: '/digital-clock-system',
+    image: '/images/digital-clock/product51.jpg',
+    params: [
+      { label: '产品尺寸', value: '86×65mm' },
+      { label: '产品寿命', value: '≥10W小时' },
+      { label: '供电方式', value: '220v供电NTP校时' },
+    ]
+  },
+  '52': {
+    name: 'NTP电子时钟(单面)',
+    category: '数字时钟系统',
+    categoryLink: '/digital-clock-system',
+    image: '/images/digital-clock/product52.jpg',
+    params: [
+      { label: '产品尺寸', value: '86×65mm' },
+      { label: '产品寿命', value: '≥10W小时' },
+      { label: '供电方式', value: '220v供电NTP校时' },
+    ]
+  },
+  '53': {
+    name: 'NTP电子时钟(双面)',
+    category: '数字时钟系统',
+    categoryLink: '/digital-clock-system',
+    image: '/images/digital-clock/product53.jpg',
+    params: [
+      { label: '产品尺寸', value: '86×65mm' },
+      { label: '产品寿命', value: '≥10W小时' },
+      { label: '供电方式', value: '220v供电NTP校时' },
+    ]
+  },
+  '54': {
+    name: 'NTP时间服务器中心母钟',
+    category: '数字时钟系统',
+    categoryLink: '/digital-clock-system',
+    image: '/images/digital-clock/product54.jpg',
+    params: [
+      { label: '用户容量', value: '支持数万台客户端' },
+      { label: 'NTP请求量', value: '8000次/秒' },
+      { label: '网口', value: 'RJ45，1路' },
+    ]
+  },
+
+  // 排队叫号系统产品 (55-60)
+  '55': {
+    name: '19寸智能一体机',
+    category: '排队叫号系统',
+    categoryLink: '/queuing-system',
+    image: '/images/queuing/product55.jpg',
+    params: [
+      { label: '安装方式', value: '医生诊室门口壁挂式' },
+      { label: '传输方式', value: '局域网传输' },
+      { label: '分辨率', value: '1920×1080' },
+    ]
+  },
+  '56': {
+    name: '32寸智能一体机',
+    category: '排队叫号系统',
+    categoryLink: '/queuing-system',
+    image: '/images/queuing/product56.jpg',
+    params: [
+      { label: '安装方式', value: '医生诊室门口壁挂式' },
+      { label: '传输方式', value: '局域网传输' },
+      { label: '分辨率', value: '1920×1080' },
+    ]
+  },
+  '57': {
+    name: '22寸智能一体机（取号/触摸屏）',
+    category: '排队叫号系统',
+    categoryLink: '/queuing-system',
+    image: '/images/queuing/product57.jpg',
+    params: [
+      { label: '安装方式', value: '落地式' },
+      { label: '传输方式', value: '局域网传输' },
+      { label: '分辨率', value: '1920×1080' },
+    ]
+  },
+  '58': {
+    name: '22寸智能一体机（打印/触摸屏）',
+    category: '排队叫号系统',
+    categoryLink: '/queuing-system',
+    image: '/images/queuing/product58.jpg',
+    params: [
+      { label: '安装方式', value: '落地式' },
+      { label: '传输方式', value: '局域网传输' },
+      { label: '分辨率', value: '1920×1080' },
+    ]
+  },
+  '59': {
+    name: '10寸呼叫机（触摸屏）',
+    category: '排队叫号系统',
+    categoryLink: '/queuing-system',
+    image: '/images/queuing/product59.jpg',
+    params: [
+      { label: '安装方式', value: '桌面式' },
+      { label: '传输方式', value: '局域网传输' },
+      { label: '分辨率', value: '1280×800' },
+    ]
+  },
+  '60': {
+    name: '窗口对讲呼叫机',
+    category: '排队叫号系统',
+    categoryLink: '/queuing-system',
+    image: '/images/queuing/product60.jpg',
+    params: [
+      { label: '控制方式', value: '双通道自动控制' },
+      { label: '录音方式', value: '全双工录音' },
+    ]
+  },
+
+  // 信息发布系统产品 (61-62)
+  '61': {
+    name: '43寸智能一体机(立式)',
+    category: '信息发布系统',
+    categoryLink: '/info-display-system',
+    image: '/images/info-display/product61.jpg',
+    params: [
+      { label: '安装方式', value: '落地式' },
+      { label: '传输方式', value: '局域网传输' },
+      { label: '分辨率', value: '1920×1080' },
+    ]
+  },
+  '62': {
+    name: '43寸智能一体机(卧式)',
+    category: '信息发布系统',
+    categoryLink: '/info-display-system',
+    image: '/images/info-display/product62.jpg',
+    params: [
+      { label: '安装方式', value: '卧式' },
+      { label: '传输方式', value: '局域网传输' },
+      { label: '分辨率', value: '1920×1080' },
+    ]
+  },
+
+  // 智慧康养系统产品 (63-70)
+  '63': {
+    name: '定位胸牌',
+    category: '智慧康养系统',
+    categoryLink: '/smart-aging-system',
+    image: '/images/smart-aging/product63.jpg',
+    params: [
+      { label: '产品尺寸', value: '61×11×106mm' },
+      { label: '通讯方式', value: 'Cat.1通讯' },
+      { label: '待机时长', value: '5天' },
+    ]
+  },
+  '64': {
+    name: '智能手环',
+    category: '智慧康养系统',
+    categoryLink: '/smart-aging-system',
+    image: '/images/smart-aging/product64.jpg',
+    params: [
+      { label: '屏幕尺寸', value: '1.59英寸/1.83英寸' },
+      { label: '待机时长', value: '7-9天' },
+      { label: '通话时长', value: '7-9小时' },
+    ]
+  },
+  '65': {
+    name: '毫米跌倒雷达波',
+    category: '智慧康养系统',
+    categoryLink: '/smart-aging-system',
+    image: '/images/smart-aging/product65.jpg',
+    params: [
+      { label: '产品尺寸', value: 'φ70×29mm' },
+      { label: '通讯方式', value: '4G Cat.1通讯' },
+      { label: '探测角度', value: '100°Az/100°El' },
+    ]
+  },
+  '66': {
+    name: '智能睡眠监测垫',
+    category: '智慧康养系统',
+    categoryLink: '/smart-aging-system',
+    image: '/images/smart-aging/product66.jpg',
+    params: [
+      { label: '过压保护', value: '支持' },
+      { label: '静电保护', value: '支持' },
+      { label: '防尘防水', value: '不支持' },
+    ]
+  },
+  '67': {
+    name: 'AI语音紧急呼叫按钮',
+    category: '智慧康养系统',
+    categoryLink: '/smart-aging-system',
+    image: '/images/smart-aging/product67.jpg',
+    params: [
+      { label: '产品尺寸', value: '93×93×28mm' },
+      { label: '通讯方式', value: 'Cat.1通讯' },
+      { label: '外部供电', value: 'DC 5V/2A' },
+    ]
+  },
+  '68': {
+    name: '便携式检测一体机',
+    category: '智慧康养系统',
+    categoryLink: '/smart-aging-system',
+    image: '/images/smart-aging/product68.jpg',
+    params: [
+      { label: '产品配置', value: '10.1寸健康一体机' },
+      { label: '处理器', value: '高通八核64位' },
+      { label: '可移动性', value: '便携式手提/背包设计' },
+    ]
+  },
+  '69': {
+    name: '水浸探测器',
+    category: '智慧康养系统',
+    categoryLink: '/smart-aging-system',
+    image: '/images/smart-aging/product69.jpg',
+    params: [
+      { label: '产品尺寸', value: '105×39.5×23mm' },
+      { label: '感应距离', value: '20mm' },
+      { label: '探头线长', value: '1米' },
+    ]
+  },
+  '70': {
+    name: '家用可燃气体探测器',
+    category: '智慧康养系统',
+    categoryLink: '/smart-aging-system',
+    image: '/images/smart-aging/product70.jpg',
+    params: [
+      { label: '产品尺寸', value: 'φ104×31.7mm' },
+      { label: '探测气体', value: '天然气（CH4）' },
+      { label: '报警浓度', value: '8LEL±3LEL' },
+    ]
+  },
+
+  // 智能照明系统产品 (71-78)
+  '71': {
+    name: 'KNX开关执行器',
+    category: '智能照明系统',
+    categoryLink: '/smart-lighting-system',
+    image: '/images/smart-lighting/product71.jpg',
+    params: [
+      { label: '产品尺寸', value: '72x90x63mm(4P)' },
+      { label: '总线电压', value: '21-30V DC' },
+      { label: '额定输出', value: '4路16A/20A' },
+    ]
+  },
+  '72': {
+    name: 'KNX开关执行器',
+    category: '智能照明系统',
+    categoryLink: '/smart-lighting-system',
+    image: '/images/smart-lighting/product72.jpg',
+    params: [
+      { label: '产品尺寸', value: '145x90x63mm(8P)' },
+      { label: '总线电压', value: '21-30V DC' },
+      { label: '额定输出', value: '8路16A/20A' },
+    ]
+  },
+  '73': {
+    name: 'KNX开关执行器',
+    category: '智能照明系统',
+    categoryLink: '/smart-lighting-system',
+    image: '/images/smart-lighting/product73.jpg',
+    params: [
+      { label: '产品尺寸', value: '218x90x63mm(12P)' },
+      { label: '总线电压', value: '21-30V DC' },
+      { label: '额定输出', value: '12路16A/20A' },
+    ]
+  },
+  '74': {
+    name: 'KNX总线电源(960MA)',
+    category: '智能照明系统',
+    categoryLink: '/smart-lighting-system',
+    image: '/images/smart-lighting/product74.jpg',
+    params: [
+      { label: '产品尺寸', value: '72x90x62mm(4P)' },
+      { label: '输入电压', value: '200-240VAC' },
+      { label: 'KNX/EIB输出', value: '29V DC' },
+    ]
+  },
+  '75': {
+    name: 'KNX智能面板(6键金属拉丝/喷砂可选)',
+    category: '智能照明系统',
+    categoryLink: '/smart-lighting-system',
+    image: '/images/smart-lighting/product75.jpg',
+    params: [
+      { label: '产品尺寸', value: '86x86x33mm' },
+      { label: '总线电压', value: '21-30V DC' },
+      { label: '总线功率', value: '<360mW' },
+    ]
+  },
+  '76': {
+    name: 'KNX传感器(移动/照度二合一)',
+    category: '智能照明系统',
+    categoryLink: '/smart-lighting-system',
+    image: '/images/smart-lighting/product76.jpg',
+    params: [
+      { label: '产品尺寸', value: '98.5x39.5(φ80mm)' },
+      { label: '总线电压', value: '21-30V DC' },
+      { label: '总线功率', value: '<360mW' },
+    ]
+  },
+  '77': {
+    name: 'KNX智能屏(4寸触摸屏)',
+    category: '智能照明系统',
+    categoryLink: '/smart-lighting-system',
+    image: '/images/smart-lighting/product77.jpg',
+    params: [
+      { label: '产品尺寸', value: '86x101.3x32.2mm' },
+      { label: '总线电压', value: '21-30V DC' },
+      { label: '总线功率', value: '<150mW' },
+    ]
+  },
+  '78': {
+    name: 'KNXIP接口网关',
+    category: '智能照明系统',
+    categoryLink: '/smart-lighting-system',
+    image: '/images/smart-lighting/product78.jpg',
+    params: [
+      { label: '产品尺寸', value: '36x90x64mm(2P)' },
+      { label: '总线电压', value: '21-30V DC' },
+      { label: '总线功率', value: '<470mW' },
+    ]
+  },
+};
