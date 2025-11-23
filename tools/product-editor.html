@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>德视安产品管理器</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #0066cc 0%, #003366 100%);
+      color: white;
+      padding: 24px 32px;
+    }
+    
+    h1 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    
+    .subtitle {
+      opacity: 0.9;
+      font-size: 14px;
+    }
+    
+    .toolbar {
+      padding: 16px 32px;
+      background: #fafafa;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    
+    button {
+      background: #0066cc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    
+    button:hover {
+      background: #0052a3;
+      transform: translateY(-1px);
+    }
+    
+    button.secondary {
+      background: #666;
+    }
+    
+    button.secondary:hover {
+      background: #555;
+    }
+    
+    button.success {
+      background: #28a745;
+    }
+    
+    button.success:hover {
+      background: #218838;
+    }
+    
+    button.danger {
+      background: #dc3545;
+    }
+    
+    button.danger:hover {
+      background: #c82333;
+    }
+    
+    .table-container {
+      padding: 32px;
+      overflow-x: auto;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    
+    th {
+      background: #f8f9fa;
+      padding: 12px;
+      text-align: left;
+      font-weight: 600;
+      color: #333;
+      border-bottom: 2px solid #dee2e6;
+      white-space: nowrap;
+    }
+    
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    td[contenteditable="true"] {
+      cursor: text;
+      background: white;
+      transition: background 0.2s;
+    }
+    
+    td[contenteditable="true"]:hover {
+      background: #f8f9fa;
+    }
+    
+    td[contenteditable="true"]:focus {
+      background: #fff3cd;
+      outline: 2px solid #ffc107;
+    }
+    
+    tr:hover {
+      background: #f8f9fa;
+    }
+    
+    .action-buttons {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .action-buttons button {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+    
+    .stats {
+      padding: 16px 32px;
+      background: #e7f3ff;
+      color: #0066cc;
+      font-size: 14px;
+      display: flex;
+      gap: 24px;
+    }
+    
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .stat-item strong {
+      font-size: 18px;
+    }
+    
+    input[type="file"] {
+      display: none;
+    }
+    
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    
+    .modal.active {
+      display: flex;
+    }
+    
+    .modal-content {
+      background: white;
+      padding: 32px;
+      border-radius: 8px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    
+    .modal-content h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    
+    .form-group {
+      margin-bottom: 16px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #333;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: inherit;
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    
+    .modal-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🏥 德视安产品管理器</h1>
+      <p class="subtitle">本地编辑器 - 无需数据库，双击即可使用</p>
+    </header>
+    
+    <div class="stats">
+      <div class="stat-item">
+        <span>总产品数：</span>
+        <strong id="totalCount">0</strong>
+      </div>
+      <div class="stat-item">
+        <span>已修改：</span>
+        <strong id="modifiedCount">0</strong>
+      </div>
+    </div>
+    
+    <div class="toolbar">
+      <button onclick="addProduct()" class="success">➕ 添加产品</button>
+      <button onclick="importJSON()">📥 导入JSON</button>
+      <button onclick="exportJSON()">📤 导出JSON</button>
+      <button onclick="exportTypeScript()">💾 导出TS代码</button>
+      <button onclick="clearAll()" class="danger">🗑️ 清空所有</button>
+      <button onclick="loadSample()" class="secondary">📋 加载示例</button>
+    </div>
+    
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>产品名称</th>
+            <th>分类</th>
+            <th>图片路径</th>
+            <th>链接</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- 动态生成 -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 添加/编辑产品模态框 -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <h2 id="modalTitle">添加新产品</h2>
+      <form id="productForm">
+        <div class="form-group">
+          <label>产品名称 *</label>
+          <input type="text" id="productName" required>
+        </div>
+        <div class="form-group">
+          <label>分类 *</label>
+          <select id="productCategory" required>
+            <option value="数字医护对讲系统">数字医护对讲系统</option>
+            <option value="二线制医护对讲系统">二线制医护对讲系统</option>
+            <option value="无线呼叫系统">无线呼叫系统</option>
+            <option value="无线输液呼叫">无线输液呼叫</option>
+            <option value="ICU探视对讲">ICU探视对讲</option>
+            <option value="数字时钟系统">数字时钟系统</option>
+            <option value="排队叫号系统">排队叫号系统</option>
+            <option value="信息发布系统">信息发布系统</option>
+            <option value="智慧康养系统">智慧康养系统</option>
+            <option value="智能照明系统">智能照明系统</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>图片路径 *</label>
+          <input type="text" id="productImage" placeholder="/images/category/productX.jpg" required>
+        </div>
+        <div class="modal-buttons">
+          <button type="button" onclick="closeModal()" class="secondary">取消</button>
+          <button type="submit" class="success">保存</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <input type="file" id="fileInput" accept=".json" onchange="handleFileSelect(event)">
+
+  <script>
+    let products = [];
+    let modified = 0;
+    let editingIndex = -1;
+
+    // 初始化
+    function init() {
+      loadFromLocalStorage();
+      renderTable();
+    }
+
+    // 从localStorage加载
+    function loadFromLocalStorage() {
+      const saved = localStorage.getItem('dea_products');
+      if (saved) {
+        products = JSON.parse(saved);
+      }
+    }
+
+    // 保存到localStorage
+    function saveToLocalStorage() {
+      localStorage.setItem('dea_products', JSON.stringify(products));
+      modified++;
+      updateStats();
+    }
+
+    // 更新统计
+    function updateStats() {
+      document.getElementById('totalCount').textContent = products.length;
+      document.getElementById('modifiedCount').textContent = modified;
+    }
+
+    // 渲染表格
+    function renderTable() {
+      const tbody = document.getElementById('tableBody');
+      
+      if (products.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="6" style="text-align: center; padding: 40px; color: #999;">
+              暂无产品数据，点击"添加产品"或"加载示例"开始
+            </td>
+          </tr>
+        `;
+        updateStats();
+        return;
+      }
+
+      tbody.innerHTML = products.map((p, i) => `
+        <tr>
+          <td>${p.id}</td>
+          <td contenteditable="true" onblur="updateField(${i}, 'name', this.innerText)">${p.name}</td>
+          <td contenteditable="true" onblur="updateField(${i}, 'category', this.innerText)">${p.category || ''}</td>
+          <td contenteditable="true" onblur="updateField(${i}, 'image', this.innerText)">${p.image}</td>
+          <td contenteditable="true" onblur="updateField(${i}, 'href', this.innerText)">${p.href}</td>
+          <td>
+            <div class="action-buttons">
+              <button onclick="editProduct(${i})" class="secondary">编辑</button>
+              <button onclick="deleteProduct(${i})" class="danger">删除</button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+      
+      updateStats();
+    }
+
+    // 更新字段
+    function updateField(index, field, value) {
+      products[index][field] = value.trim();
+      saveToLocalStorage();
+    }
+
+    // 添加产品
+    function addProduct() {
+      editingIndex = -1;
+      document.getElementById('modalTitle').textContent = '添加新产品';
+      document.getElementById('productForm').reset();
+      document.getElementById('productModal').classList.add('active');
+    }
+
+    // 编辑产品
+    function editProduct(index) {
+      editingIndex = index;
+      const product = products[index];
+      document.getElementById('modalTitle').textContent = '编辑产品';
+      document.getElementById('productName').value = product.name;
+      document.getElementById('productCategory').value = product.category || '';
+      document.getElementById('productImage').value = product.image;
+      document.getElementById('productModal').classList.add('active');
+    }
+
+    // 删除产品
+    function deleteProduct(index) {
+      if (confirm(`确定删除产品"${products[index].name}"吗？`)) {
+        products.splice(index, 1);
+        // 重新分配ID
+        products.forEach((p, i) => p.id = i + 1);
+        saveToLocalStorage();
+        renderTable();
+      }
+    }
+
+    // 关闭模态框
+    function closeModal() {
+      document.getElementById('productModal').classList.remove('active');
+    }
+
+    // 表单提交
+    document.getElementById('productForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('productName').value.trim();
+      const category = document.getElementById('productCategory').value;
+      const image = document.getElementById('productImage').value.trim();
+      
+      if (editingIndex >= 0) {
+        // 编辑现有产品
+        products[editingIndex] = {
+          ...products[editingIndex],
+          name,
+          category,
+          image
+        };
+      } else {
+        // 添加新产品
+        const newId = products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1;
+        products.push({
+          id: newId,
+          name,
+          category,
+          image,
+          href: `/product/${newId}`
+        });
+      }
+      
+      saveToLocalStorage();
+      renderTable();
+      closeModal();
+    });
+
+    // 导入JSON
+    function importJSON() {
+      document.getElementById('fileInput').click();
+    }
+
+    function handleFileSelect(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const data = JSON.parse(e.target.result);
+          if (Array.isArray(data)) {
+            products = data;
+          } else if (data.digitalMedicalProducts) {
+            // 如果是从config导出的格式
+            products = Object.values(data).flat().filter(p => p.id);
+          }
+          saveToLocalStorage();
+          renderTable();
+          alert('导入成功！');
+        } catch (error) {
+          alert('导入失败：' + error.message);
+        }
+      };
+      reader.readAsText(file);
+      
+      // 重置input
+      event.target.value = '';
+    }
+
+    // 导出JSON
+    function exportJSON() {
+      const dataStr = JSON.stringify(products, null, 2);
+      const blob = new Blob([dataStr], { type: 'application/json' });
+      downloadFile(blob, 'products.json');
+    }
+
+    // 导出TypeScript代码
+    function exportTypeScript() {
+      const code = `// 产品数据配置
+export interface ProductItem {
+  id: number;
+  name: string;
+  image: string;
+  href: string;
+  category?: string;
+}
+
+export const products: ProductItem[] = ${JSON.stringify(products, null, 2)};
+`;
+      
+      const blob = new Blob([code], { type: 'text/typescript' });
+      downloadFile(blob, 'products-data.ts');
+    }
+
+    // 下载文件
+    function downloadFile(blob, filename) {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    // 清空所有
+    function clearAll() {
+      if (confirm('确定清空所有产品数据吗？此操作不可恢复！')) {
+        products = [];
+        modified = 0;
+        saveToLocalStorage();
+        renderTable();
+      }
+    }
+
+    // 加载示例数据
+    function loadSample() {
+      if (products.length > 0 && !confirm('当前有数据，确定要加载示例数据吗？')) {
+        return;
+      }
+      
+      products = [
+        { id: 1, name: "10.1寸护士站管理机", category: "数字医护对讲系统", image: "/images/medical/product1.jpg", href: "/product/1" },
+        { id: 2, name: "15.6寸护士站管理机", category: "数字医护对讲系统", image: "/images/medical/product2.jpg", href: "/product/2" },
+        { id: 3, name: "网络多媒体控制器", category: "数字医护对讲系统", image: "/images/medical/product3.jpg", href: "/product/3" }
+      ];
+      
+      saveToLocalStorage();
+      renderTable();
+      alert('示例数据加载完成！');
+    }
+
+    // 点击模态框外部关闭
+    document.getElementById('productModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
+
+    // 初始化
+    init();
+  </script>
+</body>
+</html>
+
