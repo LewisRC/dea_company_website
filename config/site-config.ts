@@ -178,7 +178,7 @@ export const siteConfig = {
     },
     {
       id: 2,
-      image: "/images/banner2-1.jpg",
+      image: "/images/banner2-2.jpg",
       title: "",
       subtitle: "",
       description: "",
