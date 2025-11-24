@@ -185,14 +185,14 @@ export const siteConfig = {
     },
     {
       id: 3,
-      image: "/images/banner3-1.jpg",
+      image: "/images/banner3-2.jpg",
       title: "",
       subtitle: "",
       description: "",
     },
     {
       id: 4,
-      image: "/images/banner4-1.jpg",
+      image: "/images/banner4-2.jpg",
       title: "",
       subtitle: "",
       description: "",
