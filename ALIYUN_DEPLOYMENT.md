@@ -1,14 +1,65 @@
 # 阿里云部署配置指南
 
-## 问题现象
+## 📋 目录
+- [构建问题修复](#构建问题修复)
+- [80端口配置](#80端口配置)
+- [环境变量配置](#环境变量配置)
+- [启动命令配置](#启动命令配置)
+
+---
+
+## 构建问题修复
+
+### 问题现象
 - ✅ 本地构建成功
 - ❌ 阿里云 `pnpm build` 失败
 - 错误发生在 "Collecting page data" 阶段
 
-## 问题原因
+### 问题原因
 1. Prisma 需要 `DATABASE_URL` 环境变量
 2. 构建脚本没有生成 Prisma Client
 3. 可能的内存限制问题
+
+---
+
+## 80端口配置
+
+应用已配置为默认从 **80端口** 启动。详细配置请参考 [PORT_80_SETUP.md](./PORT_80_SETUP.md)
+
+### 快速配置
+
+#### 环境变量
+在阿里云控制台添加：
+```
+PORT=80
+DATABASE_URL=file:./prisma/dev.db
+NODE_ENV=production
+```
+
+#### 启动命令选项
+
+**选项1：使用 sudo（需要 root 权限）**
+```bash
+sudo npm start
+```
+
+**选项2：使用启动脚本**
+```bash
+bash start-server.sh
+```
+
+**选项3：使用 PM2（推荐）**
+```bash
+sudo pm2 start ecosystem.config.js
+```
+
+**选项4：使用 Nginx 反向代理（最佳实践）**
+- 应用运行在3000端口：`PORT=3000 npm start`
+- Nginx 监听80端口并转发到3000
+
+详细说明请查看 [PORT_80_SETUP.md](./PORT_80_SETUP.md)
+
+---
 
 ## 解决方案
 
@@ -71,6 +122,7 @@ npm run build
 | `DATABASE_URL` | `file:./prisma/dev.db` | 数据库连接 |
 | `NODE_ENV` | `production` | 生产环境 |
 | `NODE_OPTIONS` | `--max-old-space-size=4096` | 增加内存限制 |
+| `PORT` | `80` | 应用端口（可选，默认80） |
 
 ### 2. 配置构建命令
 
@@ -91,16 +143,74 @@ npm ci && npx prisma generate && npm run build
 bash deploy-aliyun.sh
 ```
 
-### 3. 配置启动命令（如果需要）
+### 3. 配置启动命令
 
+**默认80端口启动：**
 ```bash
 pnpm start
 ```
 
-或
+**使用3000端口启动：**
+```bash
+pnpm start:3000
+# 或
+PORT=3000 pnpm start
+```
+
+**使用 PM2 管理（推荐）：**
+```bash
+pm2 start ecosystem.config.js --env production
+```
+
+### 4. 端口权限配置（重要）
+
+应用默认使用**80端口**，这是一个特权端口，需要特殊配置：
+
+#### 选项A：使用 Nginx 反向代理（强烈推荐）
+
+1. 安装 Nginx：
+```bash
+sudo apt install nginx  # Ubuntu/Debian
+# 或
+sudo yum install nginx  # CentOS
+```
+
+2. 配置 Nginx（参考 `nginx.conf.example`）：
+```bash
+sudo cp nginx.conf.example /etc/nginx/sites-available/dea-website
+sudo ln -s /etc/nginx/sites-available/dea-website /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
+```
+
+3. 启动应用在3000端口：
+```bash
+PORT=3000 pnpm start
+```
+
+#### 选项B：配置 Node.js 权限
 
 ```bash
-npm start
+# 授予 Node.js 绑定特权端口的权限（只需执行一次）
+sudo setcap cap_net_bind_service=+ep $(which node)
+
+# 然后可以直接启动在80端口
+pnpm start
+```
+
+#### 选项C：使用 PM2 + setcap
+
+```bash
+# 1. 安装 PM2
+npm install -g pm2
+
+# 2. 配置权限
+sudo setcap cap_net_bind_service=+ep $(which node)
+
+# 3. 启动应用
+pm2 start ecosystem.config.js --env production
+pm2 save
+pm2 startup
 ```
 
 ## 验证和测试
