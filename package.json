@@ -7,11 +7,12 @@
     "npm": ">=9.0.0"
   },
   "scripts": {
-    "build": "next build",
+    "build": "prisma generate && next build",
     "dev": "next dev",
     "lint": "eslint .",
     "start": "next start",
-    "export": "next build"
+    "export": "next build",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

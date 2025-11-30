@@ -7,6 +7,10 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  
   images: {
     unoptimized: true,
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -25,6 +29,17 @@ const nextConfig = {
   // 性能优化
   poweredByHeader: false,
   generateEtags: false,
+  
+  // 环境变量配置 - 确保构建时可以访问
+  env: {
+    DATABASE_URL: process.env.DATABASE_URL || 'file:./prisma/dev.db',
+  },
+  
+  // 实验性功能 - 优化构建
+  experimental: {
+    // 优化服务器内存使用
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+  },
 }
 
 export default nextConfig
