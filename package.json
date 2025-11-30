@@ -8,9 +8,11 @@
   },
   "scripts": {
     "build": "prisma generate && next build",
-    "dev": "next dev",
+    "dev": "node server.js",
     "lint": "eslint .",
-    "start": "next start",
+    "start": "node server.js",
+    "start:next": "next start",
+    "start:3000": "PORT=3000 node server.js",
     "export": "next build",
     "postinstall": "prisma generate"
   },

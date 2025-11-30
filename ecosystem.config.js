@@ -2,8 +2,7 @@
 module.exports = {
   apps: [{
     name: 'dea-company-website',
-    script: 'node_modules/next/dist/bin/next',
-    args: 'start',
+    script: './server.js',
     cwd: './',
     instances: 1,
     autorestart: true,
@@ -13,6 +12,18 @@ module.exports = {
       NODE_ENV: 'production',
       PORT: 80,
       HOSTNAME: '0.0.0.0',
+      DATABASE_URL: 'file:./prisma/dev.db'
+    },
+    env_production: {
+      NODE_ENV: 'production',
+      PORT: 80,
+      HOSTNAME: '0.0.0.0',
+      DATABASE_URL: 'file:./prisma/dev.db'
+    },
+    env_development: {
+      NODE_ENV: 'development',
+      PORT: 3000,
+      HOSTNAME: 'localhost',
       DATABASE_URL: 'file:./prisma/dev.db'
     },
     error_file: './logs/err.log',
