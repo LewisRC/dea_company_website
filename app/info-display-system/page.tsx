@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 export default function InfoDisplaySystemPage() {
   return (
     <ProductPageTemplate
-      title="信息发布系统"
-      description="基于数字标牌技术，实现医院各类信息的实时发布与管理，包括就诊指引、公告通知、健康教育等内容，提升信息传播效率。"
+      titleKey="products.infoDisplaySystem"
+      descriptionKey="products.infoDisplaySystemDesc"
       products={infoDisplayProducts}
     />
   )

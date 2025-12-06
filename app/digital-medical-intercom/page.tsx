@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 export default function DigitalMedicalIntercomPage() {
   return (
     <ProductPageTemplate
-      title="数字医护对讲系统"
-      description="德视安数字医护对讲系统，提供高质量的医院病房通讯解决方案，提升医护效率和患者体验。"
+      titleKey="products.digitalMedicalIntercom"
+      descriptionKey="products.digitalMedicalIntercomDesc"
       products={digitalMedicalProducts}
     />
   )

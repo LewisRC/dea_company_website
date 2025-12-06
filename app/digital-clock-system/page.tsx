@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 export default function DigitalClockSystemPage() {
   return (
     <ProductPageTemplate
-      title="数字时钟系统"
-      description="确保多终端时间一致，集成校准/提醒/发布功能，优化时间管理效率。"
+      titleKey="products.digitalClockSystem"
+      descriptionKey="products.digitalClockSystemDesc"
       products={digitalClockProducts}
     />
   )

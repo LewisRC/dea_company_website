@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 export default function WirelessCallSystemPage() {
   return (
     <ProductPageTemplate
-      title="无线呼叫系统"
-      description="免布线、灵活可扩展，实时响应提升服务效率与质量，优化医患通信体验。"
+      titleKey="products.wirelessCallSystem"
+      descriptionKey="products.wirelessCallSystemDesc"
       products={wirelessCallProducts}
     />
   )

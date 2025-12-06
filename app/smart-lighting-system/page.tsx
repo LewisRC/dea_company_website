@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 export default function SmartLightingSystemPage() {
   return (
     <ProductPageTemplate
-      title="智能照明系统"
-      description="为各类场所提供专业的智能照明控制方案，包括场景控制、自动调节、节能环保等功能。"
+      titleKey="products.smartLightingSystem"
+      descriptionKey="products.smartLightingSystemDesc"
       products={smartLightingProducts}
     />
   )

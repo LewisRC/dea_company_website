@@ -6,6 +6,7 @@ import { BackToTop } from "@/components/ui/back-to-top"
 import Image from "next/image"
 import Link from "next/link"
 import { siteConfig } from "@/config/site-config"
+import { useI18n } from "@/lib/i18n-context"
 
 interface ProductItem {
   id: number;
@@ -15,12 +16,14 @@ interface ProductItem {
 }
 
 interface ProductPageTemplateProps {
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
   products: ProductItem[];
 }
 
-export function ProductPageTemplate({ title, description, products }: ProductPageTemplateProps) {
+export function ProductPageTemplate({ titleKey, descriptionKey, products }: ProductPageTemplateProps) {
+  const { t } = useI18n()
+  
   return (
     <div className="relative min-h-screen">
       <Header />
@@ -28,8 +31,8 @@ export function ProductPageTemplate({ title, description, products }: ProductPag
         <div className="container">
           {/* 页面标题 */}
           <div className="product-header text-center mb-[60px]">
-            <h1 className="text-[36px] mb-[20px]" style={{ color: siteConfig.colors.foreground, fontWeight: 600 }}>{title}</h1>
-            <p className="text-[16px] leading-[1.8] max-w-[800px] mx-auto" style={{ color: siteConfig.colors.textSecondary }}>{description}</p>
+            <h1 className="text-[36px] mb-[20px]" style={{ color: siteConfig.colors.foreground, fontWeight: 600 }}>{t(titleKey)}</h1>
+            <p className="text-[16px] leading-[1.8] max-w-[800px] mx-auto" style={{ color: siteConfig.colors.textSecondary }}>{t(descriptionKey)}</p>
           </div>
 
           {/* 产品网格 */}
@@ -57,7 +60,7 @@ export function ProductPageTemplate({ title, description, products }: ProductPag
                   <div className="product-info p-[20px] text-center">
                     <h3 className="product-name text-[18px] mb-[15px]" style={{ color: siteConfig.colors.foreground, fontWeight: 500 }}>{product.name}</h3>
                     <span className="product-btn inline-block px-[20px] py-[8px] text-white rounded-[4px] text-[14px] transition-colors duration-300" style={{ backgroundColor: siteConfig.colors.primary }}>
-                      查看详情
+                      {t('common.viewDetails')}
                     </span>
                   </div>
                 </Link>

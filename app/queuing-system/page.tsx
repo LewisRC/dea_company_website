@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 export default function QueuingSystemPage() {
   return (
     <ProductPageTemplate
-      title="排队叫号系统"
-      description="通过智能排队管理，实现患者自助取号、叫号显示、语音播报等功能，优化就诊流程，减少患者等待时间，提升就医体验。"
+      titleKey="products.queuingSystem"
+      descriptionKey="products.queuingSystemDesc"
       products={queuingProducts}
     />
   )

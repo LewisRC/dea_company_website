@@ -3,7 +3,8 @@
     "search": "搜索",
     "learnMore": "了解更多",
     "contactUs": "联系我们",
-    "backToTop": "返回顶部"
+    "backToTop": "返回顶部",
+    "viewDetails": "查看详情"
   },
   "nav": {
     "home": "首页",
@@ -15,15 +16,25 @@
   },
   "products": {
     "digitalMedicalIntercom": "数字医护对讲系统",
+    "digitalMedicalIntercomDesc": "德视安数字医护对讲系统，提供高质量的医院病房通讯解决方案，提升医护效率和患者体验。",
     "twoWireMedicalIntercom": "二线制医护对讲系统",
+    "twoWireMedicalIntercomDesc": "简化布线、降低成本的医护对讲解决方案。",
     "wirelessCallSystem": "无线呼叫系统",
+    "wirelessCallSystemDesc": "无线呼叫系统为医疗机构提供灵活便捷的呼叫解决方案。",
     "wirelessInfusionCall": "无线输液呼叫系统",
+    "wirelessInfusionCallDesc": "专为输液室设计的无线呼叫管理系统。",
     "icuVisitIntercom": "ICU探视对讲系统",
+    "icuVisitIntercomDesc": "为ICU病房提供远程探视对讲解决方案。",
     "digitalClockSystem": "数字时钟系统",
+    "digitalClockSystemDesc": "医院数字时钟同步系统，确保时间准确统一。",
     "queuingSystem": "排队叫号系统",
+    "queuingSystemDesc": "智能排队叫号系统，优化患者就诊流程。",
     "infoDisplaySystem": "信息发布系统",
+    "infoDisplaySystemDesc": "医院信息发布系统，实时传递重要信息。",
     "smartAgingSystem": "智慧康养系统",
-    "smartLightingSystem": "智能照明系统"
+    "smartAgingSystemDesc": "为养老机构提供智能化管理和照护系统。",
+    "smartLightingSystem": "智能照明系统",
+    "smartLightingSystemDesc": "智能照明控制系统，节能环保。"
   },
   "solutions": {
     "smartHospital": "智慧医院",

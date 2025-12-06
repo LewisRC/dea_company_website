@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 export default function SmartAgingSystemPage() {
   return (
     <ProductPageTemplate
-      title="智慧康养系统"
-      description="涵盖康养对讲、疗养管理、智能照护、信息发布等系统，提升康养机构管理效率和服务质量。"
+      titleKey="products.smartAgingSystem"
+      descriptionKey="products.smartAgingSystemDesc"
       products={smartAgingProducts}
     />
   )

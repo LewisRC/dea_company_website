@@ -3,7 +3,8 @@
     "search": "Search",
     "learnMore": "Learn More",
     "contactUs": "Contact Us",
-    "backToTop": "Back to Top"
+    "backToTop": "Back to Top",
+    "viewDetails": "View Details"
   },
   "nav": {
     "home": "Home",
@@ -15,15 +16,25 @@
   },
   "products": {
     "digitalMedicalIntercom": "Digital Medical Intercom System",
+    "digitalMedicalIntercomDesc": "Deshian Digital Medical Intercom System provides high-quality hospital ward communication solutions to improve medical care efficiency and patient experience.",
     "twoWireMedicalIntercom": "Two-Wire Medical Intercom System",
+    "twoWireMedicalIntercomDesc": "Simplified wiring and cost-effective medical intercom solution.",
     "wirelessCallSystem": "Wireless Call System",
+    "wirelessCallSystemDesc": "Wireless call system provides flexible and convenient calling solutions for medical institutions.",
     "wirelessInfusionCall": "Wireless Infusion Call System",
+    "wirelessInfusionCallDesc": "Wireless call management system designed for infusion rooms.",
     "icuVisitIntercom": "ICU Visit Intercom System",
+    "icuVisitIntercomDesc": "Remote visit intercom solution for ICU wards.",
     "digitalClockSystem": "Digital Clock System",
+    "digitalClockSystemDesc": "Hospital digital clock synchronization system ensures accurate and unified time.",
     "queuingSystem": "Queuing System",
+    "queuingSystemDesc": "Smart queuing system optimizes patient visit process.",
     "infoDisplaySystem": "Information Display System",
+    "infoDisplaySystemDesc": "Hospital information display system delivers important information in real-time.",
     "smartAgingSystem": "Smart Aging Care System",
-    "smartLightingSystem": "Smart Lighting System"
+    "smartAgingSystemDesc": "Intelligent management and care system for elderly care institutions.",
+    "smartLightingSystem": "Smart Lighting System",
+    "smartLightingSystemDesc": "Smart lighting control system, energy-saving and environmentally friendly."
   },
   "solutions": {
     "smartHospital": "Smart Hospital",
