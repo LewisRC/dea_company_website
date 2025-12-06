@@ -278,7 +278,8 @@
       "视频格式": "Video Format",
       "传输速率": "Transfer Rate",
       "存储容量": "Storage Capacity",
-      "可扩展容量": "Expandable Capacity"
+      "可扩展容量": "Expandable Capacity",
+      "供电方式": "Power Supply Method"
     }
   },
   "smartLighting": {

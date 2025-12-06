@@ -61,6 +61,11 @@ export function ProductDetailTemplate({
       .replace(/金属拉丝/g, ' Brushed Metal')
       .replace(/喷砂/g, ' Sandblasted')
       .replace(/可选/g, ' Optional')
+      .replace(/二芯供电/g, 'Two-wire Power Supply')
+      .replace(/供电/g, ' Power Supply')
+      .replace(/网线供电/g, 'PoE (Power over Ethernet)')
+      .replace(/DC供电/g, 'DC Power Supply')
+      .replace(/适配器供电/g, 'Adapter Power Supply')
   }
   
   return (
