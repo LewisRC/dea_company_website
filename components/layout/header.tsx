@@ -197,7 +197,8 @@ export function Header() {
                       </Link>
                     ) : (
                       <button
-                        className="flex items-center px-[15px] py-[10px] text-white text-[14px] font-medium transition-colors duration-300 relative hover:text-[#0066cc] bg-transparent border-none cursor-pointer"
+                        className="flex items-center px-[15px] py-[10px] text-white font-medium transition-colors duration-300 relative hover:text-[#0066cc] bg-transparent border-none cursor-pointer"
+                        style={{ fontSize: language === 'en' ? '15px' : '14px' }}
                       >
                         {item.label}
                         {item.children && (
