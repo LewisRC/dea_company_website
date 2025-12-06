@@ -147,8 +147,8 @@ export function Header() {
           <div className="flex items-center flex-shrink-0" style={{ marginLeft: '-40px', marginRight: 'auto' }}>
             <Link href="/" className="hover:opacity-80 transition-opacity">
               <Image 
-                src="/images/logo2-1.png" 
-                alt="德视安" 
+                src={language === 'en' ? '/images/logo3-1.png' : '/images/logo2-1.png'}
+                alt={language === 'en' ? 'Deshian' : '德视安'}
                 width={224}
                 height={56}
                 className="object-contain align-middle"
