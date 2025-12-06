@@ -183,9 +183,10 @@ export function Header() {
                       <Link
                         href={item.href}
                         onClick={(e) => handleSmoothScroll(e, item.href!)}
-                        className={`flex items-center px-[15px] py-[10px] text-white text-[14px] font-medium no-underline transition-colors duration-300 relative ${
+                        className={`flex items-center px-[15px] py-[10px] text-white font-medium no-underline transition-colors duration-300 relative ${
                           isActive ? 'text-[#0066cc]' : 'hover:text-[#0066cc]'
                         }`}
+                        style={{ fontSize: language === 'en' ? '15px' : '14px' }}
                       >
                         {item.label}
                         {isActive && (
