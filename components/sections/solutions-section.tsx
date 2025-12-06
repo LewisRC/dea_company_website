@@ -4,10 +4,12 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { siteConfig } from "@/config/site-config"
+import { useI18n } from "@/lib/i18n-context"
 
 export function SolutionsSection() {
   const solutions = siteConfig.solutions || []
   const [hoveredBtn, setHoveredBtn] = useState<number | null>(null)
+  const { t } = useI18n()
 
   return (
     <section 
@@ -16,7 +18,7 @@ export function SolutionsSection() {
     >
       <div className="container mx-auto px-5">
         <h2 className="text-center mb-15 relative text-[#333333] text-[32px] font-semibold">
-          解决方案
+          {t('nav.solutions')}
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -40,9 +42,15 @@ export function SolutionsSection() {
                   backgroundColor: 'rgba(30, 110, 198, 0.7)'
                 }}
               >
-                <h3 className="text-2xl mb-4">{solution.title}</h3>
+                <h3 className="text-2xl mb-4">
+                  {solution.id === 1 && t('solutions.smartHospital')}
+                  {solution.id === 2 && t('solutions.smartHealthcare')}
+                  {solution.id === 3 && t('solutions.smartLighting')}
+                </h3>
                 <p className="text-[15px] leading-relaxed mb-5">
-                  {solution.description}
+                  {solution.id === 1 && t('solutions.smartHospitalDesc')}
+                  {solution.id === 2 && t('solutions.smartHealthcareDesc')}
+                  {solution.id === 3 && t('solutions.smartLightingDesc')}
                 </p>
                 <Link
                   href={solution.href}
@@ -54,7 +62,7 @@ export function SolutionsSection() {
                   onMouseEnter={() => setHoveredBtn(solution.id)}
                   onMouseLeave={() => setHoveredBtn(null)}
                 >
-                  了解更多
+                  {t('common.learnMore')}
                 </Link>
               </div>
             </div>

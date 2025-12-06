@@ -1,9 +1,10 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { siteConfig } from "@/config/site-config"
+import { useI18n } from "@/lib/i18n-context"
+import { getNavigationConfig } from "@/config/site-config"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -11,8 +12,8 @@ export function Header() {
   const [hoveredDropdownItem, setHoveredDropdownItem] = useState<string | null>(null)
   const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [currentLanguage, setCurrentLanguage] = useState("zh")
   const [activeSection, setActiveSection] = useState("")
+  const { language, setLanguage, t } = useI18n()
 
   // 滚动处理
   useEffect(() => {
@@ -44,16 +45,8 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // 语言切换
-  useEffect(() => {
-    const savedLang = localStorage.getItem('preferredLanguage') || 'zh'
-    setCurrentLanguage(savedLang)
-  }, [])
-
-  const handleLanguageChange = (lang: string) => {
-    setCurrentLanguage(lang)
-    localStorage.setItem('preferredLanguage', lang)
-  }
+  // 获取当前语言的导航配置
+  const navigation = getNavigationConfig(language)
 
   // 平滑滚动
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -136,7 +129,7 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex flex-1 justify-center" style={{ margin: '0 20px' }}>
             <ul className="flex items-center gap-[15px] m-0 p-0 list-none whitespace-nowrap flex-nowrap">
-              {siteConfig.navigation.map((item) => {
+              {navigation.map((item) => {
                 const isActive = item.href && (
                   item.href === '/' && activeSection === '' ||
                   item.href === `#${activeSection}`
@@ -245,8 +238,8 @@ export function Header() {
             <button 
               className="p-2.5 bg-transparent border-none cursor-pointer text-white transition-all duration-300 hover:text-[#0066cc]"
               style={{ fontSize: '16px', transform: 'scale(1.2)' }}
-              aria-label="搜索"
-              onClick={() => alert('搜索功能将在这里实现')}
+              aria-label={t('common.search')}
+              onClick={() => alert(t('common.search'))}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -257,9 +250,9 @@ export function Header() {
           {/* Language Selector */}
           <div className="hidden lg:flex items-center ml-[15px]">
             <button 
-              onClick={() => handleLanguageChange('zh')}
+              onClick={() => setLanguage('zh')}
               className={`inline-block bg-transparent border-none cursor-pointer no-underline text-[14px] font-medium transition-colors duration-300 hover:text-[#0066cc] ${
-                currentLanguage === 'zh' ? 'text-[#0066cc]' : 'text-white'
+                language === 'zh' ? 'text-[#0066cc]' : 'text-white'
               }`}
               style={{ padding: '5px 4px' }}
             >
@@ -267,9 +260,9 @@ export function Header() {
             </button>
             <span className="text-white text-[14px]" style={{ margin: '0 2px' }}>|</span>
             <button 
-              onClick={() => handleLanguageChange('en')}
+              onClick={() => setLanguage('en')}
               className={`inline-block bg-transparent border-none cursor-pointer no-underline text-[14px] font-medium transition-colors duration-300 hover:text-[#0066cc] ${
-                currentLanguage === 'en' ? 'text-[#0066cc]' : 'text-white'
+                language === 'en' ? 'text-[#0066cc]' : 'text-white'
               }`}
               style={{ padding: '5px 4px' }}
             >
@@ -294,7 +287,7 @@ export function Header() {
           <div className="lg:hidden fixed left-0 top-[78px] w-4/5 h-screen bg-white shadow-sm z-100 overflow-y-auto pt-5">
             <nav>
               <ul className="flex flex-col w-full m-0 p-0 list-none">
-                {siteConfig.navigation.map((item) => (
+                {navigation.map((item) => (
                   <li key={item.label} className="m-0 border-b border-[#e0e0e0]">
                     {item.href ? (
                       <Link

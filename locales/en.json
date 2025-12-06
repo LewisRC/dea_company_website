@@ -1,0 +1,60 @@
+{
+  "common": {
+    "search": "Search",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "backToTop": "Back to Top"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "solutions": "Solutions",
+    "news": "News",
+    "recruitment": "Careers",
+    "about": "About"
+  },
+  "products": {
+    "digitalMedicalIntercom": "Digital Medical Intercom System",
+    "twoWireMedicalIntercom": "Two-Wire Medical Intercom System",
+    "wirelessCallSystem": "Wireless Call System",
+    "wirelessInfusionCall": "Wireless Infusion Call System",
+    "icuVisitIntercom": "ICU Visit Intercom System",
+    "digitalClockSystem": "Digital Clock System",
+    "queuingSystem": "Queuing System",
+    "infoDisplaySystem": "Information Display System",
+    "smartAgingSystem": "Smart Aging Care System",
+    "smartLightingSystem": "Smart Lighting System"
+  },
+  "solutions": {
+    "smartHospital": "Smart Hospital",
+    "smartHealthcare": "Smart Healthcare",
+    "smartLighting": "Smart Lighting",
+    "smartHospitalDesc": "Covers medical intercom, ward management, queuing system, information display, etc., to improve hospital management efficiency and patient experience.",
+    "smartHealthcareDesc": "Covers health care intercom, nursing management, intelligent care, information display, etc., to improve the management efficiency and service quality of health care institutions.",
+    "smartLightingDesc": "Provides professional intelligent lighting control solutions for various venues, including scene control, automatic adjustment, energy saving and environmental protection."
+  },
+  "recruitment": {
+    "positions": "Positions",
+    "philosophy": "Talent Philosophy"
+  },
+  "about": {
+    "companyProfile": "Company Profile",
+    "title": "About Deshian",
+    "subtitle": "Leader in Building Intercom Intelligent Solutions",
+    "description": "Deshian focuses on building intercom, smart community construction and IoT solution fields, providing professional products and services to thousands of real estate developers, property companies and integrators worldwide. Committed to creating safe, convenient and intelligent modern living spaces."
+  },
+  "footer": {
+    "productionCenter": "Production R&D Center: No.9 Lanyu 4th Street, Guangzhou Economic Development Zone, Guangzhou Science Park",
+    "salesCenter": "Sales Service Center: Longfor Century Center, No.213 Shilidianlu, Chenghua Avenue, Chenghua District, Chengdu",
+    "phone": "Service Center Phone",
+    "copyright": "© 2025 Chengdu Deshian Technology Co., Ltd. All rights reserved."
+  },
+  "hero": {
+    "title": "Enterprise Communication Solutions",
+    "subtitle": "Professional communication systems for your enterprise"
+  },
+  "news": {
+    "successCases": "Success Cases"
+  }
+}
+

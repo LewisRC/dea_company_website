@@ -1,0 +1,60 @@
+{
+  "common": {
+    "search": "搜索",
+    "learnMore": "了解更多",
+    "contactUs": "联系我们",
+    "backToTop": "返回顶部"
+  },
+  "nav": {
+    "home": "首页",
+    "products": "产品中心",
+    "solutions": "解决方案",
+    "news": "资讯中心",
+    "recruitment": "人才招聘",
+    "about": "关于我们"
+  },
+  "products": {
+    "digitalMedicalIntercom": "数字医护对讲系统",
+    "twoWireMedicalIntercom": "二线制医护对讲系统",
+    "wirelessCallSystem": "无线呼叫系统",
+    "wirelessInfusionCall": "无线输液呼叫系统",
+    "icuVisitIntercom": "ICU探视对讲系统",
+    "digitalClockSystem": "数字时钟系统",
+    "queuingSystem": "排队叫号系统",
+    "infoDisplaySystem": "信息发布系统",
+    "smartAgingSystem": "智慧康养系统",
+    "smartLightingSystem": "智能照明系统"
+  },
+  "solutions": {
+    "smartHospital": "智慧医院",
+    "smartHealthcare": "智慧康养",
+    "smartLighting": "智能照明",
+    "smartHospitalDesc": "涵盖医护对讲、病房管理、排队叫号、信息发布等系统，提升医院管理效率和患者就医体验。",
+    "smartHealthcareDesc": "涵盖康养对讲、疗养管理、智能照护、信息发布等系统，提升康养机构管理效率和服务质量。",
+    "smartLightingDesc": "为各类场所提供专业的智能照明控制方案，包括场景控制、自动调节、节能环保等功能。"
+  },
+  "recruitment": {
+    "positions": "招聘职位",
+    "philosophy": "人才理念"
+  },
+  "about": {
+    "companyProfile": "公司简介",
+    "title": "关于德视安",
+    "subtitle": "楼宇对讲智能化解决方案领导者",
+    "description": "德视安专注于楼宇对讲、智慧社区建设和物联网解决方案领域，为全球数千家房地产开发商、物业公司和集成商提供专业的产品和服务。致力于打造安全、便捷、智能的现代生活空间。"
+  },
+  "footer": {
+    "productionCenter": "生产研发中心：广州市经济开发区蓝玉四街九号广州科技园",
+    "salesCenter": "销售服务中心：成都市成华区成华大道十里店路213号龙光世纪中心",
+    "phone": "服务中心电话",
+    "copyright": "© 2025 成都德视安科技有限公司. 保留所有权利."
+  },
+  "hero": {
+    "title": "企业通信解决方案",
+    "subtitle": "为您的企业提供专业的通信系统"
+  },
+  "news": {
+    "successCases": "成功案例"
+  }
+}
+

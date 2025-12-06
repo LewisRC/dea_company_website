@@ -9,6 +9,8 @@ export interface MenuItem {
   }[]
 }
 
+type Language = 'zh' | 'en'
+
 export const siteConfig = {
   // 基础信息
   siteName: "德视安",
@@ -34,76 +36,8 @@ export const siteConfig = {
     border: "#e0e0e0",
   },
 
-  // 导航菜单 - React 标准路由
-  navigation: [
-    { 
-      label: "首页", 
-      href: "/" 
-    },
-    {
-      label: "产品中心",
-      children: [
-        {
-          items: [
-            { label: "数字医护对讲系统", href: "/digital-medical-intercom" },
-            { label: "二线制医护对讲系统", href: "/two-wire-medical-intercom" },
-            { label: "无线呼叫系统", href: "/wireless-call-system" },
-            { label: "无线输液呼叫系统", href: "/wireless-infusion-call" },
-            { label: "ICU探视对讲系统", href: "/icu-visit-intercom" },
-            { label: "数字时钟系统", href: "/digital-clock-system" },
-            { label: "排队叫号系统", href: "/queuing-system" },
-            { label: "信息发布系统", href: "/info-display-system" },
-            { label: "智慧康养系统", href: "/smart-aging-system" },
-            { label: "智能照明系统", href: "/smart-lighting-system" },
-          ]
-        }
-      ]
-    },
-    {
-      label: "解决方案",
-      children: [
-        {
-          items: [
-            { label: "智慧医院", href: "/smart-hospital" },
-            { label: "智慧康养", href: "/smart-healthcare" },
-            { label: "智能照明", href: "/smart-lighting" },
-          ]
-        }
-      ]
-    },
-    {
-      label: "资讯中心",
-      children: [
-        {
-          items: [
-            { label: "成功案例", href: "/info-center" },
-          ]
-        }
-      ]
-    },
-    {
-      label: "人才招聘",
-      children: [
-        {
-          items: [
-            { label: "招聘职位", href: "/recruitment" },
-            { label: "人才理念", href: "/talent-philosophy" },
-          ]
-        }
-      ]
-    },
-    {
-      label: "关于我们",
-      children: [
-        {
-          items: [
-            { label: "公司简介", href: "/company-profile" },
-            { label: "联系我们", href: "/contact-us" },
-          ]
-        }
-      ]
-    },
-  ] as MenuItem[],
+  // 导航菜单 - React 标准路由（中文）
+  navigation: [] as MenuItem[], // 将通过 getNavigationConfig 动态获取
 
   // Hero区域配置
   hero: {
@@ -239,3 +173,149 @@ export const siteConfig = {
 }
 
 export type SiteConfig = typeof siteConfig
+
+// 导航菜单配置 - 支持中英文
+export function getNavigationConfig(lang: Language = 'zh'): MenuItem[] {
+  if (lang === 'en') {
+    return [
+      { 
+        label: "Home", 
+        href: "/" 
+      },
+      {
+        label: "Products",
+        children: [
+          {
+            items: [
+              { label: "Digital Medical Intercom System", href: "/digital-medical-intercom" },
+              { label: "Two-Wire Medical Intercom System", href: "/two-wire-medical-intercom" },
+              { label: "Wireless Call System", href: "/wireless-call-system" },
+              { label: "Wireless Infusion Call System", href: "/wireless-infusion-call" },
+              { label: "ICU Visit Intercom System", href: "/icu-visit-intercom" },
+              { label: "Digital Clock System", href: "/digital-clock-system" },
+              { label: "Queuing System", href: "/queuing-system" },
+              { label: "Information Display System", href: "/info-display-system" },
+              { label: "Smart Aging Care System", href: "/smart-aging-system" },
+              { label: "Smart Lighting System", href: "/smart-lighting-system" },
+            ]
+          }
+        ]
+      },
+      {
+        label: "Solutions",
+        children: [
+          {
+            items: [
+              { label: "Smart Hospital", href: "/smart-hospital" },
+              { label: "Smart Healthcare", href: "/smart-healthcare" },
+              { label: "Smart Lighting", href: "/smart-lighting" },
+            ]
+          }
+        ]
+      },
+      {
+        label: "News",
+        children: [
+          {
+            items: [
+              { label: "Success Cases", href: "/info-center" },
+            ]
+          }
+        ]
+      },
+      {
+        label: "Careers",
+        children: [
+          {
+            items: [
+              { label: "Positions", href: "/recruitment" },
+              { label: "Talent Philosophy", href: "/talent-philosophy" },
+            ]
+          }
+        ]
+      },
+      {
+        label: "About",
+        children: [
+          {
+            items: [
+              { label: "Company Profile", href: "/company-profile" },
+              { label: "Contact Us", href: "/contact-us" },
+            ]
+          }
+        ]
+      },
+    ]
+  }
+  
+  // 中文导航
+  return [
+    { 
+      label: "首页", 
+      href: "/" 
+    },
+    {
+      label: "产品中心",
+      children: [
+        {
+          items: [
+            { label: "数字医护对讲系统", href: "/digital-medical-intercom" },
+            { label: "二线制医护对讲系统", href: "/two-wire-medical-intercom" },
+            { label: "无线呼叫系统", href: "/wireless-call-system" },
+            { label: "无线输液呼叫系统", href: "/wireless-infusion-call" },
+            { label: "ICU探视对讲系统", href: "/icu-visit-intercom" },
+            { label: "数字时钟系统", href: "/digital-clock-system" },
+            { label: "排队叫号系统", href: "/queuing-system" },
+            { label: "信息发布系统", href: "/info-display-system" },
+            { label: "智慧康养系统", href: "/smart-aging-system" },
+            { label: "智能照明系统", href: "/smart-lighting-system" },
+          ]
+        }
+      ]
+    },
+    {
+      label: "解决方案",
+      children: [
+        {
+          items: [
+            { label: "智慧医院", href: "/smart-hospital" },
+            { label: "智慧康养", href: "/smart-healthcare" },
+            { label: "智能照明", href: "/smart-lighting" },
+          ]
+        }
+      ]
+    },
+    {
+      label: "资讯中心",
+      children: [
+        {
+          items: [
+            { label: "成功案例", href: "/info-center" },
+          ]
+        }
+      ]
+    },
+    {
+      label: "人才招聘",
+      children: [
+        {
+          items: [
+            { label: "招聘职位", href: "/recruitment" },
+            { label: "人才理念", href: "/talent-philosophy" },
+          ]
+        }
+      ]
+    },
+    {
+      label: "关于我们",
+      children: [
+        {
+          items: [
+            { label: "公司简介", href: "/company-profile" },
+            { label: "联系我们", href: "/contact-us" },
+          ]
+        }
+      ]
+    },
+  ]
+}
