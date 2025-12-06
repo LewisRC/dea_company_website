@@ -41,31 +41,87 @@ export function ProductDetailTemplate({
     if (language === 'zh') return value
     
     return value
+      // 尺寸和屏幕
+      .replace(/英寸/g, ' inch')
       .replace(/寸/g, '"')
       .replace(/高清屏/g, ' HD Screen')
-      .replace(/IPS/g, 'IPS')
       .replace(/电容触摸屏/g, ' Capacitive Touchscreen')
       .replace(/触摸屏/g, ' Touchscreen')
+      .replace(/健康一体机/g, ' Health All-in-One')
+      
+      // 处理器
+      .replace(/高通八核64位/g, 'Qualcomm Octa-Core 64-bit')
+      .replace(/intel四核/g, 'Intel Quad-Core')
+      .replace(/RK3128四核/g, 'RK3128 Quad-Core')
       .replace(/四核/g, ' Quad-Core')
       .replace(/八核/g, ' Octa-Core')
+      
+      // 存储
       .replace(/可扩展/g, ' Expandable')
       .replace(/TF卡/g, ' TF Card')
-      .replace(/单面/g, ' Single-sided')
-      .replace(/双面/g, ' Double-sided')
-      .replace(/立式/g, ' Vertical')
+      
+      // 供电
+      .replace(/支持PoE供电和独立供电/g, 'Supports PoE and Independent Power Supply')
+      .replace(/二芯供电/g, 'Two-wire Power Supply')
+      .replace(/适配器供电/g, 'Adapter Power Supply')
+      .replace(/单独供电/g, 'Independent Power Supply')
+      .replace(/可充锂电池/g, 'Rechargeable Lithium Battery')
+      .replace(/220v供电NTP校时/g, '220V Power Supply with NTP Time Sync')
+      .replace(/220V市电/g, '220V Mains Power')
+      .replace(/220V交流电源/g, '220V AC Power')
+      .replace(/AC 220V输入/g, 'AC 220V Input')
+      .replace(/电池/g, 'Battery')
+      
+      // 传输和通讯
+      .replace(/局域网传输/g, 'LAN Transmission')
+      .replace(/网线和二芯线传输/g, 'Ethernet and Two-wire Transmission')
+      .replace(/4G Cat.1通讯/g, '4G Cat.1 Communication')
+      .replace(/Cat.1通讯/g, 'Cat.1 Communication')
+      .replace(/USB通讯/g, 'USB Communication')
+      .replace(/FM调频/g, 'FM Modulation')
+      .replace(/FSK调频/g, 'FSK Modulation')
+      .replace(/通讯/g, ' Communication')
+      
+      // 方式和类型
+      .replace(/全双工录音/g, 'Full-duplex Recording')
+      .replace(/双通道自动控制/g, 'Dual Channel Auto Control')
+      .replace(/便携式手提\/背包设计/g, 'Portable Handheld/Backpack Design')
+      .replace(/医生诊室门口壁挂式/g, 'Wall-mounted at Doctor Office Door')
+      .replace(/落地式/g, 'Floor-standing')
+      .replace(/桌面式/g, 'Desktop')
       .replace(/卧式/g, ' Horizontal')
+      .replace(/立式/g, ' Vertical')
       .replace(/横/g, ' Horizontal')
       .replace(/竖/g, ' Vertical')
+      
+      // 显示
+      .replace(/蓝色OLED/g, 'Blue OLED')
+      
+      // 气体
+      .replace(/天然气（CH4）/g, 'Natural Gas (CH4)')
+      
+      // 支持
+      .replace(/支持数万台客户端/g, 'Supports Tens of Thousands of Clients')
+      .replace(/支持/g, 'Supported')
+      .replace(/不支持/g, 'Not Supported')
+      
+      // 单位
+      .replace(/小时/g, ' hours')
+      .replace(/天/g, ' days')
+      .replace(/米/g, ' meter')
+      .replace(/毫瓦/g, ' mW')
+      .replace(/次\/秒/g, ' times/sec')
+      .replace(/路/g, ' channels')
+      .replace(/转动/g, ' rotation')
+      
+      // 其他
+      .replace(/单面/g, ' Single-sided')
+      .replace(/双面/g, ' Double-sided')
       .replace(/无屏/g, ' No Screen')
       .replace(/基础版/g, ' Basic')
       .replace(/金属拉丝/g, ' Brushed Metal')
       .replace(/喷砂/g, ' Sandblasted')
       .replace(/可选/g, ' Optional')
-      .replace(/二芯供电/g, 'Two-wire Power Supply')
-      .replace(/供电/g, ' Power Supply')
-      .replace(/网线供电/g, 'PoE (Power over Ethernet)')
-      .replace(/DC供电/g, 'DC Power Supply')
-      .replace(/适配器供电/g, 'Adapter Power Supply')
   }
   
   return (
