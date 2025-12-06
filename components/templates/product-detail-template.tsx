@@ -3,6 +3,7 @@
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { BackToTop } from "@/components/ui/back-to-top"
+import { useI18n } from "@/lib/i18n-context"
 import Image from "next/image"
 import Link from "next/link"
 import { siteConfig } from "@/config/site-config"
@@ -28,6 +29,8 @@ export function ProductDetailTemplate({
   image, 
   params 
 }: ProductDetailProps) {
+  const { t } = useI18n()
+  
   return (
     <div className="relative min-h-screen">
       <Header />
@@ -41,7 +44,7 @@ export function ProductDetailTemplate({
               style={{ color: siteConfig.colors.foreground, fontSize: '16px' }}
             >
               <ChevronLeft className="w-5 h-5 mr-2" />
-              返回产品列表
+              {t('productDetail.backToList')}
             </Link>
           </div>
 
@@ -54,7 +57,7 @@ export function ProductDetailTemplate({
               </h1>
               <div className="product-breadcrumb text-[14px]" style={{ color: siteConfig.colors.textSecondary }}>
                 <Link href="/" className="no-underline transition-colors duration-300" style={{ color: siteConfig.colors.textSecondary }}>
-                  首页
+                  {t('nav.home')}
                 </Link>
                 {' > '}
                 <Link href={categoryLink} className="no-underline transition-colors duration-300" style={{ color: siteConfig.colors.textSecondary }}>
@@ -90,7 +93,7 @@ export function ProductDetailTemplate({
                 {/* 产品参数 */}
                 <div className="product-params bg-[#f9f9f9] rounded-[8px] p-[30px]">
                   <h3 className="text-[18px] mb-[20px]" style={{ color: siteConfig.colors.foreground, fontWeight: 500 }}>
-                    产品参数
+                    {t('productDetail.specifications')}
                   </h3>
                   <ul className="param-list list-none p-0 m-0">
                     {params.map((param, index) => (
@@ -102,7 +105,7 @@ export function ProductDetailTemplate({
                         }}
                       >
                         <div className="param-label flex-[0_0_120px]" style={{ fontWeight: 500, color: siteConfig.colors.foreground }}>
-                          {param.label}
+                          {t(`productDetail.params.${param.label}`) !== `productDetail.params.${param.label}` ? t(`productDetail.params.${param.label}`) : param.label}
                         </div>
                         <div className="param-value flex-1" style={{ color: siteConfig.colors.textSecondary }}>
                           {param.value}
