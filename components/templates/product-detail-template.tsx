@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { BackToTop } from "@/components/ui/back-to-top"
 import { useI18n } from "@/lib/i18n-context"
+import { getProductName, getCategoryName } from "@/config/product-names-i18n"
 import Image from "next/image"
 import Link from "next/link"
 import { siteConfig } from "@/config/site-config"
@@ -29,7 +30,11 @@ export function ProductDetailTemplate({
   image, 
   params 
 }: ProductDetailProps) {
-  const { t } = useI18n()
+  const { t, language } = useI18n()
+  
+  // 获取翻译后的名称和分类
+  const translatedName = getProductName(name, language)
+  const translatedCategory = getCategoryName(category, language)
   
   return (
     <div className="relative min-h-screen">
@@ -53,7 +58,7 @@ export function ProductDetailTemplate({
             {/* 产品标题区域 */}
             <div className="product-title-section pb-[20px] mb-[40px]" style={{ borderBottom: `1px solid ${siteConfig.colors.border}` }}>
               <h1 className="text-[28px] mb-[10px]" style={{ color: siteConfig.colors.foreground, fontWeight: 600 }}>
-                {name}
+                {translatedName}
               </h1>
               <div className="product-breadcrumb text-[14px]" style={{ color: siteConfig.colors.textSecondary }}>
                 <Link href="/" className="no-underline transition-colors duration-300" style={{ color: siteConfig.colors.textSecondary }}>
@@ -61,10 +66,10 @@ export function ProductDetailTemplate({
                 </Link>
                 {' > '}
                 <Link href={categoryLink} className="no-underline transition-colors duration-300" style={{ color: siteConfig.colors.textSecondary }}>
-                  {category}
+                  {translatedCategory}
                 </Link>
                 {' > '}
-                <span>{name}</span>
+                <span>{translatedName}</span>
               </div>
             </div>
 
@@ -74,7 +79,7 @@ export function ProductDetailTemplate({
               <div className="product-image-section flex-1 bg-[#f9f9f9] rounded-[8px] p-[30px] flex items-center justify-center min-h-[400px]">
                 <Image
                   src={image}
-                  alt={name}
+                  alt={translatedName}
                   width={0}
                   height={0}
                   sizes="100vw"

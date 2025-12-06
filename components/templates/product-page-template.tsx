@@ -3,6 +3,7 @@
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { BackToTop } from "@/components/ui/back-to-top"
+import { getProductName } from "@/config/product-names-i18n"
 import Image from "next/image"
 import Link from "next/link"
 import { siteConfig } from "@/config/site-config"
@@ -37,35 +38,38 @@ export function ProductPageTemplate({ titleKey, descriptionKey, products }: Prod
 
           {/* 产品网格 */}
           <div className="product-grid grid gap-[30px] mt-[40px]" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))' }}>
-            {products.map((product) => (
-              <div key={product.id} className="product-item bg-white rounded-[8px] overflow-hidden transition-all duration-300 ease-out" style={{ boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)' }}>
-                <Link href={product.href} className="block">
-                  <div className="product-image relative overflow-hidden bg-white flex items-center justify-center" style={{ paddingTop: '75%' }}>
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      className="absolute object-contain"
-                      style={{
-                        top: '50%',
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)',
-                        width: '60%',
-                        height: '60%'
-                      }}
-                    />
-                  </div>
-                  <div className="product-info p-[20px] text-center">
-                    <h3 className="product-name text-[18px] mb-[15px]" style={{ color: siteConfig.colors.foreground, fontWeight: 500 }}>{product.name}</h3>
-                    <span className="product-btn inline-block px-[20px] py-[8px] text-white rounded-[4px] text-[14px] transition-colors duration-300" style={{ backgroundColor: siteConfig.colors.primary }}>
-                      {t('common.viewDetails')}
-                    </span>
-                  </div>
-                </Link>
-              </div>
-            ))}
+            {products.map((product) => {
+              const translatedName = getProductName(product.name, language)
+              return (
+                <div key={product.id} className="product-item bg-white rounded-[8px] overflow-hidden transition-all duration-300 ease-out" style={{ boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)' }}>
+                  <Link href={product.href} className="block">
+                    <div className="product-image relative overflow-hidden bg-white flex items-center justify-center" style={{ paddingTop: '75%' }}>
+                      <Image
+                        src={product.image}
+                        alt={translatedName}
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        className="absolute object-contain"
+                        style={{
+                          top: '50%',
+                          left: '50%',
+                          transform: 'translate(-50%, -50%)',
+                          width: '60%',
+                          height: '60%'
+                        }}
+                      />
+                    </div>
+                    <div className="product-info p-[20px] text-center">
+                      <h3 className="product-name text-[18px] mb-[15px]" style={{ color: siteConfig.colors.foreground, fontWeight: 500 }}>{translatedName}</h3>
+                      <span className="product-btn inline-block px-[20px] py-[8px] text-white rounded-[4px] text-[14px] transition-colors duration-300" style={{ backgroundColor: siteConfig.colors.primary }}>
+                        {t('common.viewDetails')}
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              )
+            })}
           </div>
         </div>
       </main>
