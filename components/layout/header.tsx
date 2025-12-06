@@ -5,6 +5,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { useI18n } from "@/lib/i18n-context"
 import { getNavigationConfig } from "@/config/site-config"
+import { productDetailsData } from "@/config/product-details-data"
+import { getProductName } from "@/config/product-names-i18n"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -114,15 +116,22 @@ export function Header() {
   }
 
   // 简单搜索功能 - 搜索所有产品
-  const searchResults = searchQuery.trim() ? navigation
-    .filter(item => item.children)
-    .flatMap(item => item.children || [])
-    .filter(child => {
-      const query = searchQuery.toLowerCase()
-      return child.title?.toLowerCase().includes(query) || 
-             child.label?.toLowerCase().includes(query)
-    })
-    .slice(0, 8) // 最多显示8个结果
+  const searchResults = searchQuery.trim() 
+    ? Object.entries(productDetailsData)
+        .map(([id, product]) => ({
+          id,
+          name: product.name,
+          translatedName: getProductName(product.name, language),
+          category: product.category,
+          href: `/product/${id}`
+        }))
+        .filter(product => {
+          const query = searchQuery.toLowerCase()
+          return product.name.toLowerCase().includes(query) || 
+                 product.translatedName.toLowerCase().includes(query) ||
+                 product.category.toLowerCase().includes(query)
+        })
+        .slice(0, 8) // 最多显示8个结果
     : []
 
   return (
@@ -295,10 +304,10 @@ export function Header() {
                   <div className="max-h-[400px] overflow-y-auto">
                     {searchResults.length > 0 ? (
                       <div className="py-2">
-                        {searchResults.map((result, index) => (
+                        {searchResults.map((result) => (
                           <Link
-                            key={index}
-                            href={result.href || '#'}
+                            key={result.id}
+                            href={result.href}
                             onClick={() => {
                               setIsSearchOpen(false)
                               setSearchQuery('')
@@ -306,13 +315,11 @@ export function Header() {
                             className="block px-4 py-3 hover:bg-gray-100 transition-colors"
                           >
                             <div className="text-sm font-medium text-gray-900">
-                              {result.title || result.label}
+                              {result.translatedName}
                             </div>
-                            {result.description && (
-                              <div className="text-xs text-gray-500 mt-1">
-                                {result.description}
-                              </div>
-                            )}
+                            <div className="text-xs text-gray-500 mt-1">
+                              {result.category}
+                            </div>
                           </Link>
                         ))}
                       </div>
