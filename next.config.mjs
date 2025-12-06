@@ -7,10 +7,6 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  
   images: {
     unoptimized: true,
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -21,10 +17,6 @@ const nextConfig = {
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  
-  // 生产环境优化
-  swcMinify: true,
-  compress: true,
   
   // 性能优化
   poweredByHeader: false,
