@@ -13,6 +13,8 @@ export function Header() {
   const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null)
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("")
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState("")
   const { language, setLanguage, t } = useI18n()
 
   // 滚动处理
@@ -92,10 +94,36 @@ export function Header() {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  // 点击外部关闭搜索框
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (isSearchOpen && !target.closest('.search-container')) {
+        setIsSearchOpen(false)
+        setSearchQuery('')
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [isSearchOpen])
+
   // 移动端菜单切换
   const toggleMobileMenu = (label: string) => {
     setOpenMobileMenu(openMobileMenu === label ? null : label)
   }
+
+  // 简单搜索功能 - 搜索所有产品
+  const searchResults = searchQuery.trim() ? navigation
+    .filter(item => item.children)
+    .flatMap(item => item.children || [])
+    .filter(child => {
+      const query = searchQuery.toLowerCase()
+      return child.title?.toLowerCase().includes(query) || 
+             child.label?.toLowerCase().includes(query)
+    })
+    .slice(0, 8) // 最多显示8个结果
+    : []
 
   return (
     <header 
@@ -234,17 +262,75 @@ export function Header() {
           </nav>
 
           {/* Search Button */}
-          <div className="hidden lg:block mr-[15px]">
+          <div className="hidden lg:block mr-[15px] relative search-container">
             <button 
               className="p-2.5 bg-transparent border-none cursor-pointer text-white transition-all duration-300 hover:text-[#0066cc]"
               style={{ fontSize: '16px', transform: 'scale(1.2)' }}
               aria-label={t('common.search')}
-              onClick={() => alert(t('common.search'))}
+              onClick={() => setIsSearchOpen(!isSearchOpen)}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </button>
+
+            {/* Search Dropdown */}
+            {isSearchOpen && (
+              <div 
+                className="absolute right-0 mt-2 w-[400px] bg-white rounded-lg shadow-xl z-50"
+                style={{ boxShadow: '0 10px 40px rgba(0,0,0,0.2)' }}
+              >
+                <div className="p-4">
+                  <input
+                    type="text"
+                    placeholder={t('common.search') + '...'}
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#0066cc]"
+                    autoFocus
+                  />
+                </div>
+
+                {searchQuery.trim() && (
+                  <div className="max-h-[400px] overflow-y-auto">
+                    {searchResults.length > 0 ? (
+                      <div className="py-2">
+                        {searchResults.map((result, index) => (
+                          <Link
+                            key={index}
+                            href={result.href || '#'}
+                            onClick={() => {
+                              setIsSearchOpen(false)
+                              setSearchQuery('')
+                            }}
+                            className="block px-4 py-3 hover:bg-gray-100 transition-colors"
+                          >
+                            <div className="text-sm font-medium text-gray-900">
+                              {result.title || result.label}
+                            </div>
+                            {result.description && (
+                              <div className="text-xs text-gray-500 mt-1">
+                                {result.description}
+                              </div>
+                            )}
+                          </Link>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="px-4 py-8 text-center text-gray-500">
+                        {t('common.noResults') || '没有找到结果'}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {!searchQuery.trim() && (
+                  <div className="px-4 py-8 text-center text-gray-400 text-sm">
+                    {t('common.searchPlaceholder') || '输入关键词搜索产品...'}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           {/* Language Selector */}
