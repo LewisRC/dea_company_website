@@ -36,6 +36,33 @@ export function ProductDetailTemplate({
   const translatedName = getProductName(name, language)
   const translatedCategory = getCategoryName(category, language)
   
+  // 翻译参数值中的中文
+  const translateValue = (value: string): string => {
+    if (language === 'zh') return value
+    
+    return value
+      .replace(/寸/g, '"')
+      .replace(/高清屏/g, ' HD Screen')
+      .replace(/IPS/g, 'IPS')
+      .replace(/电容触摸屏/g, ' Capacitive Touchscreen')
+      .replace(/触摸屏/g, ' Touchscreen')
+      .replace(/四核/g, ' Quad-Core')
+      .replace(/八核/g, ' Octa-Core')
+      .replace(/可扩展/g, ' Expandable')
+      .replace(/TF卡/g, ' TF Card')
+      .replace(/单面/g, ' Single-sided')
+      .replace(/双面/g, ' Double-sided')
+      .replace(/立式/g, ' Vertical')
+      .replace(/卧式/g, ' Horizontal')
+      .replace(/横/g, ' Horizontal')
+      .replace(/竖/g, ' Vertical')
+      .replace(/无屏/g, ' No Screen')
+      .replace(/基础版/g, ' Basic')
+      .replace(/金属拉丝/g, ' Brushed Metal')
+      .replace(/喷砂/g, ' Sandblasted')
+      .replace(/可选/g, ' Optional')
+  }
+  
   return (
     <div className="relative min-h-screen">
       <Header />
@@ -113,7 +140,7 @@ export function ProductDetailTemplate({
                           {t(`productDetail.params.${param.label}`) !== `productDetail.params.${param.label}` ? t(`productDetail.params.${param.label}`) : param.label}
                         </div>
                         <div className="param-value flex-1" style={{ color: siteConfig.colors.textSecondary }}>
-                          {param.value}
+                          {translateValue(param.value)}
                         </div>
                       </li>
                     ))}
