@@ -1,9 +1,7 @@
 // 产品详情数据 - 完全匹配HTML项目
 export const productDetailsData: Record<string, {
   name: string;
-  nameKey: string;
   category: string;
-  categoryKey: string;
   categoryLink: string;
   image: string;
   params: Array<{ label: string; value: string }>;

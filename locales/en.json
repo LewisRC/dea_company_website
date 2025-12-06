@@ -174,7 +174,27 @@
     "subtitle": "Professional communication systems for your enterprise"
   },
   "news": {
-    "successCases": "Success Cases"
+    "successCases": "Success Cases",
+    "title": "Classic Success Cases",
+    "subtitle": "Explore Deshian's benchmark projects in smart healthcare and intelligent control, witnessing our professional expertise",
+    "case1Title": "Meishan Dongpo Yunxin Elderly Care Project",
+    "case1Desc": "Deshian's smart healthcare solution helps Dongpo District Yunxin elderly care project achieve comprehensive intelligence and build a complete elderly care service system.",
+    "case1Badge": "Smart Healthcare",
+    "case1Tag1": "Smart Healthcare",
+    "case1Tag2": "Call System",
+    "case1Tag3": "Smart Security",
+    "case2Title": "Liangshan Yi Autonomous Prefecture Smart Security Project",
+    "case2Desc": "Emergency deployment of Deshian's smart security/control equipment in Liangshan Yi Autonomous Prefecture, completed installation and commissioning in 20 days, demonstrating efficient service capabilities.",
+    "case2Badge": "Smart Security",
+    "case2Tag1": "Smart Security",
+    "case2Tag2": "Emergency Deployment",
+    "case2Tag3": "Control System",
+    "case3Title": "Chengdu Top-tier Hospital Smart Medical System",
+    "case3Desc": "Provided a complete set of digital medical intercom system solutions for a top-tier hospital in Chengdu, improving medical service efficiency and patient experience.",
+    "case3Badge": "Smart Medical",
+    "case3Tag1": "Smart Medical",
+    "case3Tag2": "Medical Intercom",
+    "case3Tag3": "Hospital Informatization"
   },
   "talentPhilosophy": {
     "title": "Talent Philosophy",
