@@ -23,7 +23,7 @@ interface ProductPageTemplateProps {
 }
 
 export function ProductPageTemplate({ titleKey, descriptionKey, products }: ProductPageTemplateProps) {
-  const { t } = useI18n()
+  const { t, language } = useI18n()
   
   return (
     <div className="relative min-h-screen">
