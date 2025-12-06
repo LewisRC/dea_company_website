@@ -1,10 +1,10 @@
 #!/bin/bash
-# 生产环境启动脚本 - 默认80端口
+# 生产环境启动脚本 - 默认3000端口
 
 set -e
 
-# 默认端口为80
-export PORT=${PORT:-80}
+# 默认端口为3000
+export PORT=${PORT:-3000}
 export NODE_ENV=${NODE_ENV:-production}
 export HOSTNAME=${HOSTNAME:-0.0.0.0}
 

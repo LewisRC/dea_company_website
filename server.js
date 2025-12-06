@@ -4,8 +4,8 @@
  * 使用方法：node server.js
  */
 
-// 设置默认端口为 80
-process.env.PORT = process.env.PORT || '80';
+// 设置默认端口为 3000
+process.env.PORT = process.env.PORT || '3000';
 process.env.HOSTNAME = process.env.HOSTNAME || '0.0.0.0';
 
 console.log('🚀 Starting server...');
@@ -31,4 +31,5 @@ app.prepare().then(() => {
     console.log(`✅ Server ready on http://${process.env.HOSTNAME}:${port}`);
   });
 });
+
 
