@@ -3,10 +3,20 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { siteConfig } from "@/config/site-config"
+import { useI18n } from "@/lib/i18n-context"
 
 export function CarouselSection() {
+  const { language } = useI18n()
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlay, setIsAutoPlay] = useState(true)
+  
+  // 根据语言动态生成 banner 图片路径
+  const getBannerImage = (index: number) => {
+    const langFolder = language === 'en' ? 'banner-EN' : 'banner-CH'
+    const langSuffix = language === 'en' ? 'en' : 'ch'
+    return `/images/${langFolder}/banner${index + 1}-${langSuffix}.jpg`
+  }
+  
   const slides = siteConfig.carousel
   const totalSlides = slides.length
 
@@ -59,8 +69,8 @@ export function CarouselSection() {
           >
             <div className="w-full h-full overflow-hidden relative">
               <Image
-                src={slide.image}
-                alt={`德视安轮播图${index + 1}`}
+                src={getBannerImage(index)}
+                alt={language === 'en' ? `Deshian Banner ${index + 1}` : `德视安轮播图${index + 1}`}
                 fill
                 className="object-cover object-center"
                 priority={index === 0}

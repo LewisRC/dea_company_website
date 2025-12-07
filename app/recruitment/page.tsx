@@ -10,7 +10,7 @@ import { Briefcase } from "lucide-react"
 import { useEffect } from "react"
 
 export default function RecruitmentPage() {
-  const { t } = useI18n()
+  const { t, language } = useI18n()
   
   useEffect(() => {
     document.title = t('recruitment.positions') + " - 德视安"
@@ -28,7 +28,7 @@ export default function RecruitmentPage() {
         marginTop: '78px'
       }}>
         <div className="absolute inset-0 opacity-20" style={{
-          backgroundImage: 'url(/images/banner3-1.jpg)',
+          backgroundImage: `url(/images/${language === 'en' ? 'banner-EN/banner3-en' : 'banner-CH/banner3-ch'}.jpg)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }} />

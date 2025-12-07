@@ -9,7 +9,7 @@ import { Lightbulb, Users, GraduationCap, Scale } from "lucide-react"
 import { useEffect } from "react"
 
 export default function TalentPhilosophyPage() {
-  const { t } = useI18n()
+  const { t, language } = useI18n()
   
   const philosophyCards = [
     { icon: Lightbulb, titleKey: "talentPhilosophy.innovation", descKey: "talentPhilosophy.innovationDesc" },
@@ -41,7 +41,7 @@ export default function TalentPhilosophyPage() {
         marginTop: '78px'
       }}>
         <div className="absolute inset-0 opacity-[0.15]" style={{
-          backgroundImage: 'url(/images/banner4-1.jpg)',
+          backgroundImage: `url(/images/${language === 'en' ? 'banner-EN/banner4-en' : 'banner-CH/banner4-ch'}.jpg)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }} />
