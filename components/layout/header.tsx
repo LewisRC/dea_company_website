@@ -147,7 +147,7 @@ export function Header() {
           <div className="flex items-center flex-shrink-0" style={{ marginLeft: '-40px', marginRight: 'auto' }}>
             <Link href="/" className="hover:opacity-80 transition-opacity">
               <Image 
-                src={language === 'en' ? '/images/logo3-1.png' : '/images/logo2-1.png'}
+                src={language === 'en' ? '/images/logo/logo-EN.png' : '/images/logo/logo-CN.png'}
                 alt={language === 'en' ? 'Deshian' : '德视安'}
                 width={224}
                 height={56}
@@ -186,7 +186,7 @@ export function Header() {
                         className={`flex items-center px-[15px] py-[10px] text-white font-medium no-underline transition-colors duration-300 relative ${
                           isActive ? 'text-[#0066cc]' : 'hover:text-[#0066cc]'
                         }`}
-                        style={{ fontSize: language === 'en' ? '15px' : '14px' }}
+                        style={{ fontSize: language === 'en' ? '16px' : '14px' }}
                       >
                         {item.label}
                         {isActive && (
@@ -199,7 +199,7 @@ export function Header() {
                     ) : (
                       <button
                         className="flex items-center px-[15px] py-[10px] text-white font-medium transition-colors duration-300 relative hover:text-[#0066cc] bg-transparent border-none cursor-pointer"
-                        style={{ fontSize: language === 'en' ? '15px' : '14px' }}
+                        style={{ fontSize: language === 'en' ? '16px' : '14px' }}
                       >
                         {item.label}
                         {item.children && (
