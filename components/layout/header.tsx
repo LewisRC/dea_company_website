@@ -186,7 +186,7 @@ export function Header() {
                         className={`flex items-center px-[15px] py-[10px] text-white font-medium no-underline transition-colors duration-300 relative ${
                           isActive ? 'text-[#0066cc]' : 'hover:text-[#0066cc]'
                         }`}
-                        style={{ fontSize: language === 'en' ? '16px' : '14px' }}
+                        style={{ fontSize: language === 'en' ? '20px' : '16px' }}
                       >
                         {item.label}
                         {isActive && (
@@ -199,7 +199,7 @@ export function Header() {
                     ) : (
                       <button
                         className="flex items-center px-[15px] py-[10px] text-white font-medium transition-colors duration-300 relative hover:text-[#0066cc] bg-transparent border-none cursor-pointer"
-                        style={{ fontSize: language === 'en' ? '16px' : '14px' }}
+                        style={{ fontSize: language === 'en' ? '20px' : '16px' }}
                       >
                         {item.label}
                         {item.children && (
@@ -276,7 +276,7 @@ export function Header() {
           <div className="hidden lg:block mr-[15px] relative search-container">
             <button 
               className="p-2.5 bg-transparent border-none cursor-pointer text-white transition-all duration-300 hover:text-[#0066cc]"
-              style={{ fontSize: '16px', transform: 'scale(1.2)' }}
+              style={{ fontSize: '20px', transform: 'scale(1.7)' }}
               aria-label={t('common.search')}
               onClick={() => setIsSearchOpen(!isSearchOpen)}
             >
@@ -346,20 +346,20 @@ export function Header() {
           <div className="hidden lg:flex items-center ml-[15px]">
             <button 
               onClick={() => setLanguage('zh')}
-              className={`inline-block bg-transparent border-none cursor-pointer no-underline text-[14px] font-medium transition-colors duration-300 hover:text-[#0066cc] ${
+              className={`inline-block bg-transparent border-none cursor-pointer no-underline font-medium transition-colors duration-300 hover:text-[#0066cc] ${
                 language === 'zh' ? 'text-[#0066cc]' : 'text-white'
               }`}
-              style={{ padding: '5px 4px' }}
+              style={{ padding: '5px 4px', fontSize: language === 'zh' ? '18px' : '21px' }}
             >
               中文
             </button>
-            <span className="text-white text-[14px]" style={{ margin: '0 2px' }}>|</span>
+            <span className="text-white" style={{ margin: '0 2px', fontSize: language === 'zh' ? '18px' : '21px' }}>|</span>
             <button 
               onClick={() => setLanguage('en')}
-              className={`inline-block bg-transparent border-none cursor-pointer no-underline text-[14px] font-medium transition-colors duration-300 hover:text-[#0066cc] ${
+              className={`inline-block bg-transparent border-none cursor-pointer no-underline font-medium transition-colors duration-300 hover:text-[#0066cc] ${
                 language === 'en' ? 'text-[#0066cc]' : 'text-white'
               }`}
-              style={{ padding: '5px 4px' }}
+              style={{ padding: '5px 4px', fontSize: language === 'zh' ? '18px' : '21px' }}
             >
               EN
             </button>
