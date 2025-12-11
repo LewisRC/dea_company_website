@@ -5,7 +5,7 @@ import { useI18n } from "@/lib/i18n-context"
 
 export function Footer() {
   const { companyInfo, copyright } = siteConfig.footer
-  const { t } = useI18n()
+  const { t, language } = useI18n()
 
   return (
     <footer 
@@ -62,16 +62,18 @@ export function Footer() {
           <p className="m-0">
             {t('footer.copyright')} {t('footer.allRightsReserved')}
           </p>
-          <p className="m-0">
-            <a 
-              href="https://beian.miit.gov.cn/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors duration-300"
-            >
-              {t('footer.icpNumber')}
-            </a>
-          </p>
+          {language === 'zh' && (
+            <p className="m-0">
+              <a 
+                href="https://beian.miit.gov.cn/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                {t('footer.icpNumber')}
+              </a>
+            </p>
+          )}
         </div>
       </div>
     </footer>

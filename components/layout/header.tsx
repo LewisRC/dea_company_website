@@ -148,7 +148,7 @@ export function Header() {
             className="flex items-center flex-shrink-0" 
             style={{ 
               marginLeft: '-40px', 
-              marginRight: language === 'en' ? '20px' : 'auto' 
+              marginRight: language === 'en' ? '-100px' : 'auto' 
             }}
           >
             <Link href="/" className="hover:opacity-80 transition-opacity">
