@@ -139,6 +139,8 @@ export default function AdminProducts() {
               <Link href="/admin/products" className="text-blue-600 font-medium">产品管理</Link>
               <Link href="/admin/carousels" className="text-gray-600 hover:text-gray-900">轮播图管理</Link>
               <Link href="/admin/cases" className="text-gray-600 hover:text-gray-900">案例管理</Link>
+              <span className="text-gray-300">|</span>
+              <Link href="/admin/change-password" className="text-gray-600 hover:text-gray-900">修改密码</Link>
             </nav>
           </div>
           <button

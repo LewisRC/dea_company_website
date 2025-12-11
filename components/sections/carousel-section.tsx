@@ -2,23 +2,49 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { siteConfig } from "@/config/site-config"
 import { useI18n } from "@/lib/i18n-context"
+
+type Carousel = {
+  id: number
+  title: string
+  titleEn: string | null
+  subtitle: string | null
+  subtitleEn: string | null
+  image: string
+  imageEn: string | null
+  link: string | null
+  order: number
+  isActive: boolean
+}
 
 export function CarouselSection() {
   const { language } = useI18n()
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlay, setIsAutoPlay] = useState(true)
+  const [slides, setSlides] = useState<Carousel[]>([])
+  const [loading, setLoading] = useState(true)
   
-  // 根据语言动态生成 banner 图片路径
-  const getBannerImage = (index: number) => {
-    const langFolder = language === 'en' ? 'banner-EN' : 'banner-CH'
-    const langSuffix = language === 'en' ? 'en' : 'ch'
-    return `/images/${langFolder}/banner${index + 1}-${langSuffix}.jpg`
-  }
+  // 从 API 获取轮播图数据
+  useEffect(() => {
+    async function fetchCarousels() {
+      try {
+        const res = await fetch('/api/carousels')
+        const data = await res.json()
+        setSlides(data)
+      } catch (error) {
+        console.error('Failed to fetch carousels:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchCarousels()
+  }, [])
   
-  const slides = siteConfig.carousel
   const totalSlides = slides.length
+
+  if (loading || totalSlides === 0) {
+    return <div className="w-full h-[600px] bg-gray-100" style={{ marginTop: '78px' }} />
+  }
 
   // Auto-play功能
   useEffect(() => {
@@ -57,28 +83,35 @@ export function CarouselSection() {
     >
       {/* Carousel Container - 使用固定高度确保完整显示 */}
       <div className="relative w-full" style={{ height: '600px' }}>
-        {slides.map((slide, index) => (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === currentSlide ? 'opacity-100 z-[2]' : 'opacity-0 z-0'
-            }`}
-            style={{
-              pointerEvents: index === currentSlide ? 'auto' : 'none'
-            }}
-          >
-            <div className="w-full h-full overflow-hidden relative">
-              <Image
-                src={getBannerImage(index)}
-                alt={language === 'en' ? `Deshian Banner ${index + 1}` : `德视安轮播图${index + 1}`}
-                fill
-                className="object-cover object-center"
-                priority={index === 0}
-                sizes="100vw"
-              />
+        {slides.map((slide, index) => {
+          // 根据语言选择图片：优先使用对应语言的图片，如果没有则使用默认图片
+          const imageUrl = language === 'en' && slide.imageEn 
+            ? slide.imageEn 
+            : slide.image
+          
+          return (
+            <div
+              key={slide.id}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                index === currentSlide ? 'opacity-100 z-[2]' : 'opacity-0 z-0'
+              }`}
+              style={{
+                pointerEvents: index === currentSlide ? 'auto' : 'none'
+              }}
+            >
+              <div className="w-full h-full overflow-hidden relative">
+                <Image
+                  src={imageUrl}
+                  alt={language === 'en' && slide.titleEn ? slide.titleEn : slide.title}
+                  fill
+                  className="object-cover object-center"
+                  priority={index === 0}
+                  sizes="100vw"
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
 
       {/* Carousel Dots */}

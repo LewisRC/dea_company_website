@@ -16,8 +16,9 @@ export default function AdminLogin() {
     setLoading(true)
 
     // 简单验证（生产环境应该用真实的认证系统）
-    if (username === 'admin' && password === 'admin123') {
+    if (username === 'admin' && password === 'Dsa@2025#Admin!') {
       localStorage.setItem('admin_logged_in', 'true')
+      localStorage.setItem('admin_username', username)
       router.push('/admin/products')
     } else {
       setError('用户名或密码错误')
@@ -75,10 +76,6 @@ export default function AdminLogin() {
           >
             {loading ? '登录中...' : '登录'}
           </button>
-
-          <div className="text-center text-sm text-gray-500 mt-4">
-            默认账号: admin / admin123
-          </div>
         </form>
       </div>
     </div>
