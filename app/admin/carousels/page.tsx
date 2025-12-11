@@ -5,52 +5,53 @@ import { useRouter } from 'next/navigation'
 import { ImageUpload } from '@/components/admin/image-upload'
 import Link from 'next/link'
 
-type Product = {
+type Carousel = {
   id: number
-  name: string
-  nameEn: string | null
-  category: string
-  categoryEn: string | null
-  description: string | null
-  descriptionEn: string | null
+  title: string
+  titleEn: string | null
+  subtitle: string | null
+  subtitleEn: string | null
   image: string
-  href: string
+  imageEn: string | null
+  link: string | null
+  order: number
+  isActive: boolean
 }
 
-export default function AdminProducts() {
+export default function AdminCarousels() {
   const router = useRouter()
-  const [products, setProducts] = useState<Product[]>([])
+  const [carousels, setCarousels] = useState<Carousel[]>([])
   const [loading, setLoading] = useState(true)
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [editingProduct, setEditingProduct] = useState<Product | null>(null)
+  const [editingCarousel, setEditingCarousel] = useState<Carousel | null>(null)
   const [formData, setFormData] = useState({
-    name: '',
-    nameEn: '',
-    category: '',
-    categoryEn: '',
-    description: '',
-    descriptionEn: '',
+    title: '',
+    titleEn: '',
+    subtitle: '',
+    subtitleEn: '',
     image: '',
-    href: ''
+    imageEn: '',
+    link: '',
+    order: 0,
+    isActive: true
   })
 
   useEffect(() => {
-    // 检查登录状态
     const loggedIn = localStorage.getItem('admin_logged_in')
     if (!loggedIn) {
       router.push('/admin')
       return
     }
-    fetchProducts()
+    fetchCarousels()
   }, [router])
 
-  const fetchProducts = async () => {
+  const fetchCarousels = async () => {
     try {
-      const res = await fetch('/api/admin/products')
+      const res = await fetch('/api/admin/carousels')
       const data = await res.json()
-      setProducts(data)
+      setCarousels(data)
     } catch (error) {
-      console.error('Failed to fetch products:', error)
+      console.error('Failed to fetch carousels:', error)
     } finally {
       setLoading(false)
     }
@@ -60,16 +61,14 @@ export default function AdminProducts() {
     e.preventDefault()
     
     try {
-      if (editingProduct) {
-        // 更新产品
-        await fetch(`/api/admin/products/${editingProduct.id}`, {
+      if (editingCarousel) {
+        await fetch(`/api/admin/carousels/${editingCarousel.id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
         })
       } else {
-        // 创建新产品
-        await fetch('/api/admin/products', {
+        await fetch('/api/admin/carousels', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
@@ -77,42 +76,57 @@ export default function AdminProducts() {
       }
       
       setIsModalOpen(false)
-      setEditingProduct(null)
-      setFormData({ name: '', nameEn: '', category: '', categoryEn: '', description: '', descriptionEn: '', image: '', href: '' })
-      fetchProducts()
+      setEditingCarousel(null)
+      resetForm()
+      fetchCarousels()
     } catch (error) {
-      console.error('Failed to save product:', error)
+      console.error('Failed to save carousel:', error)
       alert('保存失败，请重试')
     }
   }
 
-  const handleEdit = (product: Product) => {
-    setEditingProduct(product)
+  const handleEdit = (carousel: Carousel) => {
+    setEditingCarousel(carousel)
     setFormData({
-      name: product.name,
-      nameEn: product.nameEn || '',
-      category: product.category,
-      categoryEn: product.categoryEn || '',
-      description: product.description || '',
-      descriptionEn: product.descriptionEn || '',
-      image: product.image,
-      href: product.href
+      title: carousel.title,
+      titleEn: carousel.titleEn || '',
+      subtitle: carousel.subtitle || '',
+      subtitleEn: carousel.subtitleEn || '',
+      image: carousel.image,
+      imageEn: carousel.imageEn || '',
+      link: carousel.link || '',
+      order: carousel.order,
+      isActive: carousel.isActive
     })
     setIsModalOpen(true)
   }
 
   const handleDelete = async (id: number) => {
-    if (!confirm('确定要删除这个产品吗？')) return
+    if (!confirm('确定要删除这个轮播图吗？')) return
 
     try {
-      await fetch(`/api/admin/products/${id}`, {
+      await fetch(`/api/admin/carousels/${id}`, {
         method: 'DELETE'
       })
-      fetchProducts()
+      fetchCarousels()
     } catch (error) {
-      console.error('Failed to delete product:', error)
+      console.error('Failed to delete carousel:', error)
       alert('删除失败，请重试')
     }
+  }
+
+  const resetForm = () => {
+    setFormData({
+      title: '',
+      titleEn: '',
+      subtitle: '',
+      subtitleEn: '',
+      image: '',
+      imageEn: '',
+      link: '',
+      order: 0,
+      isActive: true
+    })
   }
 
   const handleLogout = () => {
@@ -134,10 +148,10 @@ export default function AdminProducts() {
       <header className="bg-white shadow">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <h1 className="text-2xl font-bold text-gray-800">产品管理</h1>
+            <h1 className="text-2xl font-bold text-gray-800">轮播图管理</h1>
             <nav className="flex gap-4">
-              <Link href="/admin/products" className="text-blue-600 font-medium">产品管理</Link>
-              <Link href="/admin/carousels" className="text-gray-600 hover:text-gray-900">轮播图管理</Link>
+              <Link href="/admin/products" className="text-gray-600 hover:text-gray-900">产品管理</Link>
+              <Link href="/admin/carousels" className="text-blue-600 font-medium">轮播图管理</Link>
               <Link href="/admin/cases" className="text-gray-600 hover:text-gray-900">案例管理</Link>
             </nav>
           </div>
@@ -154,56 +168,62 @@ export default function AdminProducts() {
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6 flex justify-between items-center">
           <div className="text-lg text-gray-600">
-            共 {products.length} 个产品
+            共 {carousels.length} 个轮播图
           </div>
           <button
             onClick={() => {
-              setEditingProduct(null)
-              setFormData({ name: '', nameEn: '', category: '', categoryEn: '', description: '', descriptionEn: '', image: '', href: '' })
+              setEditingCarousel(null)
+              resetForm()
               setIsModalOpen(true)
             }}
             className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
           >
-            + 添加产品
+            + 添加轮播图
           </button>
         </div>
 
-        {/* 产品列表 */}
+        {/* 轮播图列表 */}
         <div className="bg-white rounded-lg shadow overflow-hidden">
           <table className="w-full">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ID</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">产品名称</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">分类</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">排序</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">标题</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">副标题</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">图片</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">状态</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">操作</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
-              {products.map((product) => (
-                <tr key={product.id} className="hover:bg-gray-50">
-                  <td className="px-6 py-4 text-sm text-gray-900">{product.id}</td>
+              {carousels.map((carousel) => (
+                <tr key={carousel.id} className="hover:bg-gray-50">
+                  <td className="px-6 py-4 text-sm text-gray-900">{carousel.order}</td>
                   <td className="px-6 py-4 text-sm">
-                    <div className="text-gray-900">{product.name}</div>
-                    {product.nameEn && <div className="text-gray-500 text-xs">{product.nameEn}</div>}
+                    <div className="text-gray-900">{carousel.title}</div>
+                    {carousel.titleEn && <div className="text-gray-500 text-xs">{carousel.titleEn}</div>}
                   </td>
                   <td className="px-6 py-4 text-sm">
-                    <div className="text-gray-500">{product.category}</div>
-                    {product.categoryEn && <div className="text-gray-400 text-xs">{product.categoryEn}</div>}
+                    <div className="text-gray-500">{carousel.subtitle}</div>
+                    {carousel.subtitleEn && <div className="text-gray-400 text-xs">{carousel.subtitleEn}</div>}
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-500">
-                    <img src={product.image} alt={product.name} className="h-10 w-10 object-cover rounded" />
+                    <img src={carousel.image} alt={carousel.title} className="h-10 w-20 object-cover rounded" />
+                  </td>
+                  <td className="px-6 py-4 text-sm">
+                    <span className={`px-2 py-1 rounded text-xs ${carousel.isActive ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
+                      {carousel.isActive ? '启用' : '禁用'}
+                    </span>
                   </td>
                   <td className="px-6 py-4 text-sm">
                     <button
-                      onClick={() => handleEdit(product)}
+                      onClick={() => handleEdit(carousel)}
                       className="text-blue-600 hover:text-blue-800 mr-4"
                     >
                       编辑
                     </button>
                     <button
-                      onClick={() => handleDelete(product.id)}
+                      onClick={() => handleDelete(carousel.id)}
                       className="text-red-600 hover:text-red-800"
                     >
                       删除
@@ -218,22 +238,22 @@ export default function AdminProducts() {
 
       {/* 添加/编辑模态框 */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg p-6 max-w-md w-full">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 overflow-y-auto">
+          <div className="bg-white rounded-lg p-6 max-w-2xl w-full my-8">
             <h2 className="text-xl font-bold mb-4">
-              {editingProduct ? '编辑产品' : '添加产品'}
+              {editingCarousel ? '编辑轮播图' : '添加轮播图'}
             </h2>
             
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    产品名称（中文）*
+                    标题（中文）*
                   </label>
                   <input
                     type="text"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    value={formData.title}
+                    onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                     required
                   />
@@ -241,12 +261,12 @@ export default function AdminProducts() {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    产品名称（英文）
+                    标题（英文）
                   </label>
                   <input
                     type="text"
-                    value={formData.nameEn}
-                    onChange={(e) => setFormData({ ...formData, nameEn: e.target.value })}
+                    value={formData.titleEn}
+                    onChange={(e) => setFormData({ ...formData, titleEn: e.target.value })}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -255,76 +275,84 @@ export default function AdminProducts() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    分类（中文）*
+                    副标题（中文）
                   </label>
                   <input
                     type="text"
-                    value={formData.category}
-                    onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                    value={formData.subtitle}
+                    onChange={(e) => setFormData({ ...formData, subtitle: e.target.value })}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                    required
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    分类（英文）
+                    副标题（英文）
                   </label>
                   <input
                     type="text"
-                    value={formData.categoryEn}
-                    onChange={(e) => setFormData({ ...formData, categoryEn: e.target.value })}
+                    value={formData.subtitleEn}
+                    onChange={(e) => setFormData({ ...formData, subtitleEn: e.target.value })}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    描述（中文）
-                  </label>
-                  <textarea
-                    value={formData.description}
-                    onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                    rows={3}
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    描述（英文）
-                  </label>
-                  <textarea
-                    value={formData.descriptionEn}
-                    onChange={(e) => setFormData({ ...formData, descriptionEn: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                    rows={3}
                   />
                 </div>
               </div>
 
               <div>
                 <ImageUpload
-                  label="产品图片*"
+                  label="轮播图（中文）*"
                   value={formData.image}
                   onChange={(url) => setFormData({ ...formData, image: url })}
                 />
               </div>
 
               <div>
+                <ImageUpload
+                  label="轮播图（英文）"
+                  value={formData.imageEn}
+                  onChange={(url) => setFormData({ ...formData, imageEn: url })}
+                />
+              </div>
+
+              <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  链接*
+                  链接
                 </label>
                 <input
                   type="text"
-                  value={formData.href}
-                  onChange={(e) => setFormData({ ...formData, href: e.target.value })}
+                  value={formData.link}
+                  onChange={(e) => setFormData({ ...formData, link: e.target.value })}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                  placeholder="/product/1"
-                  required
+                  placeholder="/products"
                 />
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    排序
+                  </label>
+                  <input
+                    type="number"
+                    value={formData.order}
+                    onChange={(e) => setFormData({ ...formData, order: parseInt(e.target.value) || 0 })}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    状态
+                  </label>
+                  <select
+                    value={formData.isActive ? 'true' : 'false'}
+                    onChange={(e) => setFormData({ ...formData, isActive: e.target.value === 'true' })}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                  >
+                    <option value="true">启用</option>
+                    <option value="false">禁用</option>
+                  </select>
+                </div>
               </div>
 
               <div className="flex gap-3 pt-4">
@@ -338,8 +366,8 @@ export default function AdminProducts() {
                   type="button"
                   onClick={() => {
                     setIsModalOpen(false)
-                    setEditingProduct(null)
-                    setFormData({ name: '', nameEn: '', category: '', categoryEn: '', description: '', descriptionEn: '', image: '', href: '' })
+                    setEditingCarousel(null)
+                    resetForm()
                   }}
                   className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 py-2 rounded-lg transition-colors"
                 >
