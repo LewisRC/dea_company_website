@@ -34,6 +34,7 @@ cd dea_company_website
 DATABASE_URL="file:./prisma/dev.db"
 NODE_ENV=production
 PORT=3000
+HOSTNAME=0.0.0.0
 ```
 
 或者导出环境变量：
@@ -42,6 +43,7 @@ PORT=3000
 export DATABASE_URL="file:./prisma/dev.db"
 export NODE_ENV=production
 export PORT=3000
+export HOSTNAME=0.0.0.0
 ```
 
 ### 3. 安装依赖
@@ -128,14 +130,14 @@ pm2 save
 
 ```bash
 cd .next/standalone
-DATABASE_URL="file:./prisma/dev.db" NODE_ENV=production PORT=3000 node server.js
+DATABASE_URL="file:./prisma/dev.db" NODE_ENV=production PORT=3000 HOSTNAME=0.0.0.0 node server.js
 ```
 
 ### 方式 4: 使用 nohup（后台运行）
 
 ```bash
 cd .next/standalone
-nohup DATABASE_URL="file:./prisma/dev.db" NODE_ENV=production PORT=3000 node server.js > ../logs/app.log 2>&1 &
+nohup DATABASE_URL="file:./prisma/dev.db" NODE_ENV=production PORT=3000 HOSTNAME=0.0.0.0 node server.js > ../logs/app.log 2>&1 &
 ```
 
 ## 🔍 验证部署
@@ -220,6 +222,30 @@ kill -9 <PID>
 
 # 或者换个端口
 PORT=3001 node server.js
+```
+
+### 5. 主机名解析失败（阿里云常见问题）
+
+**错误信息：**
+```
+Error: getaddrinfo ENOTFOUND <hostname>
+```
+
+**原因：**
+服务器尝试绑定到主机名（如阿里云的 iZ2vc13rou7minejy21o9hZ），但 DNS 无法解析。
+
+**解决方案：**
+设置 `HOSTNAME=0.0.0.0` 环境变量：
+
+```bash
+# 方式1：在 .env 文件中添加
+HOSTNAME=0.0.0.0
+
+# 方式2：在启动命令中设置
+HOSTNAME=0.0.0.0 node server.js
+
+# 方式3：导出环境变量
+export HOSTNAME=0.0.0.0
 ```
 
 ## 🔄 更新部署

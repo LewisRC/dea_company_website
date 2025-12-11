@@ -8,6 +8,7 @@ echo "🚀 启动德视安生产服务器..."
 # 设置环境变量
 export NODE_ENV=production
 export PORT=3000
+export HOSTNAME=0.0.0.0
 export DATABASE_URL="file:./prisma/dev.db"
 
 # 检查 standalone 目录是否存在

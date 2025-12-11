@@ -10,6 +10,7 @@ module.exports = {
       env: {
         NODE_ENV: 'production',
         PORT: 3000,
+        HOSTNAME: '0.0.0.0',
         DATABASE_URL: 'file:./prisma/dev.db'
       },
       error_file: './logs/err.log',
