@@ -58,8 +58,20 @@ export function Footer() {
         className="w-full mt-10 pt-5 min-h-[80px] flex items-center justify-center"
         style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)' }}
       >
-        <div className="text-center text-[13px] text-gray-400">
-          <p className="m-0">{t('footer.copyright')}</p>
+        <div className="text-center text-[13px] text-gray-400 space-y-2">
+          <p className="m-0">
+            {t('footer.copyright')} {t('footer.allRightsReserved')}
+          </p>
+          <p className="m-0">
+            <a 
+              href="https://beian.miit.gov.cn/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
+            >
+              {t('footer.icpNumber')}
+            </a>
+          </p>
         </div>
       </div>
     </footer>

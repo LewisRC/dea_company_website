@@ -169,7 +169,10 @@
     "productionCenter": "Production R&D Center: No.9 Lanyu 4th Street, Guangzhou Economic Development Zone, Guangzhou Science Park",
     "salesCenter": "Sales Service Center: Longfor Century Center, No.213 Shilidianlu, Chenghua Avenue, Chenghua District, Chengdu",
     "phone": "Service Center Phone",
-    "copyright": "© 2025 Chengdu Deshian Technology Co., Ltd. All rights reserved."
+    "copyright": "© 2025 Chengdu Deshian Technology Co., Ltd.",
+    "allRightsReserved": "All rights reserved",
+    "companyName": "Chengdu Deshian Technology Co., Ltd.",
+    "icpNumber": "蜀ICP备2025175011号-1"
   },
   "hero": {
     "title": "Enterprise Communication Solutions",

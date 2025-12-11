@@ -144,7 +144,13 @@ export function Header() {
       <div className="container mx-auto px-5">
         <div className="flex items-center h-[78px] relative">
           {/* Logo */}
-          <div className="flex items-center flex-shrink-0" style={{ marginLeft: '-40px', marginRight: 'auto' }}>
+          <div 
+            className="flex items-center flex-shrink-0" 
+            style={{ 
+              marginLeft: '-40px', 
+              marginRight: language === 'en' ? '20px' : 'auto' 
+            }}
+          >
             <Link href="/" className="hover:opacity-80 transition-opacity">
               <Image 
                 src={language === 'en' ? '/images/logo/logo-EN.png' : '/images/logo/logo-CN.png'}
