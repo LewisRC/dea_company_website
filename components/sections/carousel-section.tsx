@@ -42,13 +42,9 @@ export function CarouselSection() {
   
   const totalSlides = slides.length
 
-  if (loading || totalSlides === 0) {
-    return <div className="w-full h-[600px] bg-gray-100" style={{ marginTop: '78px' }} />
-  }
-
   // Auto-play功能
   useEffect(() => {
-    if (!isAutoPlay) return
+    if (!isAutoPlay || totalSlides === 0) return
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % totalSlides)
@@ -56,6 +52,10 @@ export function CarouselSection() {
 
     return () => clearInterval(interval)
   }, [isAutoPlay, totalSlides])
+
+  if (loading || totalSlides === 0) {
+    return <div className="w-full h-[600px] bg-gray-100" style={{ marginTop: '78px' }} />
+  }
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index)
