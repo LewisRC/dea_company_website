@@ -3,11 +3,18 @@ module.exports = {
     {
       name: 'deshian-website',
       script: '.next/standalone/server.js',
+      cwd: '/root/dea_company_website/.next/standalone',
       instances: 1,
       exec_mode: 'cluster',
       watch: false,
       max_memory_restart: '500M',
       env: {
+        NODE_ENV: 'production',
+        PORT: 3000,
+        HOSTNAME: '0.0.0.0',
+        DATABASE_URL: 'file:./prisma/dev.db'
+      },
+      env_production: {
         NODE_ENV: 'production',
         PORT: 3000,
         HOSTNAME: '0.0.0.0',
