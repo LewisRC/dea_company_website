@@ -2,8 +2,8 @@ module.exports = {
   apps: [
     {
       name: 'deshian-website',
-      script: '.next/standalone/server.js',
-      cwd: '/root/dea_company_website/.next/standalone',
+      script: 'server.js',
+      cwd: '.next/standalone',
       instances: 1,
       exec_mode: 'cluster',
       watch: false,
