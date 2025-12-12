@@ -30,61 +30,57 @@ fi
 echo ""
 echo "🔍 查找运行中的 Node 进程..."
 
-# 查找 standalone server.js 进程
-PIDS=$(pgrep -f ".next/standalone/server.js")
+# 查找所有 server.js 进程（包括 standalone 和根目录）
+ALL_PIDS=$(pgrep -f "node.*server.js")
 
-if [ -n "$PIDS" ]; then
-  echo "找到以下进程:"
-  ps aux | grep ".next/standalone/server.js" | grep -v grep
+if [ -n "$ALL_PIDS" ]; then
+  echo "找到以下 Node 进程:"
+  ps aux | grep "node.*server.js" | grep -v grep
   echo ""
   
-  read -p "是否要停止这些进程？(y/n) " -n 1 -r
+  read -p "是否要停止所有这些进程？(y/n) " -n 1 -r
   echo ""
   
   if [[ $REPLY =~ ^[Yy]$ ]]; then
-    for PID in $PIDS; do
+    for PID in $ALL_PIDS; do
+      echo "停止进程 $PID..."
+      
+      # 优雅停止
       kill -15 $PID 2>/dev/null
-      echo "✅ 已发送停止信号到进程 $PID"
+      echo "  ✅ 已发送 SIGTERM 信号"
     done
     
     # 等待进程退出
-    sleep 2
+    echo "⏳ 等待进程退出..."
+    sleep 3
     
     # 检查是否还在运行
-    REMAINING=$(pgrep -f ".next/standalone/server.js")
+    REMAINING=$(pgrep -f "node.*server.js")
     if [ -n "$REMAINING" ]; then
       echo "⚠️  部分进程仍在运行，尝试强制停止..."
       for PID in $REMAINING; do
         kill -9 $PID 2>/dev/null
-        echo "✅ 已强制停止进程 $PID"
+        echo "  ✅ 已强制停止进程 $PID (SIGKILL)"
       done
+      
+      # 再等待一下
+      sleep 1
+    fi
+    
+    # 最终检查
+    FINAL_CHECK=$(pgrep -f "node.*server.js")
+    if [ -z "$FINAL_CHECK" ]; then
+      echo "✅ 所有 Node 进程已停止"
+    else
+      echo "⚠️  仍有进程未能停止:"
+      ps aux | grep "node.*server.js" | grep -v grep
     fi
   else
     echo "⏭️  跳过停止"
     exit 0
   fi
 else
-  echo "⚠️  未找到运行中的 standalone 服务器进程"
-fi
-
-# 查找并停止其他可能的 Node 进程（如 pnpm dev）
-echo ""
-OTHER_PIDS=$(pgrep -f "node.*server.js" | grep -v $(pgrep -f ".next/standalone/server.js"))
-
-if [ -n "$OTHER_PIDS" ]; then
-  echo "🔍 找到其他 Node 进程:"
-  ps aux | grep "node.*server.js" | grep -v ".next/standalone" | grep -v grep
-  echo ""
-  
-  read -p "是否也要停止这些进程？(y/n) " -n 1 -r
-  echo ""
-  
-  if [[ $REPLY =~ ^[Yy]$ ]]; then
-    for PID in $OTHER_PIDS; do
-      kill -15 $PID 2>/dev/null
-      echo "✅ 已停止进程 $PID"
-    done
-  fi
+  echo "⚠️  未找到运行中的 Node 服务器进程"
 fi
 
 # 检查端口占用
