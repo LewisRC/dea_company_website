@@ -30,9 +30,17 @@ export function CarouselSection() {
       try {
         const res = await fetch('/api/carousels')
         const data = await res.json()
-        setSlides(data)
+        
+        // 确保返回的是数组
+        if (Array.isArray(data)) {
+          setSlides(data)
+        } else {
+          console.error('API returned non-array data:', data)
+          setSlides([])
+        }
       } catch (error) {
         console.error('Failed to fetch carousels:', error)
+        setSlides([])
       } finally {
         setLoading(false)
       }

@@ -13,10 +13,8 @@ export async function GET() {
     return NextResponse.json(carousels)
   } catch (error) {
     console.error('Failed to fetch carousels:', error)
-    return NextResponse.json(
-      { error: '获取轮播图失败' },
-      { status: 500 }
-    )
+    // 返回空数组而不是错误对象，避免前端 map 报错
+    return NextResponse.json([])
   }
 }
 

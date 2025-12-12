@@ -38,9 +38,17 @@ export default function InfoCenterPage() {
       try {
         const res = await fetch('/api/cases')
         const data = await res.json()
-        setCases(data)
+        
+        // 确保返回的是数组
+        if (Array.isArray(data)) {
+          setCases(data)
+        } else {
+          console.error('API returned non-array data:', data)
+          setCases([])
+        }
       } catch (error) {
         console.error('Failed to fetch cases:', error)
+        setCases([])
       } finally {
         setLoading(false)
       }

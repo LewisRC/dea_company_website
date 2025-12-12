@@ -13,10 +13,8 @@ export async function GET() {
     return NextResponse.json(cases)
   } catch (error) {
     console.error('Failed to fetch cases:', error)
-    return NextResponse.json(
-      { error: '获取案例失败' },
-      { status: 500 }
-    )
+    // 返回空数组而不是错误对象，避免前端 map 报错
+    return NextResponse.json([])
   }
 }
 
