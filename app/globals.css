@@ -325,11 +325,15 @@
     font-size: 28px;
   }
   
-  /* 轮播图响应式 */
-  #hero-banner,
-  section[style*="marginTop"] {
-    height: 50vh !important;
-    min-height: 400px !important;
+  /* 轮播图响应式 - 平板 */
+  #hero-banner {
+    margin-top: 78px !important;
+  }
+  
+  /* 确保图片在移动端正确显示 */
+  #hero-banner img {
+    object-fit: cover !important;
+    object-position: center center !important;
   }
 }
 
@@ -340,16 +344,27 @@
   
   h2 {
     font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  h2::after {
+    width: 60px;
+    height: 2px;
+    margin-top: 12px;
   }
   
   .container {
     padding: 0 15px;
   }
   
-  /* 轮播图响应式 - 小屏幕 */
-  #hero-banner,
-  section[style*="marginTop"] {
-    height: 40vh !important;
-    min-height: 300px !important;
+  /* 轮播图响应式 - 小屏手机 */
+  #hero-banner {
+    margin-top: 78px !important;
+  }
+  
+  /* 确保图片在小屏手机正确显示 */
+  #hero-banner img {
+    object-fit: cover !important;
+    object-position: center center !important;
   }
 }

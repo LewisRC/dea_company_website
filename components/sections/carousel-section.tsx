@@ -62,7 +62,15 @@ export function CarouselSection() {
   }, [isAutoPlay, totalSlides])
 
   if (loading || totalSlides === 0) {
-    return <div className="w-full h-[600px] bg-gray-100" style={{ marginTop: '78px' }} />
+    return (
+      <div 
+        className="w-full bg-gray-100" 
+        style={{ 
+          marginTop: '78px',
+          height: 'clamp(300px, 50vh, 600px)' // 响应式高度
+        }} 
+      />
+    )
   }
 
   const goToSlide = (index: number) => {
@@ -84,13 +92,18 @@ export function CarouselSection() {
       id="hero-banner"
       className="relative w-full overflow-hidden bg-black"
       style={{
-        marginTop: '78px', // 为固定导航栏留出空间（与header高度一致）
+        marginTop: '78px', // 为固定导航栏留出空间
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Carousel Container - 使用固定高度确保完整显示 */}
-      <div className="relative w-full" style={{ height: '600px' }}>
+      {/* Carousel Container - 响应式高度 */}
+      <div 
+        className="relative w-full" 
+        style={{ 
+          height: 'clamp(300px, 50vh, 600px)' // 移动端最小300px，桌面端最大600px
+        }}
+      >
         {slides.map((slide, index) => {
           // 根据语言选择图片：优先使用对应语言的图片，如果没有则使用默认图片
           const imageUrl = language === 'en' && slide.imageEn 
@@ -113,8 +126,11 @@ export function CarouselSection() {
                   alt={language === 'en' && slide.titleEn ? slide.titleEn : slide.title}
                   fill
                   className="object-cover object-center"
+                  style={{
+                    objectPosition: 'center center', // 确保图片居中
+                  }}
                   priority={index === 0}
-                  sizes="100vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
                 />
               </div>
             </div>
@@ -122,19 +138,29 @@ export function CarouselSection() {
         })}
       </div>
 
-      {/* Carousel Dots */}
+      {/* Carousel Dots - 响应式设计 */}
       <div 
-        className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2.5 z-20"
+        className="absolute left-1/2 -translate-x-1/2 flex z-20"
+        style={{
+          bottom: 'clamp(12px, 3vh, 20px)', // 响应式底部间距
+          gap: 'clamp(8px, 2vw, 10px)' // 响应式间距
+        }}
       >
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${
+            className={`rounded-full cursor-pointer transition-all duration-300 ${
               index === currentSlide 
                 ? 'bg-white' 
                 : 'bg-white/50 hover:bg-white/80'
             }`}
+            style={{
+              width: 'clamp(10px, 3vw, 12px)', // 移动端更大，桌面端适中
+              height: 'clamp(10px, 3vw, 12px)',
+              minWidth: '10px',
+              minHeight: '10px'
+            }}
             aria-label={`转到第 ${index + 1} 张`}
           />
         ))}
