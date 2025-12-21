@@ -67,7 +67,7 @@ export function CarouselSection() {
         className="w-full bg-gray-100" 
         style={{ 
           marginTop: '78px',
-          height: 'clamp(300px, 50vh, 600px)' // 响应式高度
+          height: '600px' // 固定高度
         }} 
       />
     )
@@ -97,11 +97,11 @@ export function CarouselSection() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Carousel Container - 响应式高度 */}
+      {/* Carousel Container - 桌面端固定高度，移动端响应式 */}
       <div 
-        className="relative w-full" 
+        className="relative w-full carousel-container" 
         style={{ 
-          height: 'clamp(300px, 50vh, 600px)' // 移动端最小300px，桌面端最大600px
+          height: '600px' // 桌面端固定 600px
         }}
       >
         {slides.map((slide, index) => {
@@ -140,27 +140,20 @@ export function CarouselSection() {
 
       {/* Carousel Dots - 响应式设计 */}
       <div 
-        className="absolute left-1/2 -translate-x-1/2 flex z-20"
+        className="absolute left-1/2 -translate-x-1/2 flex gap-2.5 z-20 carousel-dots"
         style={{
-          bottom: 'clamp(12px, 3vh, 20px)', // 响应式底部间距
-          gap: 'clamp(8px, 2vw, 10px)' // 响应式间距
+          bottom: '20px'
         }}
       >
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`rounded-full cursor-pointer transition-all duration-300 ${
+            className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${
               index === currentSlide 
                 ? 'bg-white' 
                 : 'bg-white/50 hover:bg-white/80'
             }`}
-            style={{
-              width: 'clamp(10px, 3vw, 12px)', // 移动端更大，桌面端适中
-              height: 'clamp(10px, 3vw, 12px)',
-              minWidth: '10px',
-              minHeight: '10px'
-            }}
             aria-label={`转到第 ${index + 1} 张`}
           />
         ))}

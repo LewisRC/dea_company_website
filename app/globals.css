@@ -330,6 +330,21 @@
     margin-top: 78px !important;
   }
   
+  #hero-banner .carousel-container {
+    height: 450px !important; /* 平板高度 */
+  }
+  
+  /* 轮播图指示点 - 平板 */
+  #hero-banner .carousel-dots {
+    bottom: 16px !important;
+    gap: 8px !important;
+  }
+  
+  #hero-banner .carousel-dots button {
+    width: 10px !important;
+    height: 10px !important;
+  }
+  
   /* 确保图片在移动端正确显示 */
   #hero-banner img {
     object-fit: cover !important;
@@ -360,6 +375,21 @@
   /* 轮播图响应式 - 小屏手机 */
   #hero-banner {
     margin-top: 78px !important;
+  }
+  
+  #hero-banner .carousel-container {
+    height: 350px !important; /* 手机高度 */
+  }
+  
+  /* 轮播图指示点 - 手机 */
+  #hero-banner .carousel-dots {
+    bottom: 12px !important;
+    gap: 6px !important;
+  }
+  
+  #hero-banner .carousel-dots button {
+    width: 8px !important;
+    height: 8px !important;
   }
   
   /* 确保图片在小屏手机正确显示 */
