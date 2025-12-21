@@ -151,10 +151,17 @@ export const siteConfig = {
     },
     {
       id: 3,
-      title: "智能照明解决方案",
-      description: "为各类场所提供专业的智能照明控制方案，包括场景控制、自动调节、节能环保等功能。",
-      image: "/images/solution3-1.jpg",
-      href: "/smart-lighting",
+      title: "智慧社区解决方案",
+      description: "打造安全、便捷、智能的现代社区生活环境，实现社区各系统间的互联互通和协同工作。",
+      image: "/images/solution1-1.jpg",
+      href: "/smart-community",
+    },
+    {
+      id: 4,
+      title: "智慧建筑解决方案",
+      description: "整合智能照明、能源管理、楼宇自控、酒店客控等系统，打造高效、节能、舒适的智慧建筑。",
+      image: "/images/solution2-1.jpg",
+      href: "/smart-building",
     },
   ],
 
@@ -196,7 +203,6 @@ export function getNavigationConfig(lang: Language = 'zh'): MenuItem[] {
               { label: "Queuing System", href: "/queuing-system" },
               { label: "Information Display System", href: "/info-display-system" },
               { label: "Smart Aging Care System", href: "/smart-aging-system" },
-              { label: "Smart Lighting System", href: "/smart-lighting-system" },
             ]
           }
         ]
@@ -208,7 +214,8 @@ export function getNavigationConfig(lang: Language = 'zh'): MenuItem[] {
             items: [
               { label: "Smart Hospital", href: "/smart-hospital" },
               { label: "Smart Healthcare", href: "/smart-healthcare" },
-              { label: "Smart Lighting", href: "/smart-lighting" },
+              { label: "Smart Community", href: "/smart-community" },
+              { label: "Smart Building", href: "/smart-building" },
             ]
           }
         ]
@@ -268,7 +275,6 @@ export function getNavigationConfig(lang: Language = 'zh'): MenuItem[] {
             { label: "排队叫号系统", href: "/queuing-system" },
             { label: "信息发布系统", href: "/info-display-system" },
             { label: "智慧康养系统", href: "/smart-aging-system" },
-            { label: "智能照明系统", href: "/smart-lighting-system" },
           ]
         }
       ]
@@ -280,7 +286,8 @@ export function getNavigationConfig(lang: Language = 'zh'): MenuItem[] {
           items: [
             { label: "智慧医院", href: "/smart-hospital" },
             { label: "智慧康养", href: "/smart-healthcare" },
-            { label: "智能照明", href: "/smart-lighting" },
+            { label: "智慧社区", href: "/smart-community" },
+            { label: "智慧建筑", href: "/smart-building" },
           ]
         }
       ]

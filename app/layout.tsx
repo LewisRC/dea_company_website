@@ -34,7 +34,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
-      <body className={`font-sans antialiased`}>
+      <head>
+        <link 
+          rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className={`font-sans antialiased`} style={{ margin: 0, padding: 0, width: '100%', overflowX: 'hidden' }}>
         <I18nProvider>
           {children}
         </I18nProvider>

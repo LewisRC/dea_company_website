@@ -142,10 +142,10 @@ export function Header() {
       style={{ backgroundColor: '#051b33' }}
     >
       <div className="container mx-auto px-5">
-        <div className="flex items-center h-[78px] relative">
+        <div className="flex items-center justify-between h-[78px] relative px-4 max-[1200px]:px-3">
           {/* Logo */}
           <div 
-            className="flex items-center flex-shrink-0" 
+            className="flex items-center flex-shrink-0 logo-container" 
             style={{ 
               marginLeft: '-40px', 
               marginRight: language === 'en' ? '-100px' : 'auto' 
@@ -169,8 +169,8 @@ export function Header() {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex flex-1 justify-center" style={{ margin: '0 20px' }}>
+          {/* Desktop Navigation - 在1200px以上显示 */}
+          <nav className="hidden min-[1200px]:flex flex-1 justify-center" style={{ margin: '0 20px' }}>
             <ul className="flex items-center gap-[15px] m-0 p-0 list-none whitespace-nowrap flex-nowrap">
               {navigation.map((item) => {
                 const isActive = item.href && (
@@ -278,8 +278,8 @@ export function Header() {
             </ul>
           </nav>
 
-          {/* Search Button */}
-          <div className="hidden lg:block mr-[15px] relative search-container">
+          {/* Search Button - 在1200px以上显示 */}
+          <div className="hidden min-[1200px]:block mr-[15px] relative search-container">
             <button 
               className="p-2.5 bg-transparent border-none cursor-pointer text-white transition-all duration-300 hover:text-[#0066cc]"
               style={{ fontSize: '20px', transform: 'scale(1.7)' }}
@@ -348,8 +348,8 @@ export function Header() {
             )}
           </div>
 
-          {/* Language Selector */}
-          <div className="hidden lg:flex items-center ml-[15px]">
+          {/* Language Selector - 在1200px以上显示 */}
+          <div className="hidden min-[1200px]:flex items-center ml-[15px]">
             <button 
               onClick={() => setLanguage('zh')}
               className={`inline-block bg-transparent border-none cursor-pointer no-underline font-medium transition-colors duration-300 hover:text-[#0066cc] ${
@@ -371,11 +371,12 @@ export function Header() {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - 在1200px以下显示 */}
           <button
-            className={`lg:hidden p-2.5 bg-transparent border-none outline-none cursor-pointer z-[1002] ${isMenuOpen ? 'active' : ''}`}
+            className={`hidden max-[1200px]:block p-2.5 bg-transparent border-none outline-none cursor-pointer z-[1002] ${isMenuOpen ? 'active' : ''}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="菜单"
+            style={{ position: 'relative' }}
           >
             <span className={`block w-[25px] h-[3px] my-[5px] mx-auto bg-white transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
             <span className={`block w-[25px] h-[3px] my-[5px] mx-auto bg-white transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
@@ -385,7 +386,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden fixed left-0 top-[78px] w-4/5 h-screen bg-white shadow-sm z-100 overflow-y-auto pt-5">
+          <div className="max-[1200px]:block hidden fixed left-0 top-[78px] w-4/5 h-screen bg-white shadow-sm z-[1001] overflow-y-auto pt-5">
             <nav>
               <ul className="flex flex-col w-full m-0 p-0 list-none">
                 {navigation.map((item) => (

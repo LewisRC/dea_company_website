@@ -27,7 +27,7 @@ export default function Home() {
     <>
       <PageLoader />
       <Header />
-      <main className="w-full">
+      <main className="w-full" style={{ margin: 0, padding: 0, maxWidth: '100%' }}>
         <CarouselSection />
         <SolutionsSection />
       </main>

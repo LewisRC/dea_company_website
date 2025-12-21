@@ -45,12 +45,14 @@ export function SolutionsSection() {
                 <h3 className="text-2xl mb-4">
                   {solution.id === 1 && t('solutions.smartHospital')}
                   {solution.id === 2 && t('solutions.smartHealthcare')}
-                  {solution.id === 3 && t('solutions.smartLighting')}
+                  {solution.id === 3 && t('solutions.smartCommunity')}
+                  {solution.id === 4 && t('solutions.smartBuilding')}
                 </h3>
                 <p className="text-[15px] leading-relaxed mb-5">
                   {solution.id === 1 && t('solutions.smartHospitalDesc')}
                   {solution.id === 2 && t('solutions.smartHealthcareDesc')}
-                  {solution.id === 3 && t('solutions.smartLightingDesc')}
+                  {solution.id === 3 && t('solutions.smartCommunityDesc')}
+                  {solution.id === 4 && t('solutions.smartBuildingDesc')}
                 </p>
                 <Link
                   href={solution.href}

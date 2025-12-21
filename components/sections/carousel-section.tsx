@@ -90,18 +90,25 @@ export function CarouselSection() {
   return (
     <section 
       id="hero-banner"
-      className="relative w-full overflow-hidden bg-black"
+      className="w-screen overflow-hidden"
       style={{
-        marginTop: '78px', // 为固定导航栏留出空间
+        marginTop: '78px',
+        backgroundColor: '#000',
+        marginLeft: 0,
+        marginRight: 0,
+        position: 'relative',
+        left: 0,
+        right: 0,
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Carousel Container - 桌面端固定高度，移动端响应式 */}
+      {/* Carousel Container */}
       <div 
-        className="relative w-full carousel-container" 
+        className="w-full carousel-container" 
         style={{ 
-          height: '600px' // 桌面端固定 600px
+          height: '600px',
+          position: 'relative',
         }}
       >
         {slides.map((slide, index) => {
@@ -117,20 +124,17 @@ export function CarouselSection() {
                 index === currentSlide ? 'opacity-100 z-[2]' : 'opacity-0 z-0'
               }`}
               style={{
-                pointerEvents: index === currentSlide ? 'auto' : 'none'
+                pointerEvents: index === currentSlide ? 'auto' : 'none',
               }}
             >
-              <div className="w-full h-full overflow-hidden relative">
+              <div className="w-full h-full relative">
                 <Image
                   src={imageUrl}
                   alt={language === 'en' && slide.titleEn ? slide.titleEn : slide.title}
                   fill
-                  className="object-cover object-center"
-                  style={{
-                    objectPosition: 'center center', // 确保图片居中
-                  }}
+                  className="object-cover"
                   priority={index === 0}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                  sizes="100vw"
                 />
               </div>
             </div>
