@@ -155,9 +155,13 @@
     "title": "Careers",
     "positions": "Positions",
     "philosophy": "Talent Philosophy",
-    "joinUs": "Join Us",
+    "joinUs": "Join Deshian, Create a Better Future Together",
     "philosophyTitle": "Talent Philosophy",
-    "philosophyDesc": "Deshian always adheres to the 'people-oriented' talent philosophy, providing employees with a good working environment and development platform."
+    "philosophyDesc": "Deshian always adheres to the 'people-oriented' talent philosophy, providing employees with a good working environment and development platform.",
+    "noPositions": "No Current Openings",
+    "noPositionsDesc": "Thank you for your interest in Deshian! We currently have no open positions, but we are always looking for exceptional talent.",
+    "stayConnected": "Stay Connected",
+    "stayConnectedDesc": "If you are interested in joining us, please feel free to contact us through the following channels to stay informed about our latest recruitment opportunities."
   },
   "about": {
     "companyProfile": "Company Profile",
@@ -203,7 +207,7 @@
   },
   "talentPhilosophy": {
     "title": "Talent Philosophy",
-    "subtitle": "People-oriented, Achieving Talent, Creating the Future Together",
+    "subtitle": "Deshian believes that talent is the core driving force of enterprise development, and we are committed to providing every employee with a stage to realize their self-worth",
     "ourTalentView": "Our Talent View",
     "ourTalentViewDesc": "Deshian always adheres to the people-oriented management philosophy, respecting talent, cultivating talent, and achieving talent",
     "innovation": "Value Innovation",

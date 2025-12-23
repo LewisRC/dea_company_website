@@ -155,9 +155,13 @@
     "title": "人才招聘",
     "positions": "招聘职位",
     "philosophy": "人才理念",
-    "joinUs": "加入我们",
+    "joinUs": "携手德视安，共创美好未来",
     "philosophyTitle": "人才理念",
-    "philosophyDesc": "德视安始终坚持「以人为本」的人才理念，为员工提供良好的工作环境和发展平台。"
+    "philosophyDesc": "德视安始终坚持「以人为本」的人才理念，为员工提供良好的工作环境和发展平台。",
+    "noPositions": "暂无招聘职位",
+    "noPositionsDesc": "感谢您对德视安的关注！目前我们暂无招聘职位，但我们一直在寻找优秀人才。",
+    "stayConnected": "保持联系",
+    "stayConnectedDesc": "如果您有兴趣加入我们，欢迎通过以下方式与我们保持联系，了解最新的招聘信息。"
   },
   "about": {
     "companyProfile": "公司简介",
@@ -203,7 +207,7 @@
   },
   "talentPhilosophy": {
     "title": "人才理念",
-    "subtitle": "以人为本，成就人才，共创未来",
+    "subtitle": "德视安相信人才是企业发展的核心驱动力，我们致力于为每位员工提供实现自我价值的舞台",
     "ourTalentView": "我们的人才观",
     "ourTalentViewDesc": "德视安始终坚持以人为本的管理理念，尊重人才、培养人才、成就人才",
     "innovation": "重视创新",
