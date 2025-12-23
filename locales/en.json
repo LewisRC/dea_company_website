@@ -155,13 +155,16 @@
     "title": "Careers",
     "positions": "Positions",
     "philosophy": "Talent Philosophy",
-    "joinUs": "Join Deshian, Create a Better Future Together",
+    "joinUs": "Join Deshian and Create an Intelligent Future Together",
     "philosophyTitle": "Talent Philosophy",
     "philosophyDesc": "Deshian always adheres to the 'people-oriented' talent philosophy, providing employees with a good working environment and development platform.",
-    "noPositions": "No Current Openings",
-    "noPositionsDesc": "Thank you for your interest in Deshian! We currently have no open positions, but we are always looking for exceptional talent.",
+    "noPositions": "No Open Positions at the Moment",
+    "noPositionsDesc1": "Thank you for your interest and support in Deshian Technology. Currently, all positions in the company are fully staffed, and there are no new recruitment plans at this time. We are developing steadily and will open new vacancies in due course based on business expansion needs.",
+    "noPositionsDesc2": "If you are interested in our corporate culture and development prospects, please stay tuned to our official website. We look forward to the opportunity to work with excellent talents like you in the future, and jointly promote the development of intelligent medical care and smart community construction.",
     "stayConnected": "Stay Connected",
-    "stayConnectedDesc": "If you are interested in joining us, please feel free to contact us through the following channels to stay informed about our latest recruitment opportunities."
+    "stayConnectedDesc": "For further information about the company, please feel free to contact us through our",
+    "contactLink": "Contact Us",
+    "stayConnectedDesc2": "page."
   },
   "about": {
     "companyProfile": "Company Profile",

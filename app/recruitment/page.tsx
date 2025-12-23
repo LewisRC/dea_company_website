@@ -21,9 +21,9 @@ export default function RecruitmentPage() {
       <Header />
       
       <section className="recruitment-banner text-center relative overflow-hidden" style={{
-        background: `linear-gradient(135deg, ${siteConfig.colors.primary} 0%, #003366 100%)`,
+        background: 'linear-gradient(135deg, #0066cc 0%, #003366 100%)',
         color: 'white',
-        paddingTop: '0px',
+        paddingTop: '100px',
         paddingBottom: '100px',
         marginTop: '78px'
       }}>
@@ -33,44 +33,41 @@ export default function RecruitmentPage() {
           backgroundPosition: 'center'
         }} />
         <div className="container relative">
-          <h1 className="text-[3rem] font-bold mb-[20px]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)', marginTop: '0' }}>{t('recruitment.positions')}</h1>
+          <h1 className="text-[3rem] font-bold mb-[20px]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)', marginTop: '0' }}>{t('recruitment.title')}</h1>
           <p className="text-[1.2rem] max-w-[800px] mx-auto opacity-90">{t('recruitment.joinUs')}</p>
         </div>
       </section>
 
-      <main className="recruitment-content py-[80px]" style={{ backgroundColor: siteConfig.colors.backgroundLight }}>
-        <div className="container">
-          <section className="no-jobs-section text-center max-w-[900px] mx-auto bg-white p-[60px] rounded-[12px] relative overflow-hidden border border-[#eaeaea]" style={{ boxShadow: '0 10px 30px rgba(0,0,0,0.08)' }}>
+      <main className="recruitment-content py-[80px]" style={{ backgroundColor: '#f8f9fa' }}>
+        <div className="recruitment-container max-w-[1200px] mx-auto px-5">
+          <section className="no-jobs-section bg-white rounded-[12px] p-[60px] text-center relative overflow-hidden border border-[#eaeaea]" style={{ boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
             <div className="absolute top-0 left-0 right-0 h-[5px]" style={{
-              background: 'linear-gradient(90deg, #003366, #0066cc)'
+              background: 'linear-gradient(90deg, #0066cc, #003366)'
             }} />
             <div className="no-jobs-icon mb-[30px]">
-              <Briefcase className="w-20 h-20 mx-auto opacity-90" style={{ color: siteConfig.colors.primary }} />
+              <Briefcase className="w-16 h-16 mx-auto opacity-80" style={{ color: siteConfig.colors.primary }} />
             </div>
-            <h2 className="text-[2.2rem] font-bold mb-[20px]" style={{ color: '#003366' }}>
+            <h2 className="text-[2rem] font-semibold mb-[20px]" style={{ color: '#333' }}>
               {t('recruitment.noPositions')}
             </h2>
-            <p className="text-[1.05rem] leading-[1.8] mb-[30px]" style={{ color: '#555' }}>
-              {t('recruitment.noPositionsDesc')}
+            <p className="text-[1.1rem] leading-[1.8] mb-[30px] max-w-[800px] mx-auto" style={{ color: '#666' }}>
+              {t('recruitment.noPositionsDesc1')}
             </p>
-            <p className="text-[1.05rem] leading-[1.8] mb-[15px]" style={{ color: '#555' }}>
-              {t('recruitment.philosophyDesc')}
+            <p className="text-[1.1rem] leading-[1.8] mb-[30px] max-w-[800px] mx-auto" style={{ color: '#666' }}>
+              {t('recruitment.noPositionsDesc2')}
             </p>
             
-            <div className="keep-in-touch mt-[50px] p-[50px] rounded-[10px] border border-[#e3f2fd]" style={{ background: 'linear-gradient(135deg, #f0f8ff 0%, #ffffff 100%)' }}>
-              <h3 className="text-[1.8rem] font-semibold mb-[20px]" style={{ color: '#003366' }}>
+            <div className="keep-in-touch mt-[40px] p-[40px] rounded-[8px] border border-[#e3f2fd]" style={{ backgroundColor: '#f0f8ff' }}>
+              <h3 className="text-[1.5rem] font-semibold mb-[20px]" style={{ color: siteConfig.colors.primary }}>
                 {t('recruitment.stayConnected')}
               </h3>
-              <p className="text-[1.05rem] leading-[1.8] mb-[25px]" style={{ color: '#555' }}>
+              <p className="text-[1.1rem] m-0" style={{ color: '#666' }}>
                 {t('recruitment.stayConnectedDesc')}
+                <Link href="/contact-us" className="underline" style={{ color: siteConfig.colors.primary }}>
+                  {t('recruitment.contactLink')}
+                </Link>
+                {t('recruitment.stayConnectedDesc2')}
               </p>
-              <Link 
-                href="/contact-us" 
-                className="inline-block px-[40px] py-[14px] rounded-[8px] text-white font-semibold text-[1.05rem] transition-all duration-300 hover:shadow-lg hover:-translate-y-[2px]" 
-                style={{ backgroundColor: siteConfig.colors.primary }}
-              >
-                {t('common.contactUs')}
-              </Link>
             </div>
           </section>
         </div>
