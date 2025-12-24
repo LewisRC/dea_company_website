@@ -203,6 +203,7 @@ export function getNavigationConfig(lang: Language = 'zh'): MenuItem[] {
               { label: "Queuing System", href: "/queuing-system" },
               { label: "Information Display System", href: "/info-display-system" },
               { label: "Smart Aging Care System", href: "/smart-aging-system" },
+              { label: "Smart Lighting System", href: "/smart-lighting-system" },
             ]
           }
         ]
@@ -275,6 +276,7 @@ export function getNavigationConfig(lang: Language = 'zh'): MenuItem[] {
             { label: "排队叫号系统", href: "/queuing-system" },
             { label: "信息发布系统", href: "/info-display-system" },
             { label: "智慧康养系统", href: "/smart-aging-system" },
+            { label: "智能照明系统", href: "/smart-lighting-system" },
           ]
         }
       ]

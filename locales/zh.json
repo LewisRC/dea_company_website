@@ -34,7 +34,9 @@
     "infoDisplaySystem": "信息发布系统",
     "infoDisplaySystemDesc": "医院信息发布系统，实时传递重要信息。",
     "smartAgingSystem": "智慧康养系统",
-    "smartAgingSystemDesc": "为养老机构提供智能化管理和照护系统."
+    "smartAgingSystemDesc": "为养老机构提供智能化管理和照护系统.",
+    "smartLightingSystem": "智能照明系统",
+    "smartLightingSystemDesc": "为各类场所提供专业的智能照明控制方案，包括场景控制、自动调节、节能环保等功能。"
   },
   "solutions": {
     "smartHospital": "智慧医院",

@@ -34,7 +34,9 @@
     "infoDisplaySystem": "Information Display System",
     "infoDisplaySystemDesc": "Hospital information display system delivers important information in real-time.",
     "smartAgingSystem": "Smart Aging Care System",
-    "smartAgingSystemDesc": "Intelligent management and care system for elderly care institutions."
+    "smartAgingSystemDesc": "Intelligent management and care system for elderly care institutions.",
+    "smartLightingSystem": "Smart Lighting System",
+    "smartLightingSystemDesc": "Professional intelligent lighting control solutions for various venues, including scene control, automatic adjustment, energy saving and environmental protection."
   },
   "solutions": {
     "smartHospital": "Smart Hospital",
