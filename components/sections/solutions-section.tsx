@@ -37,7 +37,7 @@ export function SolutionsSection() {
                 />
               </div>
               <div 
-                className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-center p-5 text-white opacity-100"
+                className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-center p-5 text-white"
                 style={{
                   backgroundColor: 'rgba(30, 110, 198, 0.7)'
                 }}

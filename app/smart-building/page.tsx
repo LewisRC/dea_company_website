@@ -41,6 +41,7 @@ export default function SmartBuildingPage() {
                   width={600}
                   height={400}
                   className="rounded-lg shadow-lg w-full"
+                  style={{ opacity: 0.7 }}
                 />
               </div>
             </div>

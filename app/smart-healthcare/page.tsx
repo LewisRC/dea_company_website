@@ -80,7 +80,7 @@ export default function SmartHealthcarePage() {
                 width={600}
                 height={400}
                 className="w-full rounded-[8px]"
-                style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
+                style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.1)', opacity: 0.7 }}
               />
             </div>
           </div>
