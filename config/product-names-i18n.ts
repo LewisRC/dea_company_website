@@ -66,7 +66,7 @@ export const productNamesI18n: Record<string, { zh: string; en: string }> = {
 // 产品分类国际化映射
 export const productCategoriesI18n: Record<string, { zh: string; en: string }> = {
   '数字医护对讲系统': { zh: '数字医护对讲系统', en: 'Digital Medical Intercom System' },
-  '二线医护对讲系统': { zh: '二线医护对讲系统', en: 'Two-Wire Medical Intercom System' },
+  '医护对讲系统': { zh: '医护对讲系统', en: 'Medical Intercom System' },
   '无线呼叫系统': { zh: '无线呼叫系统', en: 'Wireless Call System' },
   '无线输液呼叫系统': { zh: '无线输液呼叫系统', en: 'Wireless Infusion Call System' },
   'ICU探视对讲系统': { zh: 'ICU探视对讲系统', en: 'ICU Visit Intercom System' },
