@@ -82,7 +82,7 @@ export default function InfoCenterPage() {
           ) : cases.length === 0 ? (
             <div className="text-center text-gray-500">暂无案例</div>
           ) : (
-            <div className="case-grid grid gap-[30px]" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
+            <div className="case-grid grid gap-[30px] grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-[1400px] mx-auto">
               {cases.map((caseItem) => {
                 // 根据语言选择显示内容
                 const title = language === 'en' && caseItem.titleEn ? caseItem.titleEn : caseItem.title

@@ -36,7 +36,7 @@ export default function SmartCommunityPage() {
               </div>
               <div className="flex-1">
                 <Image
-                  src="/images/solution1-1.jpg"
+                  src="/images/solution3-1.jpg"
                   alt={t('smartCommunity.title')}
                   width={600}
                   height={400}

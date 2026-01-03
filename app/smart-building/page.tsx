@@ -36,7 +36,7 @@ export default function SmartBuildingPage() {
               </div>
               <div className="flex-1">
                 <Image
-                  src="/images/solution2-1.jpg"
+                  src="/images/solution4-1.jpg"
                   alt={t('smartBuilding.title')}
                   width={600}
                   height={400}
