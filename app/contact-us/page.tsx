@@ -32,7 +32,7 @@ export default function ContactUsPage() {
       <main>
         <section className="map-section" style={{ padding: '40px 0' }}>
           <div className="container">
-            <div className="map-container mx-auto" style={{ width: '100%', height: '450px' }}>
+            <div className="map-container mx-auto" style={{ width: '100%', height: '600px' }}>
               <iframe 
                 src="https://api.map.baidu.com/marker?location=30.649596,104.136242&title=成都德视安科技有限公司&content=成都市成华区成华大道十里店路213号龙光世纪中心&output=html&coord_type=gcj02&src=webapp.baidu.openAPIdemo"
                 width="100%" 
