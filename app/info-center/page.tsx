@@ -62,15 +62,15 @@ export default function InfoCenterPage() {
       
       {/* 页面头部 */}
       <section className="info-center-header text-center" style={{
-        background: `linear-gradient(135deg, ${siteConfig.colors.primary} 0%, #003366 100%)`,
+        background: 'linear-gradient(135deg, #0066cc 0%, #003366 100%)',
         color: 'white',
-        paddingTop: '0px',
-        paddingBottom: '80px',
+        padding: '80px 0',
+        textAlign: 'center',
         marginTop: '78px'
       }}>
         <div className="container">
-          <h1 className="text-[3rem] font-bold mb-[20px]" style={{ marginTop: '0' }}>{t('news.title')}</h1>
-          <p className="text-[1.2rem] max-w-[800px] mx-auto">{t('news.subtitle')}</p>
+          <h1 style={{ fontSize: '3rem', marginTop: '0', marginBottom: '20px', fontWeight: 'bold' }}>{t('news.title')}</h1>
+          <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>{t('news.subtitle')}</p>
         </div>
       </section>
 
