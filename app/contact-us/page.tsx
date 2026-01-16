@@ -24,8 +24,8 @@ export default function ContactUsPage() {
         marginTop: '78px'
       }}>
         <div className="container mx-auto">
-          <h1 style={{ fontSize: '2rem', marginBottom: '15px', fontWeight: '600', color: '#0066cc' }}>{t('contactUs.title')}</h1>
-          <p style={{ fontSize: '1rem', maxWidth: '800px', color: '#666666' }}>{t('contactUs.getInTouch')}</p>
+          <h1 style={{ fontSize: '2.5rem', marginBottom: '15px', fontWeight: '600', color: '#0066cc' }}>{t('contactUs.title')}</h1>
+          <p style={{ fontSize: '1.1rem', maxWidth: '800px', color: '#666666' }}>{t('contactUs.getInTouch')}</p>
         </div>
       </section>
 
