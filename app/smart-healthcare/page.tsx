@@ -47,9 +47,9 @@ export default function SmartHealthcarePage() {
       {/* 解决方案英雄区 */}
       <section className="solution-hero" style={{
         background: `linear-gradient(135deg, #0099cc 0%, #006699 100%),
-                    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)`,
-        backgroundSize: '100% 100%, 40px 40px, 40px 40px',
+                    linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px)`,
+        backgroundSize: '100% 100%, 30px 30px, 30px 30px',
         color: 'white',
         padding: '80px 0',
         textAlign: 'center',
