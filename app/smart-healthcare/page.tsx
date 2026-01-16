@@ -153,7 +153,7 @@ export default function SmartHealthcarePage() {
                   className="w-full rounded-[8px] mb-[15px]"
                   style={{ height: '200px', objectFit: 'cover' }}
                 />
-                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'bold', fontFamily: '黑体' }}>{t(app.key)}</h3>
+                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'normal', fontFamily: '黑体' }}>{t(app.key)}</h3>
               </div>
             ))}
           </div>
