@@ -36,7 +36,7 @@ export default function SmartCommunityPage() {
               </div>
               <div className="flex-1">
                 <Image
-                  src="/images/solution3-1.jpg"
+                  src="/images/solution/solution3/solution3.jpg"
                   alt={t('smartCommunity.title')}
                   width={600}
                   height={400}
@@ -154,10 +154,10 @@ export default function SmartCommunityPage() {
         <section className="py-16">
           <div className="container mx-auto px-5">
             <h2 className="text-center">{t('smartCommunity.applications')}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
               <div className="text-center">
                 <Image
-                  src="/images/gh.jpeg"
+                  src="/images/solution/solution3/gdzz.jpg"
                   alt={t('smartCommunity.app1')}
                   width={300}
                   height={200}
@@ -167,7 +167,7 @@ export default function SmartCommunityPage() {
               </div>
               <div className="text-center">
                 <Image
-                  src="/images/sh.jpeg"
+                  src="/images/solution/solution3/syzh.jpg"
                   alt={t('smartCommunity.app2')}
                   width={300}
                   height={200}
@@ -177,13 +177,23 @@ export default function SmartCommunityPage() {
               </div>
               <div className="text-center">
                 <Image
-                  src="/images/chc.jpeg"
+                  src="/images/solution/solution3/ljgz.jpg"
                   alt={t('smartCommunity.app3')}
                   width={300}
                   height={200}
                   className="rounded-lg mb-4 w-full h-48 object-cover"
                 />
                 <h3 style={{ color: '#333333', fontWeight: 'bold', fontFamily: '黑体' }}>{t('smartCommunity.app3')}</h3>
+              </div>
+              <div className="text-center">
+                <Image
+                  src="/images/solution/solution3/cyyq.jpg"
+                  alt={t('smartCommunity.app4')}
+                  width={300}
+                  height={200}
+                  className="rounded-lg mb-4 w-full h-48 object-cover"
+                />
+                <h3 style={{ color: '#333333', fontWeight: 'bold', fontFamily: '黑体' }}>{t('smartCommunity.app4')}</h3>
               </div>
             </div>
           </div>
