@@ -7,6 +7,7 @@ import { useI18n } from "@/lib/i18n-context"
 import { useEffect } from "react"
 import { Building, Target, Lightbulb, Shield, Headset, Award, Globe, CheckCircle } from "lucide-react"
 import { siteConfig } from "@/config/site-config"
+import Image from "next/image"
 
 export default function CompanyProfilePage() {
   const { t } = useI18n()
@@ -20,13 +21,28 @@ export default function CompanyProfilePage() {
       <Header />
       <main className="w-full pt-20">
         <section className="py-20 bg-white">
-          <div className="container mx-auto px-5">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl font-bold text-[#003366] mb-5">
-                {t('companyProfile.title')}
-              </h1>
-              <div className="w-[80px] h-[3px] mx-auto bg-[#0066cc]"></div>
+          {/* 大气图片横幅 */}
+          <div className="w-full mb-16 relative overflow-hidden h-[400px] md:h-[500px]">
+            <Image
+              src="/images/company-profile/P-10.jpg"
+              alt={t('companyProfile.title')}
+              fill
+              className="object-cover"
+              style={{ filter: 'brightness(0.9)' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[rgba(0,51,102,0.8)] to-[rgba(0,102,204,0.5)] flex items-center">
+              <div className="container mx-auto px-5">
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                  {t('companyProfile.companyName')}
+                </h1>
+                <p className="text-lg md:text-xl text-white opacity-90 max-w-2xl">
+                  技术领先、服务一流的行业翘楚，致力于为客户提供卓越的产品与服务
+                </p>
+              </div>
             </div>
+          </div>
+
+          <div className="container mx-auto px-5">
 
             {/* 关于我们部分 */}
             <div className="max-w-4xl mx-auto mb-16 bg-white p-8 rounded-lg shadow-sm">
