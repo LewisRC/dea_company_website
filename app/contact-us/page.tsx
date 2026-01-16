@@ -19,13 +19,13 @@ export default function ContactUsPage() {
     <div className="relative min-h-screen">
       <Header />
       
-      <section className="contact-header text-center py-[40px]" style={{
+      <section className="contact-header py-[60px] px-5" style={{
         backgroundColor: '#f5f5f5',
         marginTop: '78px'
       }}>
-        <div className="container">
-          <h1 className="text-2xl font-bold mb-3" style={{ color: '#0066cc' }}>{t('contactUs.title')}</h1>
-          <p className="text-base max-w-[800px] mx-auto" style={{ color: '#666666' }}>{t('contactUs.getInTouch')}</p>
+        <div className="container mx-auto">
+          <h1 style={{ fontSize: '3rem', marginBottom: '20px', fontWeight: 'bold', color: '#0066cc' }}>{t('contactUs.title')}</h1>
+          <p style={{ fontSize: '1.2rem', maxWidth: '800px', color: '#666666' }}>{t('contactUs.getInTouch')}</p>
         </div>
       </section>
 
