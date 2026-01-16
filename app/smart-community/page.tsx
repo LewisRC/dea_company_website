@@ -6,6 +6,7 @@ import { BackToTop } from "@/components/ui/back-to-top"
 import { useI18n } from "@/lib/i18n-context"
 import Image from "next/image"
 import { siteConfig } from "@/config/site-config"
+import { CheckCircle } from "lucide-react"
 
 export default function SmartCommunityPage() {
   const { t } = useI18n()
@@ -109,7 +110,7 @@ export default function SmartCommunityPage() {
                 {[1, 2, 3].map((index) => (
                   <div key={index} className="advantage-list">
                     <div className="py-[15px] border-b flex items-start" style={{ borderColor: '#e0e0e0' }}>
-                      <i className="fas fa-check-circle mt-1 mr-[15px] flex-shrink-0" style={{ color: siteConfig.colors.primary, width: '20px', height: '20px', marginTop: '5px' }}></i>
+                      <CheckCircle className="w-5 h-5 mr-[15px] mt-[5px]" style={{ color: siteConfig.colors.primary }} />
                       <div>
                         <strong style={{ color: siteConfig.colors.foreground }}>{t(`smartCommunity.adv${index}Title`)}</strong>
                         <p className="mt-[5px]" style={{ color: siteConfig.colors.textSecondary }}>{t(`smartCommunity.adv${index}Desc`)}</p>
@@ -122,7 +123,7 @@ export default function SmartCommunityPage() {
                 {[4, 5, 6].map((index) => (
                   <div key={index} className="advantage-list">
                     <div className="py-[15px] border-b flex items-start" style={{ borderColor: '#e0e0e0' }}>
-                      <i className="fas fa-check-circle text-[#0066cc] mt-1 mr-[15px] flex-shrink-0"></i>
+                      <CheckCircle className="w-5 h-5 mr-[15px] mt-[5px]" style={{ color: siteConfig.colors.primary }} />
                       <div>
                         <strong style={{ color: siteConfig.colors.foreground }}>{t(`smartCommunity.adv${index}Title`)}</strong>
                         <p className="mt-[5px]" style={{ color: siteConfig.colors.textSecondary }}>{t(`smartCommunity.adv${index}Desc`)}</p>
