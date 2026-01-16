@@ -49,24 +49,48 @@ export default function ContactUsPage() {
           <div className="contact-info-container container">
             <div className="contact-info-grid grid gap-[30px]" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
               <div className="contact-info-item p-[30px] bg-white rounded-[8px]" style={{ boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)' }}>
-                <h3 className="text-[1.5rem] mb-[20px] font-semibold" style={{ color: siteConfig.colors.primary }}>{t('footer.productionCenter').split('：')[0]}</h3>
+                <h3 className="text-[1.5rem] mb-[20px] font-semibold" style={{ color: siteConfig.colors.primary }}>
+                  {(() => {
+                    const text = t('footer.productionCenter');
+                    const colonIndex = text.indexOf(':') !== -1 ? text.indexOf(':') : text.indexOf('：');
+                    return text.substring(0, colonIndex);
+                  })()}
+                </h3>
                 <div className="contact-details">
                   <div className="contact-detail">
                     <p className="mb-[15px] flex items-start text-[16px]" style={{ color: siteConfig.colors.foreground }}>
                       <Building2 className="w-5 h-5 mr-[10px] mt-[5px]" style={{ color: siteConfig.colors.primary }} />
-                      <span>{t('footer.productionCenter').split('：')[1]}</span>
+                      <span>
+                        {(() => {
+                          const text = t('footer.productionCenter');
+                          const colonIndex = text.indexOf(':') !== -1 ? text.indexOf(':') : text.indexOf('：');
+                          return text.substring(colonIndex + 1).trim();
+                        })()}
+                      </span>
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="contact-info-item p-[30px] bg-white rounded-[8px]" style={{ boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)' }}>
-                <h3 className="text-[1.5rem] mb-[20px] font-semibold" style={{ color: siteConfig.colors.primary }}>{t('footer.salesCenter').split('：')[0]}</h3>
+                <h3 className="text-[1.5rem] mb-[20px] font-semibold" style={{ color: siteConfig.colors.primary }}>
+                  {(() => {
+                    const text = t('footer.salesCenter');
+                    const colonIndex = text.indexOf(':') !== -1 ? text.indexOf(':') : text.indexOf('：');
+                    return text.substring(0, colonIndex);
+                  })()}
+                </h3>
                 <div className="contact-details">
                   <div className="contact-detail">
                     <p className="mb-[15px] flex items-start text-[16px]" style={{ color: siteConfig.colors.foreground }}>
                       <Store className="w-5 h-5 mr-[10px] mt-[5px]" style={{ color: siteConfig.colors.primary }} />
-                      <span>{t('footer.salesCenter').split('：')[1]}</span>
+                      <span>
+                        {(() => {
+                          const text = t('footer.salesCenter');
+                          const colonIndex = text.indexOf(':') !== -1 ? text.indexOf(':') : text.indexOf('：');
+                          return text.substring(colonIndex + 1).trim();
+                        })()}
+                      </span>
                     </p>
                   </div>
                   <div className="contact-detail">
