@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/footer"
 import { BackToTop } from "@/components/ui/back-to-top"
 import { useI18n } from "@/lib/i18n-context"
 import Image from "next/image"
+import { siteConfig } from "@/config/site-config"
 
 export default function SmartBuildingPage() {
   const { t } = useI18n()
@@ -26,13 +27,17 @@ export default function SmartBuildingPage() {
         </section>
 
         {/* Overview Section */}
-        <section className="py-16">
+        <section className="py-[60px]">
           <div className="container mx-auto px-5">
-            <div className="flex flex-col md:flex-row items-center gap-10 mb-16">
+            <div className="flex flex-col md:flex-row items-center gap-10 mb-[60px]">
               <div className="flex-1">
-                <h2>{t('smartBuilding.overview')}</h2>
-                <p className="text-lg mb-4">{t('smartBuilding.overview1')}</p>
-                <p className="text-lg">{t('smartBuilding.overview2')}</p>
+                <h2 className="text-[2rem] mb-[20px]" style={{ color: siteConfig.colors.foreground, fontWeight: 600 }}>{t('smartBuilding.overview')}</h2>
+                <p className="mb-[15px] text-[16px] leading-[1.8]" style={{ color: siteConfig.colors.textSecondary }}>
+                  {t('smartBuilding.overview1')}
+                </p>
+                <p className="mb-[15px] text-[16px] leading-[1.8]" style={{ color: siteConfig.colors.textSecondary }}>
+                  {t('smartBuilding.overview2')}
+                </p>
               </div>
               <div className="flex-1">
                 <Image
@@ -47,28 +52,28 @@ export default function SmartBuildingPage() {
             </div>
 
             {/* Features */}
-            <div className="mt-16">
-              <h2 className="text-center">{t('smartBuilding.features')}</h2>
+            <div className="mt-[60px]">
+              <h2 className="text-center text-[2rem] mb-[40px]" style={{ color: siteConfig.colors.foreground, fontWeight: 600 }}>{t('smartBuilding.features')}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
-                <div className="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-shadow">
-                  <i className="fas fa-lightbulb text-[2.5rem] text-[#0066cc] mb-5 block"></i>
-                  <h3 className="text-xl font-semibold mb-3">{t('smartBuilding.feature1Title')}</h3>
-                  <p>{t('smartBuilding.feature1Desc')}</p>
+                <div className="feature-item p-[30px] rounded-[8px] transition-all duration-300 hover:-translate-y-[5px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)]" style={{ backgroundColor: '#f9f9f9' }}>
+                  <i className="fas fa-lightbulb mb-[20px] block" style={{ color: siteConfig.colors.primary, fontSize: '2.5rem' }}></i>
+                  <h3 className="text-[1.5rem] mb-[15px]" style={{ color: siteConfig.colors.foreground }}>{t('smartBuilding.feature1Title')}</h3>
+                  <p style={{ color: siteConfig.colors.textSecondary, lineHeight: '1.6' }}>{t('smartBuilding.feature1Desc')}</p>
                 </div>
-                <div className="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-shadow">
-                  <i className="fas fa-bolt text-[2.5rem] text-[#0066cc] mb-5 block"></i>
-                  <h3 className="text-xl font-semibold mb-3">{t('smartBuilding.feature2Title')}</h3>
-                  <p>{t('smartBuilding.feature2Desc')}</p>
+                <div className="feature-item p-[30px] rounded-[8px] transition-all duration-300 hover:-translate-y-[5px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)]" style={{ backgroundColor: '#f9f9f9' }}>
+                  <i className="fas fa-bolt mb-[20px] block" style={{ color: siteConfig.colors.primary, fontSize: '2.5rem' }}></i>
+                  <h3 className="text-[1.5rem] mb-[15px]" style={{ color: siteConfig.colors.foreground }}>{t('smartBuilding.feature2Title')}</h3>
+                  <p style={{ color: siteConfig.colors.textSecondary, lineHeight: '1.6' }}>{t('smartBuilding.feature2Desc')}</p>
                 </div>
-                <div className="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-shadow">
-                  <i className="fas fa-building text-[2.5rem] text-[#0066cc] mb-5 block"></i>
-                  <h3 className="text-xl font-semibold mb-3">{t('smartBuilding.feature3Title')}</h3>
-                  <p>{t('smartBuilding.feature3Desc')}</p>
+                <div className="feature-item p-[30px] rounded-[8px] transition-all duration-300 hover:-translate-y-[5px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)]" style={{ backgroundColor: '#f9f9f9' }}>
+                  <i className="fas fa-building mb-[20px] block" style={{ color: siteConfig.colors.primary, fontSize: '2.5rem' }}></i>
+                  <h3 className="text-[1.5rem] mb-[15px]" style={{ color: siteConfig.colors.foreground }}>{t('smartBuilding.feature3Title')}</h3>
+                  <p style={{ color: siteConfig.colors.textSecondary, lineHeight: '1.6' }}>{t('smartBuilding.feature3Desc')}</p>
                 </div>
-                <div className="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-shadow">
-                  <i className="fas fa-hotel text-[2.5rem] text-[#0066cc] mb-5 block"></i>
-                  <h3 className="text-xl font-semibold mb-3">{t('smartBuilding.feature4Title')}</h3>
-                  <p>{t('smartBuilding.feature4Desc')}</p>
+                <div className="feature-item p-[30px] rounded-[8px] transition-all duration-300 hover:-translate-y-[5px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)]" style={{ backgroundColor: '#f9f9f9' }}>
+                  <i className="fas fa-hotel mb-[20px] block" style={{ color: siteConfig.colors.primary, fontSize: '2.5rem' }}></i>
+                  <h3 className="text-[1.5rem] mb-[15px]" style={{ color: siteConfig.colors.foreground }}>{t('smartBuilding.feature4Title')}</h3>
+                  <p style={{ color: siteConfig.colors.textSecondary, lineHeight: '1.6' }}>{t('smartBuilding.feature4Desc')}</p>
                 </div>
               </div>
             </div>
@@ -76,111 +81,95 @@ export default function SmartBuildingPage() {
         </section>
 
         {/* Advantages Section */}
-        <section className="py-16" style={{ backgroundColor: '#f9f9f9' }}>
+        <section className="py-[60px]" style={{ backgroundColor: '#f9f9f9' }}>
           <div className="container mx-auto px-5">
-            <h2 className="text-center">{t('smartBuilding.advantages')}</h2>
+            <h2 className="text-center text-[2rem] mb-[40px]" style={{ color: siteConfig.colors.foreground, fontWeight: 600 }}>{t('smartBuilding.advantages')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <i className="fas fa-check-circle text-[#0066cc] mt-1"></i>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">{t('smartBuilding.adv1Title')}</h3>
-                    <p>{t('smartBuilding.adv1Desc')}</p>
+              <div>
+                {[1, 2, 3].map((index) => (
+                  <div key={index} className="advantage-list">
+                    <div className="py-[15px] border-b flex items-start" style={{ borderColor: '#e0e0e0' }}>
+                      <i className="fas fa-check-circle mt-1 mr-[15px] flex-shrink-0" style={{ color: siteConfig.colors.primary, width: '20px', height: '20px', marginTop: '5px' }}></i>
+                      <div>
+                        <strong style={{ color: siteConfig.colors.foreground }}>{t(`smartBuilding.adv${index}Title`)}</strong>
+                        <p className="mt-[5px]" style={{ color: siteConfig.colors.textSecondary }}>{t(`smartBuilding.adv${index}Desc`)}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <i className="fas fa-check-circle text-[#0066cc] mt-1"></i>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">{t('smartBuilding.adv2Title')}</h3>
-                    <p>{t('smartBuilding.adv2Desc')}</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <i className="fas fa-check-circle text-[#0066cc] mt-1"></i>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">{t('smartBuilding.adv3Title')}</h3>
-                    <p>{t('smartBuilding.adv3Desc')}</p>
-                  </div>
-                </div>
+                ))}
               </div>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <i className="fas fa-check-circle text-[#0066cc] mt-1"></i>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">{t('smartBuilding.adv4Title')}</h3>
-                    <p>{t('smartBuilding.adv4Desc')}</p>
+              <div>
+                {[4, 5, 6].map((index) => (
+                  <div key={index} className="advantage-list">
+                    <div className="py-[15px] border-b flex items-start" style={{ borderColor: '#e0e0e0' }}>
+                      <i className="fas fa-check-circle text-[#0066cc] mt-1 mr-[15px] flex-shrink-0"></i>
+                      <div>
+                        <strong style={{ color: siteConfig.colors.foreground }}>{t(`smartBuilding.adv${index}Title`)}</strong>
+                        <p className="mt-[5px]" style={{ color: siteConfig.colors.textSecondary }}>{t(`smartBuilding.adv${index}Desc`)}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <i className="fas fa-check-circle text-[#0066cc] mt-1"></i>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">{t('smartBuilding.adv5Title')}</h3>
-                    <p>{t('smartBuilding.adv5Desc')}</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <i className="fas fa-check-circle text-[#0066cc] mt-1"></i>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">{t('smartBuilding.adv6Title')}</h3>
-                    <p>{t('smartBuilding.adv6Desc')}</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
         {/* Applications Section */}
-        <section className="py-16">
+        <section className="py-[60px]">
           <div className="container mx-auto px-5">
-            <h2 className="text-center">{t('smartBuilding.applications')}</h2>
+            <h2 className="text-center text-[2rem] mb-[40px]" style={{ color: siteConfig.colors.foreground, fontWeight: 600 }}>{t('smartBuilding.applications')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
               <div className="text-center">
                 <Image
-                  src="/images/gh.jpeg"
+                  src="/images/solution/solution3/gdzz.jpg"
                   alt={t('smartBuilding.app1')}
                   width={300}
                   height={200}
-                  className="rounded-lg mb-4 w-full h-48 object-cover"
+                  className="rounded-[8px] mb-[15px] w-full"
+                  style={{ height: '200px', objectFit: 'cover' }}
                 />
-                <h3 style={{ color: '#333333', fontWeight: 'bold', fontFamily: '黑体' }}>{t('smartBuilding.app1')}</h3>
+                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'bold', fontFamily: '黑体' }}>{t('smartBuilding.app1')}</h3>
               </div>
               <div className="text-center">
                 <Image
-                  src="/images/sh.jpeg"
+                  src="/images/solution/solution3/syzh.jpg"
                   alt={t('smartBuilding.app2')}
                   width={300}
                   height={200}
-                  className="rounded-lg mb-4 w-full h-48 object-cover"
+                  className="rounded-[8px] mb-[15px] w-full"
+                  style={{ height: '200px', objectFit: 'cover' }}
                 />
-                <h3 style={{ color: '#333333', fontWeight: 'bold', fontFamily: '黑体' }}>{t('smartBuilding.app2')}</h3>
+                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'bold', fontFamily: '黑体' }}>{t('smartBuilding.app2')}</h3>
               </div>
               <div className="text-center">
                 <Image
-                  src="/images/cssc.jpeg"
+                  src="/images/solution/solution3/ljgz.jpg"
                   alt={t('smartBuilding.app3')}
                   width={300}
                   height={200}
-                  className="rounded-lg mb-4 w-full h-48 object-cover"
+                  className="rounded-[8px] mb-[15px] w-full"
+                  style={{ height: '200px', objectFit: 'cover' }}
                 />
-                <h3 style={{ color: '#333333', fontWeight: 'bold', fontFamily: '黑体' }}>{t('smartBuilding.app3')}</h3>
+                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'bold', fontFamily: '黑体' }}>{t('smartBuilding.app3')}</h3>
               </div>
               <div className="text-center">
                 <Image
-                  src="/images/nh.jpeg"
+                  src="/images/solution/solution3/cyyq.jpg"
                   alt={t('smartBuilding.app4')}
                   width={300}
                   height={200}
-                  className="rounded-lg mb-4 w-full h-48 object-cover"
+                  className="rounded-[8px] mb-[15px] w-full"
+                  style={{ height: '200px', objectFit: 'cover' }}
                 />
-                <h3 style={{ color: '#333333', fontWeight: 'bold', fontFamily: '黑体' }}>{t('smartBuilding.app4')}</h3>
+                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'bold', fontFamily: '黑体' }}>{t('smartBuilding.app4')}</h3>
               </div>
             </div>
           </div>
         </section>
 
         {/* Contact Section */}
-        <section className="py-16 text-center" style={{ backgroundColor: '#f5f5f5' }}>
+        <section className="py-[60px] text-center" style={{ backgroundColor: '#f5f5f5' }}>
           <div className="container mx-auto px-5">
             <h2 className="mb-[20px]" style={{ color: '#333' }}>{t('smartBuilding.contactTitle')}</h2>
             <p className="mb-[30px]" style={{ color: '#666' }}>{t('smartBuilding.contactDesc')}</p>

@@ -92,7 +92,7 @@ export default function SmartHealthcarePage() {
                 const Icon = feature.icon
                 return (
                   <div key={index} className="feature-item p-[30px] rounded-[8px] transition-all duration-300 hover:-translate-y-[5px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)]" style={{ backgroundColor: '#f9f9f9', maxWidth: '500px' }}>
-                    <Icon className="w-10 h-10 mb-[20px]" style={{ color: '#0099cc', fontSize: '2.5rem' }} />
+                    <Icon className="w-10 h-10 mb-[20px]" style={{ color: siteConfig.colors.primary, fontSize: '2.5rem' }} />
                     <h3 className="text-[1.5rem] mb-[15px]" style={{ color: siteConfig.colors.foreground }}>{t(feature.titleKey)}</h3>
                     <p style={{ color: siteConfig.colors.textSecondary, lineHeight: '1.6' }}>{t(feature.descKey)}</p>
                   </div>
@@ -112,7 +112,7 @@ export default function SmartHealthcarePage() {
               <ul className="advantage-list list-none p-0">
                 {advantages.slice(0, 3).map((advantage, index) => (
                   <li key={index} className="py-[15px] border-b flex items-start" style={{ borderColor: '#e0e0e0' }}>
-                    <CheckCircle className="w-5 h-5 mr-[15px] mt-[5px] flex-shrink-0" style={{ color: '#0099cc' }} />
+                    <CheckCircle className="w-5 h-5 mr-[15px] mt-[5px] flex-shrink-0" style={{ color: siteConfig.colors.primary }} />
                     <div>
                       <strong style={{ color: siteConfig.colors.foreground }}>{t(advantage.titleKey)}</strong>
                       <p className="mt-[5px]" style={{ color: siteConfig.colors.textSecondary }}>{t(advantage.descKey)}</p>
@@ -125,7 +125,7 @@ export default function SmartHealthcarePage() {
               <ul className="advantage-list list-none p-0">
                 {advantages.slice(3, 6).map((advantage, index) => (
                   <li key={index} className="py-[15px] border-b flex items-start" style={{ borderColor: '#e0e0e0' }}>
-                    <CheckCircle className="w-5 h-5 mr-[15px] mt-[5px] flex-shrink-0" style={{ color: '#0099cc' }} />
+                    <CheckCircle className="w-5 h-5 mr-[15px] mt-[5px] flex-shrink-0" style={{ color: siteConfig.colors.primary }} />
                     <div>
                       <strong style={{ color: siteConfig.colors.foreground }}>{t(advantage.titleKey)}</strong>
                       <p className="mt-[5px]" style={{ color: siteConfig.colors.textSecondary }}>{t(advantage.descKey)}</p>
