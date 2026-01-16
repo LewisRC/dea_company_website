@@ -36,7 +36,7 @@ export default function CompanyProfilePage() {
                   {t('companyProfile.companyName')}
                 </h1>
                 <p className="text-lg md:text-xl text-white opacity-90 max-w-2xl">
-                  技术领先、服务一流的行业翘楚，致力于为客户提供卓越的产品与服务
+                  致力于为客户提供卓越的产品与服务
                 </p>
               </div>
             </div>
