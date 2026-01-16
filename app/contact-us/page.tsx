@@ -30,13 +30,13 @@ export default function ContactUsPage() {
       </section>
 
       <main>
-        <section className="map-section" style={{ height: '450px', width: '100%' }}>
-          <div className="map-container w-full h-full">
+        <section className="map-section" style={{ height: '450px', padding: '0 5%' }}>
+          <div className="map-container mx-auto" style={{ width: '80%', height: '100%' }}>
             <iframe 
               src="https://api.map.baidu.com/marker?location=30.649596,104.136242&title=成都德视安科技有限公司&content=成都市成华区成华大道十里店路213号龙光世纪中心&output=html&coord_type=gcj02&src=webapp.baidu.openAPIdemo"
               width="100%" 
               height="100%" 
-              style={{ border: 0 }}
+              style={{ border: 0, borderRadius: '8px' }}
               allowFullScreen
               title={t('contactUs.title')}
             />
