@@ -41,7 +41,7 @@ export default function SmartBuildingPage() {
               </div>
               <div className="flex-1">
                 <Image
-                  src="/images/solution4-1.jpg"
+                  src="/images/solution/solution4/solution4.jpg"
                   alt={t('smartBuilding.title')}
                   width={600}
                   height={400}
@@ -102,7 +102,7 @@ export default function SmartBuildingPage() {
                 {[4, 5, 6].map((index) => (
                   <div key={index} className="advantage-list">
                     <div className="py-[15px] border-b flex items-start" style={{ borderColor: '#e0e0e0' }}>
-                      <i className="fas fa-check-circle text-[#0066cc] mt-1 mr-[15px] flex-shrink-0"></i>
+                      <i className="fas fa-check-circle mt-1 mr-[15px] flex-shrink-0" style={{ color: siteConfig.colors.primary, width: '20px', height: '20px', marginTop: '5px' }}></i>
                       <div>
                         <strong style={{ color: siteConfig.colors.foreground }}>{t(`smartBuilding.adv${index}Title`)}</strong>
                         <p className="mt-[5px]" style={{ color: siteConfig.colors.textSecondary }}>{t(`smartBuilding.adv${index}Desc`)}</p>
@@ -122,7 +122,7 @@ export default function SmartBuildingPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
               <div className="text-center">
                 <Image
-                  src="/images/solution/solution3/gdzz.jpg"
+                  src="/images/solution/solution4/bg.jpg"
                   alt={t('smartBuilding.app1')}
                   width={300}
                   height={200}
@@ -133,7 +133,7 @@ export default function SmartBuildingPage() {
               </div>
               <div className="text-center">
                 <Image
-                  src="/images/solution/solution3/syzh.jpg"
+                  src="/images/solution/solution4/sy.jpg"
                   alt={t('smartBuilding.app2')}
                   width={300}
                   height={200}
@@ -144,7 +144,7 @@ export default function SmartBuildingPage() {
               </div>
               <div className="text-center">
                 <Image
-                  src="/images/solution/solution3/ljgz.jpg"
+                  src="/images/solution/solution4/wl.jpg"
                   alt={t('smartBuilding.app3')}
                   width={300}
                   height={200}
@@ -155,7 +155,7 @@ export default function SmartBuildingPage() {
               </div>
               <div className="text-center">
                 <Image
-                  src="/images/solution/solution3/cyyq.jpg"
+                  src="/images/solution/solution4/jt.jpg"
                   alt={t('smartBuilding.app4')}
                   width={300}
                   height={200}
