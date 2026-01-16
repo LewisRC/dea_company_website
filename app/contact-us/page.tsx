@@ -9,7 +9,7 @@ import { Building2, Store, Phone } from "lucide-react"
 import { useEffect } from "react"
 
 export default function ContactUsPage() {
-  const { t } = useI18n()
+  const { t, language } = useI18n()
   
   useEffect(() => {
     document.title = t('contactUs.title') + " - 德视安"
@@ -34,7 +34,7 @@ export default function ContactUsPage() {
           <div className="container">
             <div className="map-container mx-auto" style={{ width: '100%', height: '600px' }}>
               <iframe 
-                src="https://api.map.baidu.com/marker?location=30.649596,104.136242&title=成都德视安科技有限公司&content=成都市成华区成华大道十里店路213号龙光世纪中心&output=html&coord_type=gcj02&src=webapp.baidu.openAPIdemo"
+                src={`https://api.map.baidu.com/marker?location=30.649596,104.136242&title=${encodeURIComponent(t('footer.companyName'))}&content=${encodeURIComponent(t('footer.salesCenter').split(/[:：]/)[1].trim())}&output=html&coord_type=gcj02&src=webapp.baidu.openAPIdemo&lang=${language === 'zh' ? 'zh-cn' : 'en'}`}
                 width="100%" 
                 height="100%" 
                 style={{ border: 0, borderRadius: '8px' }}
