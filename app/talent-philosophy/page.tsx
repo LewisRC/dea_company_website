@@ -64,7 +64,6 @@ export default function TalentPhilosophyPage() {
               <p className="text-[1.1rem] max-w-[800px] mx-auto" style={{ color: siteConfig.colors.textSecondary }}>
                 {t('talentPhilosophy.ourTalentViewDesc')}
               </p>
-              <div className="w-[80px] h-[3px] mx-auto mt-[20px]" style={{ background: '#0066cc' }} />
             </div>
             
             <div className="philosophy-cards grid gap-[30px] mb-[80px]" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
