@@ -33,23 +33,18 @@ export default function TalentPhilosophyPage() {
     <div className="relative min-h-screen">
       <Header />
       
-      <section className="philosophy-banner text-center relative overflow-hidden" style={{
-        background: 'linear-gradient(135deg, #003366 0%, #0066cc 100%)',
+      <section className="philosophy-banner text-center" style={{
+        background: 'linear-gradient(135deg, #0066cc 0%, #003366 100%)',
         color: 'white',
-        paddingTop: '0px',
-        paddingBottom: '120px',
+        padding: '80px 0',
+        textAlign: 'center',
         marginTop: '78px'
       }}>
-        <div className="absolute inset-0 opacity-[0.15]" style={{
-          backgroundImage: `url(/images/${language === 'en' ? 'banner-EN/banner4-en' : 'banner-CH/banner4-ch'}.jpg)`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }} />
-        <div className="container relative">
-          <h1 className="text-[3.2rem] font-bold mb-[25px]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)', letterSpacing: '1px', marginTop: '0' }}>
+        <div className="container">
+          <h1 style={{ fontSize: '3rem', marginTop: '0', marginBottom: '20px', fontWeight: 'bold' }}>
             {t('talentPhilosophy.title')}
           </h1>
-          <p className="text-[1.3rem] max-w-[850px] mx-auto opacity-95 leading-[1.8]">
+          <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
             {t('talentPhilosophy.subtitle')}
           </p>
         </div>
