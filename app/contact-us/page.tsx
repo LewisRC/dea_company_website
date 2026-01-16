@@ -20,13 +20,12 @@ export default function ContactUsPage() {
       <Header />
       
       <section className="contact-header text-center py-[60px]" style={{
-        background: `linear-gradient(135deg, ${siteConfig.colors.primary} 0%, #003366 100%)`,
-        color: 'white',
+        backgroundColor: '#f5f5f5',
         marginTop: '78px'
       }}>
         <div className="container">
-          <h1 className="text-[3rem] font-bold mb-[20px]">{t('contactUs.title')}</h1>
-          <p className="text-[1.2rem] max-w-[800px] mx-auto">{t('contactUs.getInTouch')}</p>
+          <h1 className="text-[3rem] font-bold mb-[20px]" style={{ color: siteConfig.colors.primary }}>{t('contactUs.title')}</h1>
+          <p className="text-[1.2rem] max-w-[800px] mx-auto" style={{ color: '#666666' }}>{t('contactUs.getInTouch')}</p>
         </div>
       </section>
 
