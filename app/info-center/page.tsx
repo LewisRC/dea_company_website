@@ -62,7 +62,10 @@ export default function InfoCenterPage() {
       
       {/* 页面头部 */}
       <section className="info-center-header text-center" style={{
-        background: 'linear-gradient(135deg, #0066cc 0%, #003366 100%)',
+        background: `linear-gradient(135deg, #0066cc 0%, #003366 100%),
+                    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)`,
+        backgroundSize: '100% 100%, 40px 40px, 40px 40px',
         color: 'white',
         padding: '80px 0',
         textAlign: 'center',

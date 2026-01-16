@@ -17,13 +17,17 @@ export default function SmartBuildingPage() {
       <main className="w-full" style={{ marginTop: '78px' }}>
         {/* Hero Section */}
         <section className="relative w-full" style={{ 
-          background: 'linear-gradient(135deg, #0066cc 0%, #003366 100%)',
+          background: `linear-gradient(135deg, #0066cc 0%, #003366 100%),
+                      linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)`,
+          backgroundSize: '100% 100%, 40px 40px, 40px 40px',
           padding: '80px 0',
-          color: 'white'
+          color: 'white',
+          textAlign: 'center'
         }}>
-          <div className="container mx-auto px-5 text-center">
-            <h1 className="text-5xl font-bold mb-5">{t('smartBuilding.title')}</h1>
-            <p className="text-xl max-w-3xl mx-auto">{t('smartBuilding.hero')}</p>
+          <div className="container mx-auto px-5">
+            <h1 style={{ fontSize: '3rem', marginTop: '0', marginBottom: '20px', fontWeight: 'bold' }}>{t('smartBuilding.title')}</h1>
+            <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>{t('smartBuilding.hero')}</p>
           </div>
         </section>
 
