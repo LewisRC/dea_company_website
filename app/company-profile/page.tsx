@@ -19,8 +19,8 @@ export default function CompanyProfilePage() {
   return (
     <>
       <Header />
-      <main className="w-full pt-20">
-        <section className="py-20 bg-white">
+      <main className="w-full">
+        <section className="bg-white">
           {/* 大气图片横幅 */}
           <div className="w-full mb-16 relative overflow-hidden h-[400px] md:h-[500px]">
             <Image
