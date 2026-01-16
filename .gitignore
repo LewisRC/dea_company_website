@@ -66,3 +66,6 @@ Desktop.ini
 .cache
 
 /lib/generated/prisma
+
+# database
+prisma/prisma/dev.db
