@@ -195,6 +195,16 @@ export function Header() {
                         style={{ fontSize: language === 'en' ? '20px' : '16px' }}
                       >
                         {item.label}
+                        {item.children && (
+                          <svg 
+                            className="ml-[5px] w-3 h-3 transition-transform duration-300"
+                            style={{ transform: hoveredMenu === item.label ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                            fill="currentColor" 
+                            viewBox="0 0 20 20"
+                          >
+                            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+                          </svg>
+                        )}
                         {isActive && (
                           <span 
                             className="absolute left-[15px] bottom-0 h-[2px] bg-[#0066cc]"

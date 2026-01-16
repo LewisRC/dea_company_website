@@ -105,30 +105,52 @@ export const siteConfig = {
   carousel: [
     {
       id: 1,
-      image: "/images/banner1-1.jpg",
+      image: "/images/banner-CH/banner1-ch.jpg",
+      imageEn: "/images/banner-EN/banner1-en.jpg",
       title: "",
+      titleEn: "",
       subtitle: "",
+      subtitleEn: "",
       description: "",
     },
     {
       id: 2,
-      image: "/images/banner2-2.jpg",
+      image: "/images/banner-CH/banner2-ch.jpg",
+      imageEn: "/images/banner-EN/banner2-en.jpg",
       title: "",
+      titleEn: "",
       subtitle: "",
+      subtitleEn: "",
       description: "",
     },
     {
       id: 3,
-      image: "/images/banner3-2.jpg",
+      image: "/images/banner-CH/banner3-ch.jpg",
+      imageEn: "/images/banner-EN/banner3-en.jpg",
       title: "",
+      titleEn: "",
       subtitle: "",
+      subtitleEn: "",
       description: "",
     },
     {
       id: 4,
-      image: "/images/banner4-2.jpg",
+      image: "/images/banner-CH/banner4-ch.jpg",
+      imageEn: "/images/banner-EN/banner4-en.jpg",
       title: "",
+      titleEn: "",
       subtitle: "",
+      subtitleEn: "",
+      description: "",
+    },
+    {
+      id: 5,
+      image: "/images/banner-CH/banner5-ch.jpg",
+      imageEn: "/images/banner-EN/banner5-en.jpg",
+      title: "",
+      titleEn: "",
+      subtitle: "",
+      subtitleEn: "",
       description: "",
     },
   ],
@@ -139,28 +161,28 @@ export const siteConfig = {
       id: 1,
       title: "智慧医院解决方案",
       description: "涵盖医护对讲、病房管理、排队叫号、信息发布等系统，提升医院管理效率和患者就医体验。",
-      image: "/images/solution1-1.jpg",
+      image: "/images/solution/solution1/solution1.jpg",
       href: "/smart-hospital",
     },
     {
       id: 2,
       title: "智慧康养解决方案",
       description: "涵盖康养对讲、疗养管理、智能照护、信息发布等系统，提升康养机构管理效率和服务质量。",
-      image: "/images/solution2-1.jpg",
+      image: "/images/solution/solution2/solution2.jpg",
       href: "/smart-healthcare",
     },
     {
       id: 3,
       title: "智慧社区解决方案",
       description: "打造安全、便捷、智能的现代社区生活环境，实现社区各系统间的互联互通和协同工作。",
-      image: "/images/solution3-1.jpg",
+      image: "/images/solution/solution3/solution3.jpg",
       href: "/smart-community",
     },
     {
       id: 4,
       title: "智慧建筑解决方案",
       description: "整合智能照明、能源管理、楼宇自控、酒店客控等系统，打造高效、节能、舒适的智慧建筑。",
-      image: "/images/solution4-1.jpg",
+      image: "/images/solution/solution4/solution4.jpg",
       href: "/smart-building",
     },
   ],
@@ -191,6 +213,7 @@ export function getNavigationConfig(lang: Language = 'zh'): MenuItem[] {
       },
       {
         label: "Products",
+        href: "/queuing-system",
         children: [
           {
             items: [
@@ -264,6 +287,7 @@ export function getNavigationConfig(lang: Language = 'zh'): MenuItem[] {
     },
     {
       label: "产品中心",
+      href: "/queuing-system",
       children: [
         {
           items: [

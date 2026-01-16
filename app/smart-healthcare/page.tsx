@@ -30,10 +30,10 @@ export default function SmartHealthcarePage() {
   ]
 
   const applications = [
-    { image: "/images/nh.jpeg", key: "smartHealthcare.app1" },
-    { image: "/images/irf.jpeg", key: "smartHealthcare.app2" },
-    { image: "/images/src.jpeg", key: "smartHealthcare.app3" },
-    { image: "/images/cssc.jpeg", key: "smartHealthcare.app4" }
+    { image: "/images/solution/solution2/yly.jpeg", key: "smartHealthcare.app1" },
+    { image: "/images/solution/solution2/kfzx.jpeg", key: "smartHealthcare.app2" },
+    { image: "/images/solution/solution2/lngy.jpeg", key: "smartHealthcare.app3" },
+    { image: "/images/solution/solution2/sqylzx.jpeg", key: "smartHealthcare.app4" }
   ]
   
   useEffect(() => {
@@ -48,8 +48,7 @@ export default function SmartHealthcarePage() {
       <section className="solution-hero" style={{
         background: 'linear-gradient(135deg, #0099cc 0%, #006699 100%)',
         color: 'white',
-        paddingTop: '0px',
-        paddingBottom: '80px',
+        padding: '80px 0',
         textAlign: 'center',
         marginTop: '78px'
       }}>
@@ -75,12 +74,12 @@ export default function SmartHealthcarePage() {
             </div>
             <div className="flex-1 min-w-[300px]">
               <Image
-                src="/images/solution2-1.jpg"
+                src="/images/solution/solution2/solution2.jpg"
                 alt="智慧康养解决方案概述"
                 width={600}
                 height={400}
                 className="w-full rounded-[8px]"
-                style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.1)', opacity: 0.7 }}
+                style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.1)', opacity: 1 }}
               />
             </div>
           </div>
@@ -154,7 +153,7 @@ export default function SmartHealthcarePage() {
                   className="w-full rounded-[8px] mb-[15px]"
                   style={{ height: '200px', objectFit: 'cover' }}
                 />
-                <h3 style={{ color: siteConfig.colors.foreground }}>{t(app.key)}</h3>
+                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'bold', fontFamily: '黑体' }}>{t(app.key)}</h3>
               </div>
             ))}
           </div>

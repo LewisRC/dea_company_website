@@ -82,10 +82,10 @@ export default function SmartHospitalPage() {
   ]
 
   const applications = [
-    { image: "/images/gh.jpeg", key: "smartHospital.app1" },
-    { image: "/images/sh.jpeg", key: "smartHospital.app2" },
-    { image: "/images/chc.jpeg", key: "smartHospital.app3" },
-    { image: "/images/rehab.jpeg", key: "smartHospital.app4" }
+    { image: "/images/solution/solution1/zh.jpeg", key: "smartHospital.app1" },
+    { image: "/images/solution/solution1/zk.jpeg", key: "smartHospital.app2" },
+    { image: "/images/solution/solution1/sq.jpeg", key: "smartHospital.app3" },
+    { image: "/images/solution/solution1/kf.jpeg", key: "smartHospital.app4" }
   ]
   
   // 动态更新页面标题
@@ -101,8 +101,7 @@ export default function SmartHospitalPage() {
       <section className="solution-hero" style={{
         background: 'linear-gradient(135deg, #0066cc 0%, #003366 100%)',
         color: 'white',
-        paddingTop: '0px',
-        paddingBottom: '80px',
+        padding: '80px 0',
         textAlign: 'center',
         marginTop: '78px'
       }}>
@@ -128,12 +127,12 @@ export default function SmartHospitalPage() {
             </div>
             <div className="flex-1 min-w-[300px]">
               <Image
-                src="/images/solution1-1.jpg"
+                src="/images/solution/solution1/solution1.jpg"
                 alt="智慧医院解决方案概述"
                 width={600}
                 height={400}
                 className="w-full rounded-[8px]"
-                style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.1)', opacity: 0.7 }}
+                style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.1)', opacity: 1 }}
               />
             </div>
           </div>
@@ -192,7 +191,7 @@ export default function SmartHospitalPage() {
                   className="w-full rounded-[8px] mb-[15px]"
                   style={{ height: '200px', objectFit: 'cover' }}
                 />
-                <h3 style={{ color: siteConfig.colors.foreground }}>{t(app.key)}</h3>
+                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'bold', fontFamily: '黑体' }}>{t(app.key)}</h3>
               </div>
             ))}
           </div>

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { useI18n } from "@/lib/i18n-context"
+import { siteConfig } from "@/config/site-config"
 
 type Carousel = {
   id: number
@@ -24,28 +25,28 @@ export function CarouselSection() {
   const [slides, setSlides] = useState<Carousel[]>([])
   const [loading, setLoading] = useState(true)
   
-  // 从 API 获取轮播图数据
+  // 直接使用默认配置的轮播图数据
   useEffect(() => {
-    async function fetchCarousels() {
-      try {
-        const res = await fetch('/api/carousels')
-        const data = await res.json()
-        
-        // 确保返回的是数组
-        if (Array.isArray(data)) {
-          setSlides(data)
-        } else {
-          console.error('API returned non-array data:', data)
-          setSlides([])
-        }
-      } catch (error) {
-        console.error('Failed to fetch carousels:', error)
-        setSlides([])
-      } finally {
-        setLoading(false)
-      }
+    try {
+      // 使用默认配置
+      setSlides(siteConfig.carousel.map((item, index) => ({
+        id: index + 1,
+        title: item.title || '',
+        titleEn: item.titleEn || '',
+        subtitle: item.subtitle || '',
+        subtitleEn: item.subtitleEn || '',
+        image: item.image,
+        imageEn: item.imageEn || '',
+        link: '',
+        order: index + 1,
+        isActive: true
+      })))
+    } catch (error) {
+      console.error('Failed to use default carousels:', error)
+      setSlides([])
+    } finally {
+      setLoading(false)
     }
-    fetchCarousels()
   }, [])
   
   const totalSlides = slides.length

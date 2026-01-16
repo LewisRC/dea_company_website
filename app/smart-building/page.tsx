@@ -41,7 +41,7 @@ export default function SmartBuildingPage() {
                   width={600}
                   height={400}
                   className="rounded-lg shadow-lg w-full"
-                  style={{ opacity: 0.7 }}
+                  style={{ opacity: 1 }}
                 />
               </div>
             </div>
@@ -143,7 +143,7 @@ export default function SmartBuildingPage() {
                   height={200}
                   className="rounded-lg mb-4 w-full h-48 object-cover"
                 />
-                <h3 className="text-lg font-semibold">{t('smartBuilding.app1')}</h3>
+                <h3 style={{ color: '#333333', fontWeight: 'bold', fontFamily: '黑体' }}>{t('smartBuilding.app1')}</h3>
               </div>
               <div className="text-center">
                 <Image
@@ -153,7 +153,7 @@ export default function SmartBuildingPage() {
                   height={200}
                   className="rounded-lg mb-4 w-full h-48 object-cover"
                 />
-                <h3 className="text-lg font-semibold">{t('smartBuilding.app2')}</h3>
+                <h3 style={{ color: '#333333', fontWeight: 'bold', fontFamily: '黑体' }}>{t('smartBuilding.app2')}</h3>
               </div>
               <div className="text-center">
                 <Image
@@ -163,7 +163,7 @@ export default function SmartBuildingPage() {
                   height={200}
                   className="rounded-lg mb-4 w-full h-48 object-cover"
                 />
-                <h3 className="text-lg font-semibold">{t('smartBuilding.app3')}</h3>
+                <h3 style={{ color: '#333333', fontWeight: 'bold', fontFamily: '黑体' }}>{t('smartBuilding.app3')}</h3>
               </div>
               <div className="text-center">
                 <Image
@@ -173,17 +173,17 @@ export default function SmartBuildingPage() {
                   height={200}
                   className="rounded-lg mb-4 w-full h-48 object-cover"
                 />
-                <h3 className="text-lg font-semibold">{t('smartBuilding.app4')}</h3>
+                <h3 style={{ color: '#333333', fontWeight: 'bold', fontFamily: '黑体' }}>{t('smartBuilding.app4')}</h3>
               </div>
             </div>
           </div>
         </section>
 
         {/* Contact Section */}
-        <section className="py-16 bg-[#0066cc] text-white text-center">
+        <section className="py-16 text-center" style={{ backgroundColor: '#f5f5f5' }}>
           <div className="container mx-auto px-5">
-            <h2 className="text-white">{t('smartBuilding.contactTitle')}</h2>
-            <p className="text-lg mt-4">{t('smartBuilding.contactDesc')}</p>
+            <h2 className="mb-[20px]" style={{ color: '#333' }}>{t('smartBuilding.contactTitle')}</h2>
+            <p className="mb-[30px]" style={{ color: '#666' }}>{t('smartBuilding.contactDesc')}</p>
           </div>
         </section>
       </main>

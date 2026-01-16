@@ -74,8 +74,8 @@ export const digitalClockProducts: ProductItem[] = [
 
 // 排队叫号系统产品
 export const queuingProducts: ProductItem[] = [
-  { id: 55, name: "19寸智能一体机", image: "/images/queuing/product55.jpg", href: "/product/55" },
-  { id: 56, name: "32寸智能一体机", image: "/images/queuing/product56.jpg", href: "/product/56" },
+  { id: 55, name: "22寸智能一体机", image: "/images/queuing/product55.jpg", href: "/product/55" },
+  { id: 56, name: "55寸智能一体机", image: "/images/queuing/product56.jpg", href: "/product/56" },
   { id: 57, name: "22寸智能一体机（取号/触摸屏）", image: "/images/queuing/product57.jpg", href: "/product/57" },
   { id: 58, name: "22寸智能一体机（打印/触摸屏）", image: "/images/queuing/product58.jpg", href: "/product/58" },
   { id: 59, name: "10寸呼叫机（触摸屏）", image: "/images/queuing/product59.jpg", href: "/product/59" },
