@@ -76,7 +76,7 @@ export default function SmartBuildingPage() {
         </section>
 
         {/* Advantages Section */}
-        <section className="py-16 bg-blue-50">
+        <section className="py-16" style={{ backgroundColor: '#f9f9f9' }}>
           <div className="container mx-auto px-5">
             <h2 className="text-center">{t('smartBuilding.advantages')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
