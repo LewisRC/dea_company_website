@@ -224,34 +224,83 @@ const caseData: CaseItem[] = [
     category: "elderly",
     image: "/images/info-center/kangyang/case10.jpg"
   },
-  // 智慧建筑案例
+  // 智慧建筑案例 - 第一页显示（前6个案例）
   {
     id: 26,
-    title: "成都天府国际机场",
-    location: "四川·成都",
-    system: "信息发布",
+    title: "青白江国际贸易产业园",
+    location: "四川.成都青白江",
+    system: "智能照明",
     category: "building",
     image: "/images/info-center/jianzhu/case13.jpg"
   },
   {
     id: 27,
-    title: "成都环球中心",
-    location: "四川·成都",
-    system: "智能对讲系统",
+    title: "AI数字创智元",
+    location: "四川.成都金牛",
+    system: "智能照明",
     category: "building",
     image: "/images/info-center/jianzhu/case14.jpg"
   },
   {
     id: 28,
-    title: "成都银泰中心",
-    location: "四川·成都",
-    system: "信息发布",
+    title: "柳城县市民健康服务中心",
+    location: "广西.柳州柳城",
+    system: "智能照明",
+    category: "building",
+    image: "/images/info-center/jianzhu/case15.jpg"
+  },
+  {
+    id: 29,
+    title: "瀛洲园酒店",
+    location: "四川.凉山会理",
+    system: "智能照明、酒店客控",
+    category: "building",
+    image: "/images/info-center/jianzhu/case16.jpg"
+  },
+  {
+    id: 30,
+    title: "融通科创基地",
+    location: "四川.成都天府新区",
+    system: "能源管理",
+    category: "building",
+    image: "/images/info-center/jianzhu/case17.jpg"
+  },
+  {
+    id: 31,
+    title: "电子科技大学海南陵水分校",
+    location: "海南.陵水",
+    system: "智能照明、能源管理",
+    category: "building",
+    image: "/images/info-center/jianzhu/case18.jpg"
+  },
+  // 智慧建筑案例 - 第二页显示（剩余案例）
+  {
+    id: 32,
+    title: "吉泰锦江大厦",
+    location: "四川.成都高新",
+    system: "智能照明",
+    category: "building",
+    image: "/images/info-center/jianzhu/case13.jpg"
+  },
+  {
+    id: 33,
+    title: "五里梁创新科技孵化园",
+    location: "四川.绵阳",
+    system: "智能照明",
+    category: "building",
+    image: "/images/info-center/jianzhu/case14.jpg"
+  },
+  {
+    id: 34,
+    title: "三峡集团溪洛渡电站",
+    location: "云南.昭通",
+    system: "宿舍对讲",
     category: "building",
     image: "/images/info-center/jianzhu/case15.jpg"
   },
   // 智慧社区案例
   {
-    id: 29,
+    id: 35,
     title: "成都高新区天府二街社区",
     location: "四川·成都",
     system: "数字对讲",
@@ -259,7 +308,7 @@ const caseData: CaseItem[] = [
     image: "/images/info-center/shequ/case19.jpg"
   },
   {
-    id: 30,
+    id: 36,
     title: "成都市锦江区东光街道",
     location: "四川·成都",
     system: "智慧社区",
