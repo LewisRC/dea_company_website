@@ -453,6 +453,33 @@ export function Header() {
                   </li>
                 ))}
               </ul>
+              
+              {/* Mobile Language Selector */}
+              <div className="flex items-center justify-center py-6 border-t border-[#e0e0e0] mt-4">
+                <button 
+                  onClick={() => {
+                    setLanguage('zh')
+                    setIsMenuOpen(false)
+                  }}
+                  className={`px-4 py-2 text-base font-medium transition-colors duration-300 ${
+                    language === 'zh' ? 'text-[#0066cc]' : 'text-gray-600'
+                  }`}
+                >
+                  中文
+                </button>
+                <span className="text-gray-400 mx-2">|</span>
+                <button 
+                  onClick={() => {
+                    setLanguage('en')
+                    setIsMenuOpen(false)
+                  }}
+                  className={`px-4 py-2 text-base font-medium transition-colors duration-300 ${
+                    language === 'en' ? 'text-[#0066cc]' : 'text-gray-600'
+                  }`}
+                >
+                  EN
+                </button>
+              </div>
             </nav>
           </div>
         )}

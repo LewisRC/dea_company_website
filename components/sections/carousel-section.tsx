@@ -68,9 +68,32 @@ export function CarouselSection() {
         className="w-full bg-gray-100" 
         style={{ 
           marginTop: '78px',
-          height: '600px' // 固定高度
+          height: '150px' // 移动端默认高度，最小化上下空白
         }} 
-      />
+      >
+        <style jsx>{`
+          @media (min-width: 640px) {
+            div {
+              height: 230px !important;
+            }
+          }
+          @media (min-width: 768px) {
+            div {
+              height: 330px !important;
+            }
+          }
+          @media (min-width: 1024px) {
+            div {
+              height: 430px !important;
+            }
+          }
+          @media (min-width: 1280px) {
+            div {
+              height: 520px !important;
+            }
+          }
+        `}</style>
+      </div>
     )
   }
 
@@ -94,7 +117,7 @@ export function CarouselSection() {
       className="w-screen overflow-hidden"
       style={{
         marginTop: '78px',
-        backgroundColor: '#000',
+        backgroundColor: '#f0f0f0',
         marginLeft: 0,
         marginRight: 0,
         position: 'relative',
@@ -104,14 +127,36 @@ export function CarouselSection() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Carousel Container */}
+      {/* Carousel Container - 响应式高度 */}
       <div 
         className="w-full carousel-container" 
         style={{ 
-          height: '600px',
+          height: '150px', // 移动端默认高度，最小化上下空白
           position: 'relative',
         }}
       >
+        <style jsx>{`
+          @media (min-width: 640px) {
+            .carousel-container {
+              height: 230px !important;
+            }
+          }
+          @media (min-width: 768px) {
+            .carousel-container {
+              height: 330px !important;
+            }
+          }
+          @media (min-width: 1024px) {
+            .carousel-container {
+              height: 430px !important;
+            }
+          }
+          @media (min-width: 1280px) {
+            .carousel-container {
+              height: 520px !important;
+            }
+          }
+        `}</style>
         {slides.map((slide, index) => {
           // 根据语言选择图片：优先使用对应语言的图片，如果没有则使用默认图片
           const imageUrl = language === 'en' && slide.imageEn 
@@ -133,7 +178,7 @@ export function CarouselSection() {
                   src={imageUrl}
                   alt={language === 'en' && slide.titleEn ? slide.titleEn : slide.title}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   priority={index === 0}
                   sizes="100vw"
                 />
