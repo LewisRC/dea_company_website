@@ -69,6 +69,7 @@ const caseData: CaseItem[] = [
     category: "hospital",
     image: "/images/info-center/yiyuan/case6.jpg"
   },
+  // 智慧医院案例 - 第二页显示（用户要求显示更多案例）
   {
     id: 7,
     title: "宜宾市第二人民医院",
@@ -93,9 +94,57 @@ const caseData: CaseItem[] = [
     category: "hospital",
     image: "/images/info-center/yiyuan/case3.jpg"
   },
-  // 智慧康养案例
   {
     id: 10,
+    title: "成都市第一人民医院",
+    location: "四川·成都",
+    system: "智能数字对讲系统",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case4.jpg"
+  },
+  {
+    id: 11,
+    title: "四川省人民医院",
+    location: "四川·成都",
+    system: "ICU探视系统",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case5.jpg"
+  },
+  {
+    id: 12,
+    title: "四川大学华西医院",
+    location: "四川·成都",
+    system: "输液呼叫系统",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case6.jpg"
+  },
+  {
+    id: 13,
+    title: "成都中医药大学附属医院",
+    location: "四川·成都",
+    system: "排队叫号系统",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case1.jpg"
+  },
+  {
+    id: 14,
+    title: "绵阳市中心医院",
+    location: "四川·绵阳",
+    system: "数字时钟系统",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case2.jpg"
+  },
+  {
+    id: 15,
+    title: "德阳市人民医院",
+    location: "四川·德阳",
+    system: "信息发布系统",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case3.jpg"
+  },
+  // 智慧康养案例
+  {
+    id: 16,
     title: "成都泰康蜀园养老社区",
     location: "四川·成都",
     system: "智慧养老系统",
@@ -103,7 +152,7 @@ const caseData: CaseItem[] = [
     image: "/images/info-center/kangyang/case7.jpg"
   },
   {
-    id: 11,
+    id: 17,
     title: "四川寿星园养老服务中心",
     location: "四川·成都",
     system: "智能呼叫系统",
@@ -111,7 +160,7 @@ const caseData: CaseItem[] = [
     image: "/images/info-center/kangyang/case8.jpg"
   },
   {
-    id: 12,
+    id: 18,
     title: "成都万科幸福家养老中心",
     location: "四川·成都",
     system: "智慧康养系统",
@@ -119,7 +168,7 @@ const caseData: CaseItem[] = [
     image: "/images/info-center/kangyang/case9.jpg"
   },
   {
-    id: 13,
+    id: 19,
     title: "四川和熹会养老中心",
     location: "四川·成都",
     system: "智能数字对讲系统",
@@ -128,7 +177,7 @@ const caseData: CaseItem[] = [
   },
   // 智慧建筑案例
   {
-    id: 14,
+    id: 20,
     title: "成都天府国际机场",
     location: "四川·成都",
     system: "信息发布",
@@ -136,7 +185,7 @@ const caseData: CaseItem[] = [
     image: "/images/info-center/jianzhu/case13.jpg"
   },
   {
-    id: 15,
+    id: 21,
     title: "成都环球中心",
     location: "四川·成都",
     system: "智能对讲系统",
@@ -144,7 +193,7 @@ const caseData: CaseItem[] = [
     image: "/images/info-center/jianzhu/case14.jpg"
   },
   {
-    id: 16,
+    id: 22,
     title: "成都银泰中心",
     location: "四川·成都",
     system: "信息发布",
@@ -153,7 +202,7 @@ const caseData: CaseItem[] = [
   },
   // 智慧社区案例
   {
-    id: 17,
+    id: 23,
     title: "成都高新区天府二街社区",
     location: "四川·成都",
     system: "数字对讲",
@@ -161,7 +210,7 @@ const caseData: CaseItem[] = [
     image: "/images/info-center/shequ/case19.jpg"
   },
   {
-    id: 18,
+    id: 24,
     title: "成都市锦江区东光街道",
     location: "四川·成都",
     system: "智慧社区",
