@@ -381,9 +381,9 @@ export function Header() {
             </button>
           </div>
 
-          {/* Mobile Menu Button - 在1200px以下显示 */}
+          {/* Menu Button - 在所有屏幕尺寸显示 */}
           <button
-            className={`hidden max-[1200px]:block p-2.5 bg-transparent border-none outline-none cursor-pointer z-[1002] ${isMenuOpen ? 'active' : ''}`}
+            className={`block p-2.5 bg-transparent border-none outline-none cursor-pointer z-[1002] ${isMenuOpen ? 'active' : ''}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="菜单"
             style={{ position: 'relative' }}
