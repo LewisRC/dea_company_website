@@ -905,7 +905,7 @@ export function InfoCenterPageTemplate() {
           
           {/* 页面头部 */}
           <section className="cases-hero" style={{
-          background: "linear-gradient(135deg, #051b33 0%, #004a99 100%)",
+          background: "linear-gradient(90deg, #004a99 0%, #051b33 100%)",
           color: "white",
           padding: "80px 0",
           textAlign: "center",
