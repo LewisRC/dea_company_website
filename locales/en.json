@@ -40,6 +40,10 @@
     "smartLightingSystem": "Smart Lighting System",
     "smartLightingSystemDesc": "Professional intelligent lighting control solutions for various venues, including scene control, automatic adjustment, energy saving and environmental protection."
   },
+  "news": {
+    "title": "Success Cases",
+    "subtitle": "We provide professional intelligent solutions for various industries. Here are some of our successful cases."
+  },
   "solutions": {
     "smartHospital": "Smart Hospital",
     "smartHealthcare": "Smart Healthcare",

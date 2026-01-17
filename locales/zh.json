@@ -40,6 +40,10 @@
     "smartLightingSystem": "智能照明系统",
     "smartLightingSystemDesc": "为各类场所提供专业的智能照明控制方案，包括场景控制、自动调节、节能环保等功能。"
   },
+  "news": {
+    "title": "成功案例",
+    "subtitle": "我们为各行业提供专业的智能化解决方案，以下是我们的部分成功案例。"
+  },
   "solutions": {
     "smartHospital": "智慧医院",
     "smartHealthcare": "智慧康养",
