@@ -34,7 +34,11 @@ export default function ContactUsPage() {
           <div className="container">
             <div className="map-container mx-auto" style={{ width: '100%', height: '600px' }}>
               <iframe 
-                src={`https://api.map.baidu.com/marker?location=30.649596,104.136242&title=${encodeURIComponent(t('footer.companyName'))}&content=${encodeURIComponent(t('footer.salesCenter').split(/[:：]/)[1].trim())}&output=html&coord_type=gcj02&src=webapp.baidu.openAPIdemo&lang=${language === 'zh' ? 'zh-cn' : 'en'}`}
+                src={`https://api.map.baidu.com/marker?location=30.649596,104.136242&title=${encodeURIComponent(t('footer.companyName'))}&content=${encodeURIComponent((() => {
+                    const text = t('footer.salesCenter');
+                    const parts = text.split(/[:：]/);
+                    return parts.length > 1 ? parts[1].trim() : text;
+                  })())}&output=html&coord_type=gcj02&src=webapp.baidu.openAPIdemo&lang=${language === 'zh' ? 'zh-cn' : 'en'}`}
                 width="100%" 
                 height="100%" 
                 style={{ border: 0, borderRadius: '8px' }}
@@ -53,7 +57,7 @@ export default function ContactUsPage() {
                   {(() => {
                     const text = t('footer.productionCenter');
                     const colonIndex = text.indexOf(':') !== -1 ? text.indexOf(':') : text.indexOf('：');
-                    return text.substring(0, colonIndex);
+                    return colonIndex !== -1 ? text.substring(0, colonIndex) : text;
                   })()}
                 </h3>
                 <div className="contact-details">
@@ -64,7 +68,7 @@ export default function ContactUsPage() {
                         {(() => {
                           const text = t('footer.productionCenter');
                           const colonIndex = text.indexOf(':') !== -1 ? text.indexOf(':') : text.indexOf('：');
-                          return text.substring(colonIndex + 1).trim();
+                          return colonIndex !== -1 ? text.substring(colonIndex + 1).trim() : text;
                         })()}
                       </span>
                     </p>
@@ -77,7 +81,7 @@ export default function ContactUsPage() {
                   {(() => {
                     const text = t('footer.salesCenter');
                     const colonIndex = text.indexOf(':') !== -1 ? text.indexOf(':') : text.indexOf('：');
-                    return text.substring(0, colonIndex);
+                    return colonIndex !== -1 ? text.substring(0, colonIndex) : text;
                   })()}
                 </h3>
                 <div className="contact-details">
@@ -88,7 +92,7 @@ export default function ContactUsPage() {
                         {(() => {
                           const text = t('footer.salesCenter');
                           const colonIndex = text.indexOf(':') !== -1 ? text.indexOf(':') : text.indexOf('：');
-                          return text.substring(colonIndex + 1).trim();
+                          return colonIndex !== -1 ? text.substring(colonIndex + 1).trim() : text;
                         })()}
                       </span>
                     </p>
