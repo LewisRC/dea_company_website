@@ -546,7 +546,7 @@ export function InfoCenterPageTemplate() {
                 onClick={() => handleFilter("hospital")}
                 style={{
                   padding: "10px 20px",
-                  borderRadius: "25px",
+                  borderRadius: "8px",
                   border: "none",
                   backgroundColor: activeFilter === "hospital" ? siteConfig.colors.primary : "white",
                   color: activeFilter === "hospital" ? "white" : siteConfig.colors.foreground,
@@ -563,7 +563,7 @@ export function InfoCenterPageTemplate() {
                 onClick={() => handleFilter("elderly")}
                 style={{
                   padding: "10px 20px",
-                  borderRadius: "25px",
+                  borderRadius: "8px",
                   border: "none",
                   backgroundColor: activeFilter === "elderly" ? siteConfig.colors.primary : "white",
                   color: activeFilter === "elderly" ? "white" : siteConfig.colors.foreground,
@@ -580,7 +580,7 @@ export function InfoCenterPageTemplate() {
                 onClick={() => handleFilter("building")}
                 style={{
                   padding: "10px 20px",
-                  borderRadius: "25px",
+                  borderRadius: "8px",
                   border: "none",
                   backgroundColor: activeFilter === "building" ? siteConfig.colors.primary : "white",
                   color: activeFilter === "building" ? "white" : siteConfig.colors.foreground,
@@ -597,7 +597,7 @@ export function InfoCenterPageTemplate() {
                 onClick={() => handleFilter("community")}
                 style={{
                   padding: "10px 20px",
-                  borderRadius: "25px",
+                  borderRadius: "8px",
                   border: "none",
                   backgroundColor: activeFilter === "community" ? siteConfig.colors.primary : "white",
                   color: activeFilter === "community" ? "white" : siteConfig.colors.foreground,
