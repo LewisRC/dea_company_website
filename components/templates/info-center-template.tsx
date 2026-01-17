@@ -194,9 +194,11 @@ export function InfoCenterPageTemplate() {
   const getCurrentPageCases = () => {
     const cases = getFilteredCases()
     const currentPage = currentPages[activeFilter] || 1
-    const pageSize = currentPage === 1 ? 6 : cases.length - 6
-    const startIndex = currentPage === 1 ? 0 : 6
-    return cases.slice(startIndex, startIndex + pageSize)
+    if (currentPage === 1) {
+      return cases.slice(0, 6)
+    } else {
+      return cases.slice(6)
+    }
   }
   
   // 筛选案例
@@ -220,6 +222,40 @@ export function InfoCenterPageTemplate() {
       <div className="relative min-h-screen">
         <Header />
         <main className="w-full">
+          {/* 自定义样式 */}
+          <style jsx global>{`
+            /* 案例卡片悬停效果 */
+            .case-card:hover {
+              transform: translateY(-15px) scale(1.02);
+              box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            }
+            
+            .case-card::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 6px;
+              background: linear-gradient(90deg, #0066cc, #00a8e8);
+              opacity: 0;
+              transition: opacity 0.3s ease;
+            }
+            
+            .case-card:hover::before {
+              opacity: 1;
+            }
+            
+            .case-card:hover .case-image img {
+              transform: scale(1.15) rotate(2deg);
+            }
+            
+            .case-card:hover .case-system {
+              color: #0066cc !important;
+              font-weight: 600 !important;
+            }
+          `}</style>
+          
           {/* 页面头部 */}
           <section className="cases-hero" style={{
           background: "linear-gradient(135deg, #051b33 0%, #004a99 100%)",
