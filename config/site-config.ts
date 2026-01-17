@@ -213,7 +213,6 @@ export function getNavigationConfig(lang: Language = 'zh'): MenuItem[] {
       },
       {
         label: "Products",
-        href: "/queuing-system",
         children: [
           {
             items: [
@@ -287,7 +286,6 @@ export function getNavigationConfig(lang: Language = 'zh'): MenuItem[] {
     },
     {
       label: "产品中心",
-      href: "/queuing-system",
       children: [
         {
           items: [

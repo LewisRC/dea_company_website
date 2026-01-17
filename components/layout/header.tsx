@@ -415,10 +415,18 @@ export function Header() {
                     ) : (
                       <>
                         <button
-                          className="w-full py-4 px-0 text-black bg-transparent border-none cursor-pointer text-center"
+                          className="w-full py-4 px-0 text-black bg-transparent border-none cursor-pointer text-center flex items-center justify-center"
                           onClick={() => toggleMobileMenu(item.label)}
                         >
-                          {item.label}
+                          <span>{item.label}</span>
+                          <svg 
+                            className="ml-2 w-4 h-4 transition-transform duration-300"
+                            style={{ transform: openMobileMenu === item.label ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                            fill="currentColor" 
+                            viewBox="0 0 20 20"
+                          >
+                            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+                          </svg>
                         </button>
                         {openMobileMenu === item.label && item.children && (
                           <div className="block w-full min-w-full p-0 m-0 bg-white border border-[#e0e0e0] shadow-sm">
