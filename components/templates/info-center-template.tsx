@@ -728,21 +728,22 @@ export function InfoCenterPageTemplate() {
                   {getFilteredCases().length > 6 && (
                     <div style={{
                       textAlign: "center",
-                      margin: "40px 0",
-                      paddingBottom: "40px",
-                      borderBottom: "3px solid #004a99"
+                      margin: "40px 0"
                     }}>
                       <button
                         onClick={() => handlePageChange(1)}
                         style={{
                           background: "none",
                           border: "none",
-                          color: "#0066cc",
+                          color: "black",
                           cursor: "pointer",
                           fontSize: "0.9rem",
-                          textDecoration: currentPages[activeFilter] === 1 ? "underline" : "none",
-                          margin: "0 5px"
+                          textDecoration: "none",
+                          margin: "0 5px",
+                          transition: "color 0.3s ease"
                         }}
+                        onMouseEnter={(e) => e.currentTarget.style.color = "#0066cc"}
+                        onMouseLeave={(e) => e.currentTarget.style.color = "black"}
                       >
                         上一页&lt;
                       </button>
@@ -757,12 +758,15 @@ export function InfoCenterPageTemplate() {
                         style={{
                           background: "none",
                           border: "none",
-                          color: "#0066cc",
+                          color: "black",
                           cursor: "pointer",
                           fontSize: "0.9rem",
-                          textDecoration: currentPages[activeFilter] === 2 ? "underline" : "none",
-                          margin: "0 5px"
+                          textDecoration: "none",
+                          margin: "0 5px",
+                          transition: "color 0.3s ease"
                         }}
+                        onMouseEnter={(e) => e.currentTarget.style.color = "#0066cc"}
+                        onMouseLeave={(e) => e.currentTarget.style.color = "black"}
                       >
                         下一页&gt;
                       </button>
