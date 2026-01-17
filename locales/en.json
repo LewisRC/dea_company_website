@@ -6,7 +6,9 @@
     "backToTop": "Back to Top",
     "viewDetails": "View Details",
     "noResults": "No results found",
-    "searchPlaceholder": "Enter keywords to search products..."
+    "searchPlaceholder": "Enter keywords to search products...",
+    "previousPage": "Previous Page",
+    "nextPage": "Next Page"
   },
   "nav": {
     "home": "Home",

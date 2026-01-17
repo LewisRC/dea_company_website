@@ -515,7 +515,7 @@ export function InfoCenterPageTemplate() {
               color: "white",
               marginBottom: "20px"
             }}>
-              经典成功案例
+              {t("news.title")}
             </h1>
             <p style={{
               fontSize: "1.25rem",
@@ -523,7 +523,7 @@ export function InfoCenterPageTemplate() {
               maxWidth: "800px",
               margin: "0 auto"
             }}>
-              探索德视安科技在智慧医院、智慧康养、智慧建筑、智慧社区等多领域的标杆项目，从医疗养老到商业住宅，全方位见证我们的专业实力
+              {t("news.subtitle")}
             </p>
           </div>
         </section>
@@ -557,7 +557,7 @@ export function InfoCenterPageTemplate() {
                   transition: "all 0.3s ease"
                 }}
               >
-                智慧医院
+                {t("solutions.smartHospital")}
               </button>
               <button
                 onClick={() => handleFilter("elderly")}
@@ -574,7 +574,7 @@ export function InfoCenterPageTemplate() {
                   transition: "all 0.3s ease"
                 }}
               >
-                智慧康养
+                {t("solutions.smartHealthcare")}
               </button>
               <button
                 onClick={() => handleFilter("building")}
@@ -591,7 +591,7 @@ export function InfoCenterPageTemplate() {
                   transition: "all 0.3s ease"
                 }}
               >
-                智慧建筑
+                {t("solutions.smartBuilding")}
               </button>
               <button
                 onClick={() => handleFilter("community")}
@@ -608,7 +608,7 @@ export function InfoCenterPageTemplate() {
                   transition: "all 0.3s ease"
                 }}
               >
-                智慧社区
+                {t("solutions.smartCommunity")}
               </button>
             </div>
 
@@ -745,7 +745,7 @@ export function InfoCenterPageTemplate() {
                         onMouseEnter={(e) => e.currentTarget.style.color = "#0066cc"}
                         onMouseLeave={(e) => e.currentTarget.style.color = "black"}
                       >
-                        上一页&lt;
+                        {t("common.previousPage")}&lt;
                       </button>
                       <span style={{
                         fontSize: "0.9rem",
@@ -768,7 +768,7 @@ export function InfoCenterPageTemplate() {
                         onMouseEnter={(e) => e.currentTarget.style.color = "#0066cc"}
                         onMouseLeave={(e) => e.currentTarget.style.color = "black"}
                       >
-                        下一页&gt;
+                        {t("common.nextPage")}&gt;
                       </button>
                     </div>
                   )}
@@ -785,7 +785,7 @@ export function InfoCenterPageTemplate() {
                     fontSize: "1.2rem",
                     color: siteConfig.colors.textSecondary
                   }}>
-                    没有找到匹配的案例
+                    {t("common.noResults")}
                   </p>
                 </div>
               )}

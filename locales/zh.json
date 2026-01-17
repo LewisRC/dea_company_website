@@ -6,7 +6,9 @@
     "backToTop": "返回顶部",
     "viewDetails": "查看详情",
     "noResults": "没有找到结果",
-    "searchPlaceholder": "输入关键词搜索产品..."
+    "searchPlaceholder": "输入关键词搜索产品...",
+    "previousPage": "上一页",
+    "nextPage": "下一页"
   },
   "nav": {
     "home": "首页",
