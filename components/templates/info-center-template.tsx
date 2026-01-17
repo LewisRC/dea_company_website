@@ -69,76 +69,76 @@ const caseData: CaseItem[] = [
     category: "hospital",
     image: "/images/info-center/yiyuan/case6.jpg"
   },
-  // 智慧医院案例 - 第二页显示（用户要求显示更多案例）
+  // 智慧医院案例 - 第二页显示（按照用户提供的表格内容更新）
   {
     id: 7,
-    title: "宜宾市第二人民医院",
-    location: "四川·宜宾",
-    system: "智慧病房系统",
+    title: "尼玛县人民医院",
+    location: "西藏.那曲尼玛",
+    system: "医护对讲",
     category: "hospital",
     image: "/images/info-center/yiyuan/case1.jpg"
   },
   {
     id: 8,
-    title: "达州市中心医院",
-    location: "四川·达州",
-    system: "智能数字对讲系统",
+    title: "长沙盈康肿瘤医院",
+    location: "湖南.长沙",
+    system: "医护对讲",
     category: "hospital",
     image: "/images/info-center/yiyuan/case2.jpg"
   },
   {
     id: 9,
-    title: "攀枝花市中心医院",
-    location: "四川·攀枝花",
-    system: "护理管理系统",
+    title: "天山王方舱医院",
+    location: "四川.凉山西昌",
+    system: "医护对讲",
     category: "hospital",
     image: "/images/info-center/yiyuan/case3.jpg"
   },
   {
     id: 10,
-    title: "成都市第一人民医院",
-    location: "四川·成都",
-    system: "智能数字对讲系统",
+    title: "芒康县精神病福利院",
+    location: "西藏.昌都芒康",
+    system: "医护对讲",
     category: "hospital",
     image: "/images/info-center/yiyuan/case4.jpg"
   },
   {
     id: 11,
-    title: "四川省人民医院",
-    location: "四川·成都",
-    system: "ICU探视系统",
+    title: "卡孜乡卫生院",
+    location: "西藏.日客则南木林",
+    system: "医护对讲",
     category: "hospital",
     image: "/images/info-center/yiyuan/case5.jpg"
   },
   {
     id: 12,
-    title: "四川大学华西医院",
-    location: "四川·成都",
-    system: "输液呼叫系统",
+    title: "昌都病房医院",
+    location: "西藏.昌都",
+    system: "医护对讲",
     category: "hospital",
     image: "/images/info-center/yiyuan/case6.jpg"
   },
   {
     id: 13,
-    title: "成都中医药大学附属医院",
-    location: "四川·成都",
-    system: "排队叫号系统",
+    title: "中江县中医院",
+    location: "四川.德阳中江",
+    system: "医护对讲",
     category: "hospital",
     image: "/images/info-center/yiyuan/case1.jpg"
   },
   {
     id: 14,
-    title: "绵阳市中心医院",
-    location: "四川·绵阳",
-    system: "数字时钟系统",
+    title: "雅安中医院",
+    location: "四川.雅安",
+    system: "探视对讲",
     category: "hospital",
     image: "/images/info-center/yiyuan/case2.jpg"
   },
   {
     id: 15,
-    title: "德阳市人民医院",
-    location: "四川·德阳",
-    system: "信息发布系统",
+    title: "乐至县中医院",
+    location: "四川.资阳乐至",
+    system: "医护对讲",
     category: "hospital",
     image: "/images/info-center/yiyuan/case3.jpg"
   },
