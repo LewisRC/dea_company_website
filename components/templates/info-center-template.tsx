@@ -744,7 +744,7 @@ export function InfoCenterPageTemplate() {
                           margin: "0 5px"
                         }}
                       >
-                        上一页<
+                        上一页&lt;
                       </button>
                       <span style={{
                         fontSize: "0.9rem",
@@ -764,7 +764,7 @@ export function InfoCenterPageTemplate() {
                           margin: "0 5px"
                         }}
                       >
-                        下一页>
+                        下一页&gt;
                       </button>
                     </div>
                   )}
