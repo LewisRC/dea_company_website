@@ -13,8 +13,8 @@ export function SolutionsSection() {
 
   return (
     <section 
-      className="py-10 md:py-20"
-      style={{ backgroundColor: '#f9f9f9' }}
+      className="pt-0 pb-10 md:py-20"
+      style={{ backgroundColor: '#f9f9f9', marginTop: 0, paddingTop: 0 }}
     >
       <div className="container mx-auto px-5">
         <h2 className="text-center mb-15 relative text-[#333333] text-[32px] font-semibold">

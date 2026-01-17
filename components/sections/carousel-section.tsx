@@ -113,15 +113,13 @@ export function CarouselSection() {
   return (
     <section 
       id="hero-banner"
-      className="w-screen overflow-hidden"
+      className="overflow-hidden"
       style={{
         backgroundColor: '#ffffff',
-        marginLeft: 0,
-        marginRight: 0,
-        marginBottom: 0,
+        margin: '0 calc(-50vw + 50%)',
+        padding: 0,
+        width: '100vw',
         position: 'relative',
-        left: 0,
-        right: 0,
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
