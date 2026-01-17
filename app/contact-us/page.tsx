@@ -12,7 +12,7 @@ export default function ContactUsPage() {
   const { t, language } = useI18n()
   
   useEffect(() => {
-    document.title = t('contactUs.title') + " - 德视安"
+    document.title = t('contactUs.title') + " - " + t('footer.companyName')
   }, [t])
   
   return (

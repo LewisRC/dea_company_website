@@ -134,7 +134,7 @@ export default function SmartBuildingPage() {
                   className="rounded-[8px] mb-[15px] w-full"
                   style={{ height: '200px', objectFit: 'cover' }}
                 />
-                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'normal', fontFamily: '黑体' }}>{t('smartBuilding.app1')}</h3>
+                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'normal' }}>{t('smartBuilding.app1')}</h3>
               </div>
               <div className="text-center">
                 <Image
@@ -145,7 +145,7 @@ export default function SmartBuildingPage() {
                   className="rounded-[8px] mb-[15px] w-full"
                   style={{ height: '200px', objectFit: 'cover' }}
                 />
-                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'normal', fontFamily: '黑体' }}>{t('smartBuilding.app2')}</h3>
+                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'normal' }}>{t('smartBuilding.app2')}</h3>
               </div>
               <div className="text-center">
                 <Image
@@ -156,7 +156,7 @@ export default function SmartBuildingPage() {
                   className="rounded-[8px] mb-[15px] w-full"
                   style={{ height: '200px', objectFit: 'cover' }}
                 />
-                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'normal', fontFamily: '黑体' }}>{t('smartBuilding.app3')}</h3>
+                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'normal' }}>{t('smartBuilding.app3')}</h3>
               </div>
               <div className="text-center">
                 <Image
@@ -167,7 +167,7 @@ export default function SmartBuildingPage() {
                   className="rounded-[8px] mb-[15px] w-full"
                   style={{ height: '200px', objectFit: 'cover' }}
                 />
-                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'normal', fontFamily: '黑体' }}>{t('smartBuilding.app4')}</h3>
+                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'normal' }}>{t('smartBuilding.app4')}</h3>
               </div>
             </div>
           </div>

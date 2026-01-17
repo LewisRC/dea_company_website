@@ -154,7 +154,7 @@ export default function SmartCommunityPage() {
                   className="rounded-[8px] mb-[15px] w-full"
                   style={{ height: '200px', objectFit: 'cover' }}
                 />
-                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'normal', fontFamily: '黑体' }}>{t('smartCommunity.app1')}</h3>
+                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'normal' }}>{t('smartCommunity.app1')}</h3>
               </div>
               <div className="text-center">
                 <Image
@@ -165,7 +165,7 @@ export default function SmartCommunityPage() {
                   className="rounded-[8px] mb-[15px] w-full"
                   style={{ height: '200px', objectFit: 'cover' }}
                 />
-                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'normal', fontFamily: '黑体' }}>{t('smartCommunity.app2')}</h3>
+                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'normal' }}>{t('smartCommunity.app2')}</h3>
               </div>
               <div className="text-center">
                 <Image
@@ -176,7 +176,7 @@ export default function SmartCommunityPage() {
                   className="rounded-[8px] mb-[15px] w-full"
                   style={{ height: '200px', objectFit: 'cover' }}
                 />
-                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'normal', fontFamily: '黑体' }}>{t('smartCommunity.app3')}</h3>
+                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'normal' }}>{t('smartCommunity.app3')}</h3>
               </div>
               <div className="text-center">
                 <Image
@@ -187,7 +187,7 @@ export default function SmartCommunityPage() {
                   className="rounded-[8px] mb-[15px] w-full"
                   style={{ height: '200px', objectFit: 'cover' }}
                 />
-                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'normal', fontFamily: '黑体' }}>{t('smartCommunity.app4')}</h3>
+                <h3 style={{ color: siteConfig.colors.foreground, fontWeight: 'normal' }}>{t('smartCommunity.app4')}</h3>
               </div>
             </div>
           </div>

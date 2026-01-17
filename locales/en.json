@@ -141,7 +141,13 @@
     "honor1": "National High-tech Enterprise",
     "honor2": "ISO9001 Quality Management System Certification",
     "honor3": "Multiple National Patent Technologies",
-    "honor4": "Excellent Industry Supplier"
+    "honor4": "Excellent Industry Supplier",
+    "ourVision": "Our Vision",
+    "vision1": "To become an industry leader with advanced technology and first-class service, committed to providing excellent products and services to customers, and promoting the development and innovation of the intelligent field.",
+    "vision2": "We always adhere to technological innovation, customer demand-oriented, continuously improving product performance and service quality, and contributing to the construction of a more intelligent, convenient, and secure living environment.",
+    "coreAdvantagesDesc": "Our core competitiveness stems from the perfect combination of technological innovation and professional service",
+    "honorsDesc": "Our efforts and achievements have been recognized by the industry",
+    "bannerSubtitle": "Committed to providing excellent products and services to customers"
   },
   "contactUs": {
     "title": "Contact Us",
@@ -208,7 +214,9 @@
     "case3Badge": "Smart Medical",
     "case3Tag1": "Smart Medical",
     "case3Tag2": "Medical Intercom",
-    "case3Tag3": "Hospital Informatization"
+    "case3Tag3": "Hospital Informatization",
+    "loading": "Loading...",
+    "noCases": "No cases available"
   },
   "talentPhilosophy": {
     "title": "Talent Philosophy",

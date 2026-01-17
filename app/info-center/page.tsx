@@ -29,7 +29,7 @@ export default function InfoCenterPage() {
   const [loading, setLoading] = useState(true)
   
   useEffect(() => {
-    document.title = t('news.title') + " - 德视安"
+    document.title = t('news.title') + " - " + t('footer.companyName')
   }, [t])
   
   // 从 API 获取案例数据
@@ -81,9 +81,9 @@ export default function InfoCenterPage() {
       <main className="py-[80px]" style={{ backgroundColor: siteConfig.colors.backgroundLight }}>
         <div className="container">
           {loading ? (
-            <div className="text-center text-gray-500">加载中...</div>
+            <div className="text-center text-gray-500">{t('news.loading')}</div>
           ) : cases.length === 0 ? (
-            <div className="text-center text-gray-500">暂无案例</div>
+            <div className="text-center text-gray-500">{t('news.noCases')}</div>
           ) : (
             <div className="case-grid grid gap-[30px] grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-[1400px] mx-auto">
               {cases.map((caseItem) => {

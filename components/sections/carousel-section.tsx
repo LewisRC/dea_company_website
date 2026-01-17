@@ -159,7 +159,7 @@ export function CarouselSection() {
                 ? 'bg-white' 
                 : 'bg-white/50 hover:bg-white/80'
             }`}
-            aria-label={`转到第 ${index + 1} 张`}
+            aria-label={language === 'zh' ? `转到第 ${index + 1} 张` : `Go to slide ${index + 1}`}
           />
         ))}
       </div>

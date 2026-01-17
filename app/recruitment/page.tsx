@@ -13,7 +13,7 @@ export default function RecruitmentPage() {
   const { t, language } = useI18n()
   
   useEffect(() => {
-    document.title = t('recruitment.positions') + " - 德视安"
+    document.title = t('recruitment.positions') + " - " + t('footer.companyName')
   }, [t])
   
   return (
