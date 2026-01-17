@@ -65,9 +65,8 @@ export function CarouselSection() {
   if (loading || totalSlides === 0) {
     return (
       <div 
-        className="w-full bg-gray-100" 
+        className="w-full bg-white" 
         style={{ 
-          marginTop: '78px',
           height: '150px' // 移动端默认高度，最小化上下空白
         }} 
       >
@@ -116,10 +115,10 @@ export function CarouselSection() {
       id="hero-banner"
       className="w-screen overflow-hidden"
       style={{
-        marginTop: '78px',
-        backgroundColor: '#f0f0f0',
+        backgroundColor: '#ffffff',
         marginLeft: 0,
         marginRight: 0,
+        marginBottom: 0,
         position: 'relative',
         left: 0,
         right: 0,

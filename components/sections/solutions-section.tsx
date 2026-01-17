@@ -13,7 +13,7 @@ export function SolutionsSection() {
 
   return (
     <section 
-      className="py-20"
+      className="py-10 md:py-20"
       style={{ backgroundColor: '#f9f9f9' }}
     >
       <div className="container mx-auto px-5">
