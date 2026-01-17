@@ -519,7 +519,7 @@ export function InfoCenterPageTemplate() {
                             marginBottom: "8px",
                             fontSize: "0.8rem"
                           }}>{caseItem.location}</p>
-                          <p style={{ 
+                          <p className="case-system" style={{ 
                             color: "#555",
                             opacity: 1,
                             fontSize: "0.8rem"
