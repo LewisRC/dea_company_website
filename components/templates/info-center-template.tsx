@@ -298,23 +298,120 @@ const caseData: CaseItem[] = [
     category: "building",
     image: "/images/info-center/jianzhu/case15.jpg"
   },
-  // 智慧社区案例
+  // 智慧社区案例 - 第一页显示（前6个案例）
   {
     id: 35,
-    title: "成都高新区天府二街社区",
-    location: "四川·成都",
-    system: "数字对讲",
+    title: "南山两河茗景",
+    location: "四川.成都金牛",
+    system: "智能家居",
     category: "community",
     image: "/images/info-center/shequ/case19.jpg"
   },
   {
     id: 36,
-    title: "成都市锦江区东光街道",
-    location: "四川·成都",
-    system: "智慧社区",
+    title: "嘉和天悦尚嶺",
+    location: "四川.南充西充",
+    system: "楼宇对讲",
     category: "community",
     image: "/images/info-center/shequ/case20.jpg"
-  }
+  },
+  {
+    id: 37,
+    title: "中江御景湾",
+    location: "四川.德阳中江",
+    system: "楼宇对讲",
+    category: "community",
+    image: "/images/info-center/shequ/case21.jpg"
+  },
+  {
+    id: 38,
+    title: "成铁沙河澜庭",
+    location: "四川.成都成华",
+    system: "楼宇对讲",
+    category: "community",
+    image: "/images/info-center/shequ/case22.jpg"
+  },
+  {
+    id: 39,
+    title: "城投.艺墅语湖",
+    location: "四川.成都龙泉",
+    system: "楼宇对讲",
+    category: "community",
+    image: "/images/info-center/shequ/case23.jpg"
+  },
+  {
+    id: 40,
+    title: "人居.九林语凌云阁",
+    location: "四川.成都锦江",
+    system: "楼宇对讲、网络、监控门禁",
+    category: "community",
+    image: "/images/info-center/shequ/case24.jpg"
+  },
+  // 智慧社区案例 - 第二页显示（剩余案例）
+  {
+    id: 41,
+    title: "南山凌峯",
+    location: "四川.成都武侯",
+    system: "智能家居、楼宇对讲、网络、监控门禁",
+    category: "community",
+    image: "/images/info-center/shequ/case19.jpg"
+  },
+  {
+    id: 42,
+    title: "南山御峯",
+    location: "四川.成都武侯",
+    system: "楼宇对讲、网络、监控门禁",
+    category: "community",
+    image: "/images/info-center/shequ/case20.jpg"
+  },
+  {
+    id: 43,
+    title: "雅安上城峰景",
+    location: "四川.雅安",
+    system: "楼宇对讲",
+    category: "community",
+    image: "/images/info-center/shequ/case21.jpg"
+  },
+  {
+    id: 44,
+    title: "交发.逸庭",
+    location: "四川.绵阳",
+    system: "楼宇对讲",
+    category: "community",
+    image: "/images/info-center/shequ/case22.jpg"
+  },
+  {
+    id: 45,
+    title: "钰景湾",
+    location: "四川.成都都江堰",
+    system: "楼宇对讲、网络、监控门禁",
+    category: "community",
+    image: "/images/info-center/shequ/case23.jpg"
+  },
+  {
+    id: 46,
+    title: "水磨江山",
+    location: "四川.阿坝汶川",
+    system: "楼宇对讲",
+    category: "community",
+    image: "/images/info-center/shequ/case24.jpg"
+  },
+  {
+    id: 47,
+    title: "云门集都",
+    location: "四川.成都新都",
+    system: "楼宇对讲、网络、监控门禁",
+    category: "community",
+    image: "/images/info-center/shequ/case19.jpg"
+  },
+  {
+    id: 48,
+    title: "蓝兴紫悦峰境",
+    location: "四川.绵阳江油",
+    system: "楼宇对讲",
+    category: "community",
+    image: "/images/info-center/shequ/case20.jpg"
+  },
 ]
 
 export function InfoCenterPageTemplate() {
