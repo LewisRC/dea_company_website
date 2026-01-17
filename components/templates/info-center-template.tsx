@@ -173,7 +173,13 @@ const caseData: CaseItem[] = [
 export function InfoCenterPageTemplate() {
   const { t, language } = useI18n()
   const [activeFilter, setActiveFilter] = useState<string>("hospital")
-  const [currentPage, setCurrentPage] = useState<number>(1)
+  // 为每个标签单独跟踪分页状态
+  const [currentPages, setCurrentPages] = useState<Record<string, number>>({
+    hospital: 1,
+    elderly: 1,
+    building: 1,
+    community: 1
+  })
   
   // 根据当前筛选条件获取案例
   const getFilteredCases = () => {
@@ -187,6 +193,7 @@ export function InfoCenterPageTemplate() {
   // 获取当前页面的案例
   const getCurrentPageCases = () => {
     const cases = getFilteredCases()
+    const currentPage = currentPages[activeFilter] || 1
     const pageSize = currentPage === 1 ? 6 : cases.length - 6
     const startIndex = currentPage === 1 ? 0 : 6
     return cases.slice(startIndex, startIndex + pageSize)
@@ -195,12 +202,18 @@ export function InfoCenterPageTemplate() {
   // 筛选案例
   const handleFilter = (category: string) => {
     setActiveFilter(category)
-    setCurrentPage(1) // 切换分类时重置到第一页
+    // 确保切换分类时，如果该分类没有分页状态，则设置为1
+    if (!currentPages[category]) {
+      setCurrentPages(prev => ({ ...prev, [category]: 1 }))
+    }
   }
   
   // 切换页面
   const handlePageChange = (page: number) => {
-    setCurrentPage(page)
+    setCurrentPages(prev => ({
+      ...prev,
+      [activeFilter]: page
+    }))
   }
 
   return (
@@ -327,7 +340,7 @@ export function InfoCenterPageTemplate() {
               {getFilteredCases().length > 0 ? (
                 <>
                   {/* 第一页样式 - 带图片和悬停效果 */}
-                  {currentPage === 1 && (
+                  {currentPages[activeFilter] === 1 && (
                     <div style={{
                       display: "grid",
                       gridTemplateColumns: "repeat(3, 1fr)",
@@ -384,7 +397,7 @@ export function InfoCenterPageTemplate() {
                   )}
                   
                   {/* 第二页样式 - 保持现有样式 */}
-                  {currentPage === 2 && (
+                  {currentPages[activeFilter] === 2 && (
                     <div style={{
                       display: "grid",
                       gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
@@ -448,8 +461,8 @@ export function InfoCenterPageTemplate() {
                           margin: "0 10px",
                           borderRadius: "8px",
                           border: "none",
-                          backgroundColor: currentPage === 1 ? "#0066cc" : "white",
-                          color: currentPage === 1 ? "white" : "#0066cc",
+                          backgroundColor: currentPages[activeFilter] === 1 ? "#0066cc" : "white",
+                          color: currentPages[activeFilter] === 1 ? "white" : "#0066cc",
                           cursor: "pointer",
                           transition: "all 0.3s ease"
                         }}
@@ -463,8 +476,8 @@ export function InfoCenterPageTemplate() {
                           margin: "0 10px",
                           borderRadius: "8px",
                           border: "none",
-                          backgroundColor: currentPage === 2 ? "#0066cc" : "white",
-                          color: currentPage === 2 ? "white" : "#0066cc",
+                          backgroundColor: currentPages[activeFilter] === 2 ? "#0066cc" : "white",
+                          color: currentPages[activeFilter] === 2 ? "white" : "#0066cc",
                           cursor: "pointer",
                           transition: "all 0.3s ease"
                         }}
