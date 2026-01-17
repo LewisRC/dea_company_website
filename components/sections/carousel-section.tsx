@@ -67,28 +67,28 @@ export function CarouselSection() {
       <div 
         className="w-full bg-white" 
         style={{ 
-          height: '150px' // 移动端默认高度，最小化上下空白
+          height: '250px' // 增加移动端高度，确保图片显示完整
         }} 
       >
         <style jsx>{`
           @media (min-width: 640px) {
             div {
-              height: 230px !important;
+              height: 350px !important;
             }
           }
           @media (min-width: 768px) {
             div {
-              height: 330px !important;
+              height: 450px !important;
             }
           }
           @media (min-width: 1024px) {
             div {
-              height: 430px !important;
+              height: 550px !important;
             }
           }
           @media (min-width: 1280px) {
             div {
-              height: 520px !important;
+              height: 650px !important;
             }
           }
         `}</style>
@@ -126,31 +126,33 @@ export function CarouselSection() {
     >
       {/* Carousel Container - 响应式高度 */}
       <div 
-        className="w-full carousel-container" 
+        className="w-full carousel-container overflow-hidden" 
         style={{ 
-          height: '150px', // 移动端默认高度，最小化上下空白
+          height: '250px', // 增加移动端高度，确保图片显示完整
           position: 'relative',
+          padding: 0,
+          margin: 0
         }}
       >
         <style jsx>{`
           @media (min-width: 640px) {
             .carousel-container {
-              height: 230px !important;
+              height: 350px !important;
             }
           }
           @media (min-width: 768px) {
             .carousel-container {
-              height: 330px !important;
+              height: 450px !important;
             }
           }
           @media (min-width: 1024px) {
             .carousel-container {
-              height: 430px !important;
+              height: 550px !important;
             }
           }
           @media (min-width: 1280px) {
             .carousel-container {
-              height: 520px !important;
+              height: 650px !important;
             }
           }
         `}</style>
