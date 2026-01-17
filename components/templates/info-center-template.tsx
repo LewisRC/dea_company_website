@@ -142,42 +142,91 @@ const caseData: CaseItem[] = [
     category: "hospital",
     image: "/images/info-center/yiyuan/case3.jpg"
   },
-  // 智慧康养案例
+  // 智慧康养案例 - 第一页显示（前6个案例）
   {
     id: 16,
-    title: "成都泰康蜀园养老社区",
-    location: "四川·成都",
-    system: "智慧养老系统",
+    title: "眉山东养护中心",
+    location: "四川.眉山",
+    system: "数字康养对讲",
     category: "elderly",
     image: "/images/info-center/kangyang/case7.jpg"
   },
   {
     id: 17,
-    title: "四川寿星园养老服务中心",
-    location: "四川·成都",
-    system: "智能呼叫系统",
+    title: "梓潼县石牛区域养老服务中心",
+    location: "四川.绵阳梓潼",
+    system: "二线康养对讲",
     category: "elderly",
     image: "/images/info-center/kangyang/case8.jpg"
   },
   {
     id: 18,
-    title: "成都万科幸福家养老中心",
-    location: "四川·成都",
-    system: "智慧康养系统",
+    title: "万兴颐养园",
+    location: "四川.成都武侯",
+    system: "数字康养对讲",
     category: "elderly",
     image: "/images/info-center/kangyang/case9.jpg"
   },
   {
     id: 19,
-    title: "四川和熹会养老中心",
-    location: "四川·成都",
-    system: "智能数字对讲系统",
+    title: "宣汉养老中心",
+    location: "四川.达州宣汉",
+    system: "数字康养对讲+无线呼叫",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case10.jpg"
+  },
+  {
+    id: 20,
+    title: "眉山万盛养护中心",
+    location: "四川.眉山",
+    system: "数字康养对讲+无线呼叫",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case11.jpg"
+  },
+  {
+    id: 21,
+    title: "锦欣百花锦园康养社区",
+    location: "四川.成都锦江",
+    system: "数字康养对讲+无线呼叫",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case12.jpg"
+  },
+  // 智慧康养案例 - 第二页显示（剩余案例）
+  {
+    id: 22,
+    title: "三台朝方养老院",
+    location: "四川.绵阳三台",
+    system: "康养无线呼叫",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case7.jpg"
+  },
+  {
+    id: 23,
+    title: "洪柳东综合体康养中心",
+    location: "四川.成都锦江",
+    system: "二线康养对讲",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case8.jpg"
+  },
+  {
+    id: 24,
+    title: "古蔺养老院",
+    location: "四川.泸州古蔺",
+    system: "二线康养对讲",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case9.jpg"
+  },
+  {
+    id: 25,
+    title: "眉山尚义养护中心",
+    location: "四川.眉山",
+    system: "数字康养对讲",
     category: "elderly",
     image: "/images/info-center/kangyang/case10.jpg"
   },
   // 智慧建筑案例
   {
-    id: 20,
+    id: 26,
     title: "成都天府国际机场",
     location: "四川·成都",
     system: "信息发布",
@@ -185,7 +234,7 @@ const caseData: CaseItem[] = [
     image: "/images/info-center/jianzhu/case13.jpg"
   },
   {
-    id: 21,
+    id: 27,
     title: "成都环球中心",
     location: "四川·成都",
     system: "智能对讲系统",
@@ -193,7 +242,7 @@ const caseData: CaseItem[] = [
     image: "/images/info-center/jianzhu/case14.jpg"
   },
   {
-    id: 22,
+    id: 28,
     title: "成都银泰中心",
     location: "四川·成都",
     system: "信息发布",
@@ -202,7 +251,7 @@ const caseData: CaseItem[] = [
   },
   // 智慧社区案例
   {
-    id: 23,
+    id: 29,
     title: "成都高新区天府二街社区",
     location: "四川·成都",
     system: "数字对讲",
@@ -210,7 +259,7 @@ const caseData: CaseItem[] = [
     image: "/images/info-center/shequ/case19.jpg"
   },
   {
-    id: 24,
+    id: 30,
     title: "成都市锦江区东光街道",
     location: "四川·成都",
     system: "智慧社区",
