@@ -474,7 +474,7 @@ export function InfoCenterPageTemplate() {
                             <p className="case-system" style={{ 
                               color: "#555",
                               opacity: 1
-                            }}>系统：{caseItem.system}</p>
+                            }}>{caseItem.system}</p>
                           </div>
                         </div>
                       ))}
@@ -525,7 +525,7 @@ export function InfoCenterPageTemplate() {
                               color: siteConfig.colors.foreground,
                               fontSize: "0.9rem"
                             }}>
-                              系统：{caseItem.system}
+                              {caseItem.system}
                             </p>
                           </div>
                         </div>
