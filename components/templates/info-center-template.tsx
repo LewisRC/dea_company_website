@@ -728,37 +728,43 @@ export function InfoCenterPageTemplate() {
                   {getFilteredCases().length > 6 && (
                     <div style={{
                       textAlign: "center",
-                      margin: "40px 0"
+                      margin: "40px 0",
+                      paddingBottom: "40px",
+                      borderBottom: "3px solid #004a99"
                     }}>
                       <button
                         onClick={() => handlePageChange(1)}
                         style={{
-                          padding: "10px 20px",
-                          margin: "0 10px",
-                          borderRadius: "8px",
+                          background: "none",
                           border: "none",
-                          backgroundColor: currentPages[activeFilter] === 1 ? "#0066cc" : "white",
-                          color: currentPages[activeFilter] === 1 ? "white" : "#0066cc",
+                          color: "#0066cc",
                           cursor: "pointer",
-                          transition: "all 0.3s ease"
+                          fontSize: "0.9rem",
+                          textDecoration: currentPages[activeFilter] === 1 ? "underline" : "none",
+                          margin: "0 5px"
                         }}
                       >
-                        第1页
+                        上一页<
                       </button>
+                      <span style={{
+                        fontSize: "0.9rem",
+                        margin: "0 10px"
+                      }}>
+                        {currentPages[activeFilter]}
+                      </span>
                       <button
                         onClick={() => handlePageChange(2)}
                         style={{
-                          padding: "10px 20px",
-                          margin: "0 10px",
-                          borderRadius: "8px",
+                          background: "none",
                           border: "none",
-                          backgroundColor: currentPages[activeFilter] === 2 ? "#0066cc" : "white",
-                          color: currentPages[activeFilter] === 2 ? "white" : "#0066cc",
+                          color: "#0066cc",
                           cursor: "pointer",
-                          transition: "all 0.3s ease"
+                          fontSize: "0.9rem",
+                          textDecoration: currentPages[activeFilter] === 2 ? "underline" : "none",
+                          margin: "0 5px"
                         }}
                       >
-                        第2页
+                        下一页>
                       </button>
                     </div>
                   )}
