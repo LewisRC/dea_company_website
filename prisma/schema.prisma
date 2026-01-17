@@ -27,18 +27,20 @@ model Product {
 
 // 轮播图表
 model Carousel {
-  id          Int      @id @default(autoincrement())
-  title       String   // 中文标题
-  titleEn     String?  // 英文标题
-  subtitle    String?  // 中文副标题
-  subtitleEn  String?  // 英文副标题
-  image       String   // 图片路径
-  imageEn     String?  // 英文图片路径
-  link        String?  // 链接
-  order       Int      @default(0) // 排序
-  isActive    Boolean  @default(true) // 是否启用
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id             Int      @id @default(autoincrement())
+  title          String   // 中文标题
+  titleEn        String?  // 英文标题
+  subtitle       String?  // 中文副标题
+  subtitleEn     String?  // 英文副标题
+  image          String   // 桌面端图片路径
+  imageEn        String?  // 桌面端英文图片路径
+  imageMobile    String?  // 移动端图片路径
+  imageMobileEn  String?  // 移动端英文图片路径
+  link           String?  // 链接
+  order          Int      @default(0) // 排序
+  isActive       Boolean  @default(true) // 是否启用
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }
 
 // 案例表

@@ -13,6 +13,8 @@ type Carousel = {
   subtitleEn: string | null
   image: string
   imageEn: string | null
+  imageMobile: string | null
+  imageMobileEn: string | null
   link: string | null
   order: number
   isActive: boolean
@@ -24,29 +26,35 @@ export function CarouselSection() {
   const [isAutoPlay, setIsAutoPlay] = useState(true)
   const [slides, setSlides] = useState<Carousel[]>([])
   const [loading, setLoading] = useState(true)
+  const [isMobile, setIsMobile] = useState(false)
   
-  // 直接使用默认配置的轮播图数据
+  // 检测屏幕尺寸
   useEffect(() => {
-    try {
-      // 使用默认配置
-      setSlides(siteConfig.carousel.map((item, index) => ({
-        id: index + 1,
-        title: item.title || '',
-        titleEn: item.titleEn || '',
-        subtitle: item.subtitle || '',
-        subtitleEn: item.subtitleEn || '',
-        image: item.image,
-        imageEn: item.imageEn || '',
-        link: '',
-        order: index + 1,
-        isActive: true
-      })))
-    } catch (error) {
-      console.error('Failed to use default carousels:', error)
-      setSlides([])
-    } finally {
-      setLoading(false)
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
     }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+  
+  // 从API加载轮播图数据
+  useEffect(() => {
+    const fetchCarousels = async () => {
+      try {
+        const response = await fetch('/api/carousels')
+        const data = await response.json()
+        setSlides(data)
+      } catch (error) {
+        console.error('Failed to fetch carousels:', error)
+        setSlides([])
+      } finally {
+        setLoading(false)
+      }
+    }
+    
+    fetchCarousels()
   }, [])
   
   const totalSlides = slides.length
@@ -157,10 +165,25 @@ export function CarouselSection() {
           }
         `}</style>
         {slides.map((slide, index) => {
-          // 根据语言选择图片：优先使用对应语言的图片，如果没有则使用默认图片
-          const imageUrl = language === 'en' && slide.imageEn 
-            ? slide.imageEn 
-            : slide.image
+          // 智能选择图片：考虑移动端/桌面端和语言
+          let imageUrl = slide.image
+          
+          if (isMobile) {
+            // 移动端优先使用移动端图片
+            if (language === 'en' && slide.imageMobileEn) {
+              imageUrl = slide.imageMobileEn
+            } else if (slide.imageMobile) {
+              imageUrl = slide.imageMobile
+            } else if (language === 'en' && slide.imageEn) {
+              // 如果没有移动端图片，回退到桌面端图片
+              imageUrl = slide.imageEn
+            }
+          } else {
+            // 桌面端使用桌面端图片
+            if (language === 'en' && slide.imageEn) {
+              imageUrl = slide.imageEn
+            }
+          }
           
           return (
             <div
