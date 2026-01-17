@@ -482,53 +482,48 @@ export function InfoCenterPageTemplate() {
                     </div>
                   )}
                   
-                  {/* 第二页样式 - 保持现有样式 */}
+                  {/* 第二页样式 - 与第一页保持一致 */}
                   {currentPages[activeFilter] === 2 && (
                     <div style={{
                       display: "grid",
-                      gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-                      gap: "20px",
-                      marginTop: "40px",
-                      marginBottom: "40px"
+                      gridTemplateColumns: "repeat(3, 1fr)",
+                      gap: "60px",
+                      marginTop: "80px",
+                      marginBottom: "60px"
                     }}>
                       {getCurrentPageCases().map((caseItem) => (
                         <div
                           key={caseItem.id}
+                          className="case-card"
                           style={{
                             backgroundColor: "white",
-                            borderRadius: "8px",
-                            padding: "20px",
-                            boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-                            border: "1px solid #e0e0e0"
+                            borderRadius: "12px",
+                            overflow: "hidden",
+                            boxShadow: "0 4px 15px rgba(0, 0, 0, 0.05)",
+                            transition: "all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+                            position: "relative",
+                            border: "none",
+                            padding: "25px"
                           }}
                         >
-                          <h3 style={{
-                            fontSize: "1.2rem",
-                            color: siteConfig.colors.foreground,
-                            marginBottom: "10px",
-                            fontWeight: 600
-                          }}>
-                            {caseItem.title}
-                          </h3>
-                          <p style={{
-                            color: siteConfig.colors.textSecondary,
-                            marginBottom: "15px",
-                            fontSize: "0.95rem"
-                          }}>
-                            {caseItem.location}
-                          </p>
-                          <div style={{
-                            backgroundColor: "#f5f5f5",
-                            padding: "10px",
-                            borderRadius: "4px"
-                          }}>
-                            <p style={{ 
-                              color: siteConfig.colors.foreground,
-                              fontSize: "0.8rem"
-                            }}>
-                              {caseItem.system}
-                            </p>
-                          </div>
+                          <h3 style={{ 
+                            fontSize: "1rem",
+                            color: "#051b33",
+                            marginBottom: "6px",
+                            fontWeight: 700,
+                            lineHeight: "1.4"
+                          }}>{caseItem.title}</h3>
+                          <p style={{ 
+                            color: "#555",
+                            lineHeight: "1.5",
+                            marginBottom: "8px",
+                            fontSize: "0.8rem"
+                          }}>{caseItem.location}</p>
+                          <p style={{ 
+                            color: "#555",
+                            opacity: 1,
+                            fontSize: "0.8rem"
+                          }}>{caseItem.system}</p>
                         </div>
                       ))}
                     </div>
