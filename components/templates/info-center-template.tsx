@@ -18,7 +18,7 @@ interface CaseItem {
   image: string;
 }
 
-// 案例数据
+// 案例数据 - 中文
 const caseData: CaseItem[] = [
   // 智慧医院案例 - 红色字体部分（第一页显示）
   {
@@ -414,6 +414,406 @@ const caseData: CaseItem[] = [
   },
 ]
 
+// 案例数据 - 英文
+const caseDataEn: CaseItem[] = [
+  // 智慧医院案例 - 红色字体部分（第一页显示）
+  {
+    id: 1,
+    title: "Bazhong Traditional Chinese Medicine Hospital",
+    location: "Sichuan.Bazhong",
+    system: "Medical Intercom, Information Release",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case1.jpg"
+  },
+  {
+    id: 2,
+    title: "PLA 902 Hospital",
+    location: "Anhui.Bengbu",
+    system: "Medical Intercom",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case2.jpg"
+  },
+  {
+    id: 3,
+    title: "Xichang Traditional Chinese Medicine Hospital",
+    location: "Sichuan.Xichang",
+    system: "Medical Intercom",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case3.jpg"
+  },
+  {
+    id: 4,
+    title: "Mangkang County People's Hospital",
+    location: "Tibet.Changdu Mangkang",
+    system: "Medical Intercom",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case4.jpg"
+  },
+  {
+    id: 5,
+    title: "Kazi Township Health Center",
+    location: "Tibet.Shigatse Namling",
+    system: "Medical Intercom",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case5.jpg"
+  },
+  {
+    id: 6,
+    title: "Changdu Ward Hospital",
+    location: "Tibet.Changdu",
+    system: "Medical Intercom",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case6.jpg"
+  },
+  {
+    id: 7,
+    title: "Zhongjiang County Traditional Chinese Medicine Hospital",
+    location: "Sichuan.Deyang Zhongjiang",
+    system: "Medical Intercom",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case1.jpg"
+  },
+  {
+    id: 8,
+    title: "Ya'an Traditional Chinese Medicine Hospital",
+    location: "Sichuan.Ya'an",
+    system: "Visit Intercom",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case2.jpg"
+  },
+  {
+    id: 9,
+    title: "Lezhi County Traditional Chinese Medicine Hospital",
+    location: "Sichuan.Ziyang Lezhi",
+    system: "Medical Intercom",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case3.jpg"
+  },
+  {
+    id: 10,
+    title: "Mangkang County People's Hospital",
+    location: "Tibet.Changdu Mangkang",
+    system: "Medical Intercom",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case4.jpg"
+  },
+  {
+    id: 11,
+    title: "Kazi Township Health Center",
+    location: "Tibet.Shigatse Namling",
+    system: "Medical Intercom",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case5.jpg"
+  },
+  {
+    id: 12,
+    title: "Changdu Ward Hospital",
+    location: "Tibet.Changdu",
+    system: "Medical Intercom",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case6.jpg"
+  },
+  {
+    id: 13,
+    title: "Zhongjiang County Traditional Chinese Medicine Hospital",
+    location: "Sichuan.Deyang Zhongjiang",
+    system: "Medical Intercom",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case1.jpg"
+  },
+  {
+    id: 14,
+    title: "Ya'an Traditional Chinese Medicine Hospital",
+    location: "Sichuan.Ya'an",
+    system: "Visit Intercom",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case2.jpg"
+  },
+  {
+    id: 15,
+    title: "Lezhi County Traditional Chinese Medicine Hospital",
+    location: "Sichuan.Ziyang Lezhi",
+    system: "Medical Intercom",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case3.jpg"
+  },
+  // 智慧康养案例 - 第一页显示（前6个案例）
+  {
+    id: 16,
+    title: "Meishan Dongyang Care Center",
+    location: "Sichuan.Meishan",
+    system: "Digital Elderly Care Intercom",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case7.jpg"
+  },
+  {
+    id: 17,
+    title: "Zitong County Shiniu Regional Elderly Service Center",
+    location: "Sichuan.Mianyang Zitong",
+    system: "Two-wire Elderly Care Intercom",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case8.jpg"
+  },
+  {
+    id: 18,
+    title: "Wanxing Yiyang Garden",
+    location: "Sichuan.Chengdu Wuhou",
+    system: "Digital Elderly Care Intercom",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case9.jpg"
+  },
+  {
+    id: 19,
+    title: "Xuanhan Elderly Care Center",
+    location: "Sichuan.Dazhou Xuanhan",
+    system: "Digital Elderly Care Intercom + Wireless Call",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case10.jpg"
+  },
+  {
+    id: 20,
+    title: "Meishan Wansheng Care Center",
+    location: "Sichuan.Meishan",
+    system: "Digital Elderly Care Intercom + Wireless Call",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case11.jpg"
+  },
+  {
+    id: 21,
+    title: "Jinxin Baihua Jinyuan Elderly Care Community",
+    location: "Sichuan.Chengdu Jinjiang",
+    system: "Digital Elderly Care Intercom + Wireless Call",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case12.jpg"
+  },
+  {
+    id: 22,
+    title: "Santai Chaofang Nursing Home",
+    location: "Sichuan.Mianyang Santai",
+    system: "Elderly Care Wireless Call",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case13.jpg"
+  },
+  {
+    id: 23,
+    title: "Tongan Town Health Center",
+    location: "Sichuan.Chengdu Pujiang",
+    system: "Elderly Care Wireless Call",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case14.jpg"
+  },
+  {
+    id: 24,
+    title: "Pujiang County Elderly Care Center",
+    location: "Sichuan.Chengdu Pujiang",
+    system: "Elderly Care Intercom",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case15.jpg"
+  },
+  {
+    id: 25,
+    title: "Fulin Elderly Care Center",
+    location: "Sichuan.Chengdu Longquanyi",
+    system: "Elderly Care Intercom",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case16.jpg"
+  },
+  {
+    id: 26,
+    title: "Xinjin District Elderly Care Center",
+    location: "Sichuan.Chengdu Xinjin",
+    system: "Elderly Care Intercom",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case17.jpg"
+  },
+  {
+    id: 27,
+    title: "Chongzhou City Elderly Care Center",
+    location: "Sichuan.Chengdu Chongzhou",
+    system: "Elderly Care Intercom",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case18.jpg"
+  },
+  {
+    id: 28,
+    title: "Luojiang District Elderly Care Center",
+    location: "Sichuan.Deyang Luojiang",
+    system: "Elderly Care Intercom",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case19.jpg"
+  },
+  {
+    id: 29,
+    title: "Meishan Dongyang Care Center",
+    location: "Sichuan.Meishan",
+    system: "Digital Elderly Care Intercom",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case20.jpg"
+  },
+  // 智慧建筑案例 - 第一页显示（前6个案例）
+  {
+    id: 30,
+    title: "Chengdu Dongda International",
+    location: "Sichuan.Chengdu Jinjiang",
+    system: "Building Intercom, Network, Monitoring Access Control",
+    category: "building",
+    image: "/images/info-center/jianzhu/case1.jpg"
+  },
+  {
+    id: 31,
+    title: "Ziyang Jincheng International",
+    location: "Sichuan.Ziyang Yanjiang",
+    system: "Building Intercom, Network, Monitoring",
+    category: "building",
+    image: "/images/info-center/jianzhu/case2.jpg"
+  },
+  {
+    id: 32,
+    title: "Bazhong Jinlong Hotel",
+    location: "Sichuan.Bazhong",
+    system: "Hotel Guest Room Control, Building Intercom",
+    category: "building",
+    image: "/images/info-center/jianzhu/case3.jpg"
+  },
+  {
+    id: 33,
+    title: "Leshan Fortune Center",
+    location: "Sichuan.Leshan",
+    system: "Building Intercom, Network, Monitoring",
+    category: "building",
+    image: "/images/info-center/jianzhu/case4.jpg"
+  },
+  {
+    id: 34,
+    title: "Guangyuan City Administrative Center",
+    location: "Sichuan.Guangyuan",
+    system: "Building Intercom, Network, Monitoring Access Control",
+    category: "building",
+    image: "/images/info-center/jianzhu/case5.jpg"
+  },
+  {
+    id: 35,
+    title: "Yuexi County Government Building",
+    location: "Sichuan.Liangshan Yuexi",
+    system: "Building Intercom, Network",
+    category: "building",
+    image: "/images/info-center/jianzhu/case6.jpg"
+  },
+  {
+    id: 36,
+    title: "Mianyang High-tech Zone Administrative Service Center",
+    location: "Sichuan.Mianyang Fucheng",
+    system: "Building Intercom, Network, Monitoring",
+    category: "building",
+    image: "/images/info-center/jianzhu/case7.jpg"
+  },
+  {
+    id: 37,
+    title: "Guangyuan Hongtai International",
+    location: "Sichuan.Guangyuan Shizhong",
+    system: "Building Intercom, Network, Monitoring",
+    category: "building",
+    image: "/images/info-center/jianzhu/case8.jpg"
+  },
+  {
+    id: 38,
+    title: "Sichuan Minzu College",
+    location: "Sichuan.Kangding",
+    system: "Campus Intercom, Network, Monitoring Access Control",
+    category: "building",
+    image: "/images/info-center/jianzhu/case9.jpg"
+  },
+  {
+    id: 39,
+    title: "Chengdu Polytechnic",
+    location: "Sichuan.Chengdu",
+    system: "Campus Intercom, Network, Monitoring",
+    category: "building",
+    image: "/images/info-center/jianzhu/case10.jpg"
+  },
+  {
+    id: 40,
+    title: "Chengdu Southwest Petroleum University",
+    location: "Sichuan.Chengdu",
+    system: "Campus Intercom, Network, Monitoring",
+    category: "building",
+    image: "/images/info-center/jianzhu/case11.jpg"
+  },
+  {
+    id: 41,
+    title: "Meishan Vocational and Technical College",
+    location: "Sichuan.Meishan",
+    system: "Campus Intercom, Network, Monitoring",
+    category: "building",
+    image: "/images/info-center/jianzhu/case12.jpg"
+  },
+  // 智慧社区案例 - 第一页显示（前6个案例）
+  {
+    id: 42,
+    title: "Nanshan Lingfeng",
+    location: "Sichuan.Chengdu Wuhou",
+    system: "Smart Home, Building Intercom, Network, Monitoring Access Control",
+    category: "community",
+    image: "/images/info-center/shequ/case19.jpg"
+  },
+  {
+    id: 43,
+    title: "Nanshan Yufeng",
+    location: "Sichuan.Chengdu Wuhou",
+    system: "Building Intercom, Network, Monitoring Access Control",
+    category: "community",
+    image: "/images/info-center/shequ/case20.jpg"
+  },
+  {
+    id: 44,
+    title: "Ya'an Shangcheng Fengjing",
+    location: "Sichuan.Ya'an",
+    system: "Building Intercom",
+    category: "community",
+    image: "/images/info-center/shequ/case21.jpg"
+  },
+  {
+    id: 45,
+    title: "Jiaofa Yiting",
+    location: "Sichuan.Mianyang",
+    system: "Building Intercom",
+    category: "community",
+    image: "/images/info-center/shequ/case22.jpg"
+  },
+  {
+    id: 46,
+    title: "Yujing Bay",
+    location: "Sichuan.Chengdu Dujiangyan",
+    system: "Building Intercom, Network, Monitoring Access Control",
+    category: "community",
+    image: "/images/info-center/shequ/case23.jpg"
+  },
+  {
+    id: 47,
+    title: "Shuimo Jiangshan",
+    location: "Sichuan.Aba Wenchuan",
+    system: "Building Intercom",
+    category: "community",
+    image: "/images/info-center/shequ/case24.jpg"
+  },
+  {
+    id: 47,
+    title: "Yunmen Jidu",
+    location: "Sichuan.Chengdu Xindu",
+    system: "Building Intercom, Network, Monitoring Access Control",
+    category: "community",
+    image: "/images/info-center/shequ/case19.jpg"
+  },
+  {
+    id: 48,
+    title: "Lanxing Ziyue Fengjing",
+    location: "Sichuan.Mianyang Jiangyou",
+    system: "Building Intercom",
+    category: "community",
+    image: "/images/info-center/shequ/case20.jpg"
+  },
+]
+
 export function InfoCenterPageTemplate() {
   const { t, language } = useI18n()
   const [activeFilter, setActiveFilter] = useState<string>("hospital")
@@ -425,12 +825,15 @@ export function InfoCenterPageTemplate() {
     community: 1
   })
   
+  // 根据当前语言选择案例数据
+  const currentCaseData = language === "en" ? caseDataEn : caseData
+  
   // 根据当前筛选条件获取案例
   const getFilteredCases = () => {
     if (activeFilter === "all") {
-      return caseData
+      return currentCaseData
     } else {
-      return caseData.filter(item => item.category === activeFilter)
+      return currentCaseData.filter(item => item.category === activeFilter)
     }
   }
   
