@@ -1,0 +1,502 @@
+"use client"
+
+import { Header } from "@/components/layout/header"
+import { Footer } from "@/components/layout/footer"
+import { BackToTop } from "@/components/ui/back-to-top"
+import { siteConfig } from "@/config/site-config"
+import { useI18n } from "@/lib/i18n-context"
+import { useState } from "react"
+import Image from "next/image"
+
+// 案例数据类型
+interface CaseItem {
+  id: number;
+  title: string;
+  location: string;
+  system: string;
+  category: string;
+  image: string;
+}
+
+// 案例数据
+const caseData: CaseItem[] = [
+  // 智慧医院案例
+  {
+    id: 1,
+    title: "四川大学华西医院",
+    location: "四川·成都",
+    system: "智能数字对讲系统",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case1.jpg"
+  },
+  {
+    id: 2,
+    title: "成都中医药大学附属医院",
+    location: "四川·成都",
+    system: "医护呼叫系统",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case2.jpg"
+  },
+  {
+    id: 3,
+    title: "四川省人民医院",
+    location: "四川·成都",
+    system: "智慧病房系统",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case3.jpg"
+  },
+  {
+    id: 4,
+    title: "西南医科大学附属医院",
+    location: "四川·泸州",
+    system: "护理管理系统",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case4.jpg"
+  },
+  {
+    id: 5,
+    title: "绵阳市中心医院",
+    location: "四川·绵阳",
+    system: "智能数字对讲系统",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case5.jpg"
+  },
+  {
+    id: 6,
+    title: "德阳市人民医院",
+    location: "四川·德阳",
+    system: "医护呼叫系统",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case6.jpg"
+  },
+  {
+    id: 7,
+    title: "宜宾市第二人民医院",
+    location: "四川·宜宾",
+    system: "智慧病房系统",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case1.jpg"
+  },
+  {
+    id: 8,
+    title: "达州市中心医院",
+    location: "四川·达州",
+    system: "智能数字对讲系统",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case2.jpg"
+  },
+  {
+    id: 9,
+    title: "攀枝花市中心医院",
+    location: "四川·攀枝花",
+    system: "护理管理系统",
+    category: "hospital",
+    image: "/images/info-center/yiyuan/case3.jpg"
+  },
+  // 智慧康养案例
+  {
+    id: 10,
+    title: "成都泰康蜀园养老社区",
+    location: "四川·成都",
+    system: "智慧养老系统",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case7.jpg"
+  },
+  {
+    id: 11,
+    title: "四川寿星园养老服务中心",
+    location: "四川·成都",
+    system: "智能呼叫系统",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case8.jpg"
+  },
+  {
+    id: 12,
+    title: "成都万科幸福家养老中心",
+    location: "四川·成都",
+    system: "智慧康养系统",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case9.jpg"
+  },
+  {
+    id: 13,
+    title: "四川和熹会养老中心",
+    location: "四川·成都",
+    system: "智能数字对讲系统",
+    category: "elderly",
+    image: "/images/info-center/kangyang/case10.jpg"
+  },
+  // 智慧建筑案例
+  {
+    id: 14,
+    title: "成都天府国际机场",
+    location: "四川·成都",
+    system: "信息发布",
+    category: "building",
+    image: "/images/info-center/jianzhu/case13.jpg"
+  },
+  {
+    id: 15,
+    title: "成都环球中心",
+    location: "四川·成都",
+    system: "智能对讲系统",
+    category: "building",
+    image: "/images/info-center/jianzhu/case14.jpg"
+  },
+  {
+    id: 16,
+    title: "成都银泰中心",
+    location: "四川·成都",
+    system: "信息发布",
+    category: "building",
+    image: "/images/info-center/jianzhu/case15.jpg"
+  },
+  // 智慧社区案例
+  {
+    id: 17,
+    title: "成都高新区天府二街社区",
+    location: "四川·成都",
+    system: "数字对讲",
+    category: "community",
+    image: "/images/info-center/shequ/case19.jpg"
+  },
+  {
+    id: 18,
+    title: "成都市锦江区东光街道",
+    location: "四川·成都",
+    system: "智慧社区",
+    category: "community",
+    image: "/images/info-center/shequ/case20.jpg"
+  }
+]
+
+export function InfoCenterPageTemplate() {
+  const { t, language } = useI18n()
+  const [activeFilter, setActiveFilter] = useState<string>("hospital")
+  const [currentPage, setCurrentPage] = useState<number>(1)
+  
+  // 根据当前筛选条件获取案例
+  const getFilteredCases = () => {
+    if (activeFilter === "all") {
+      return caseData
+    } else {
+      return caseData.filter(item => item.category === activeFilter)
+    }
+  }
+  
+  // 获取当前页面的案例
+  const getCurrentPageCases = () => {
+    const cases = getFilteredCases()
+    const pageSize = currentPage === 1 ? 6 : cases.length - 6
+    const startIndex = currentPage === 1 ? 0 : 6
+    return cases.slice(startIndex, startIndex + pageSize)
+  }
+  
+  // 筛选案例
+  const handleFilter = (category: string) => {
+    setActiveFilter(category)
+    setCurrentPage(1) // 切换分类时重置到第一页
+  }
+  
+  // 切换页面
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page)
+  }
+
+  return (
+      <div className="relative min-h-screen">
+        <Header />
+        <main className="w-full">
+          {/* 页面头部 */}
+          <section className="cases-hero" style={{
+          background: "linear-gradient(135deg, #051b33 0%, #004a99 100%)",
+          color: "white",
+          padding: "80px 0",
+          textAlign: "center",
+          marginTop: "78px"
+        }}>
+          <div className="container">
+            <h1 style={{
+              fontSize: "3rem",
+              fontWeight: "bold",
+              color: "white",
+              marginBottom: "20px"
+            }}>
+              经典成功案例
+            </h1>
+            <p style={{
+              fontSize: "1.25rem",
+              color: "rgba(255, 255, 255, 0.9)",
+              maxWidth: "800px",
+              margin: "0 auto"
+            }}>
+              探索德视安科技在智慧医院、智慧康养、智慧建筑、智慧社区等多领域的标杆项目，从医疗养老到商业住宅，全方位见证我们的专业实力
+            </p>
+          </div>
+        </section>
+
+        {/* 案例筛选和展示 */}
+        <section className="cases-section" style={{
+          padding: "60px 0",
+          backgroundColor: "white"
+        }}>
+          <div className="container">
+            {/* 筛选按钮 */}
+            <div style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "12px",
+              justifyContent: "center",
+              marginBottom: "40px"
+            }}>
+              <button
+                onClick={() => handleFilter("hospital")}
+                style={{
+                  padding: "10px 20px",
+                  borderRadius: "25px",
+                  border: "none",
+                  backgroundColor: activeFilter === "hospital" ? siteConfig.colors.primary : "white",
+                  color: activeFilter === "hospital" ? "white" : siteConfig.colors.foreground,
+                  fontSize: "1rem",
+                  fontWeight: "500",
+                  cursor: "pointer",
+                  boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+                  transition: "all 0.3s ease"
+                }}
+              >
+                智慧医院
+              </button>
+              <button
+                onClick={() => handleFilter("elderly")}
+                style={{
+                  padding: "10px 20px",
+                  borderRadius: "25px",
+                  border: "none",
+                  backgroundColor: activeFilter === "elderly" ? siteConfig.colors.primary : "white",
+                  color: activeFilter === "elderly" ? "white" : siteConfig.colors.foreground,
+                  fontSize: "1rem",
+                  fontWeight: "500",
+                  cursor: "pointer",
+                  boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+                  transition: "all 0.3s ease"
+                }}
+              >
+                智慧康养
+              </button>
+              <button
+                onClick={() => handleFilter("building")}
+                style={{
+                  padding: "10px 20px",
+                  borderRadius: "25px",
+                  border: "none",
+                  backgroundColor: activeFilter === "building" ? siteConfig.colors.primary : "white",
+                  color: activeFilter === "building" ? "white" : siteConfig.colors.foreground,
+                  fontSize: "1rem",
+                  fontWeight: "500",
+                  cursor: "pointer",
+                  boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+                  transition: "all 0.3s ease"
+                }}
+              >
+                智慧建筑
+              </button>
+              <button
+                onClick={() => handleFilter("community")}
+                style={{
+                  padding: "10px 20px",
+                  borderRadius: "25px",
+                  border: "none",
+                  backgroundColor: activeFilter === "community" ? siteConfig.colors.primary : "white",
+                  color: activeFilter === "community" ? "white" : siteConfig.colors.foreground,
+                  fontSize: "1rem",
+                  fontWeight: "500",
+                  cursor: "pointer",
+                  boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+                  transition: "all 0.3s ease"
+                }}
+              >
+                智慧社区
+              </button>
+            </div>
+
+            {/* 案例列表 */}
+            <div style={{
+              maxWidth: "1200px",
+              margin: "0 auto"
+            }}>
+              {getFilteredCases().length > 0 ? (
+                <>
+                  {/* 第一页样式 - 带图片和悬停效果 */}
+                  {currentPage === 1 && (
+                    <div style={{
+                      display: "grid",
+                      gridTemplateColumns: "repeat(3, 1fr)",
+                      gap: "60px",
+                      marginTop: "80px",
+                      marginBottom: "60px"
+                    }}>
+                      {getCurrentPageCases().map((caseItem) => (
+                        <div
+                          key={caseItem.id}
+                          className="case-card"
+                          style={{
+                            backgroundColor: "white",
+                            borderRadius: "12px",
+                            overflow: "hidden",
+                            boxShadow: "0 4px 15px rgba(0, 0, 0, 0.05)",
+                            transition: "all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+                            position: "relative",
+                            border: "none"
+                          }}
+                        >
+                          <div className="case-image" style={{ height: "240px", overflow: "hidden", position: "relative" }}>
+                            <Image 
+                              src={caseItem.image} 
+                              alt={caseItem.title} 
+                              width={400} 
+                              height={240} 
+                              className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                              style={{ transition: "transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)" }}
+                            />
+                          </div>
+                          <div className="case-content" style={{ padding: "15px 25px" }}>
+                            <h3 style={{ 
+                              fontSize: "1rem",
+                              color: "#051b33",
+                              marginBottom: "6px",
+                              fontWeight: 700,
+                              lineHeight: "1.4"
+                            }}>{caseItem.title}</h3>
+                            <p style={{ 
+                              color: "#555",
+                              lineHeight: "1.5",
+                              marginBottom: "8px",
+                              fontSize: "0.8rem"
+                            }}>{caseItem.location}</p>
+                            <p className="case-system" style={{ 
+                              color: "#555",
+                              opacity: 1
+                            }}>系统：{caseItem.system}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  
+                  {/* 第二页样式 - 保持现有样式 */}
+                  {currentPage === 2 && (
+                    <div style={{
+                      display: "grid",
+                      gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+                      gap: "20px",
+                      marginTop: "40px",
+                      marginBottom: "40px"
+                    }}>
+                      {getCurrentPageCases().map((caseItem) => (
+                        <div
+                          key={caseItem.id}
+                          style={{
+                            backgroundColor: "white",
+                            borderRadius: "8px",
+                            padding: "20px",
+                            boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
+                            border: "1px solid #e0e0e0"
+                          }}
+                        >
+                          <h3 style={{
+                            fontSize: "1.2rem",
+                            color: siteConfig.colors.foreground,
+                            marginBottom: "10px",
+                            fontWeight: 600
+                          }}>
+                            {caseItem.title}
+                          </h3>
+                          <p style={{
+                            color: siteConfig.colors.textSecondary,
+                            marginBottom: "15px",
+                            fontSize: "0.95rem"
+                          }}>
+                            {caseItem.location}
+                          </p>
+                          <div style={{
+                            backgroundColor: "#f5f5f5",
+                            padding: "10px",
+                            borderRadius: "4px"
+                          }}>
+                            <p style={{
+                              color: siteConfig.colors.foreground,
+                              fontSize: "0.9rem"
+                            }}>
+                              系统：{caseItem.system}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  
+                  {/* 分页导航 */}
+                  {getFilteredCases().length > 6 && (
+                    <div style={{
+                      textAlign: "center",
+                      margin: "40px 0"
+                    }}>
+                      <button
+                        onClick={() => handlePageChange(1)}
+                        style={{
+                          padding: "10px 20px",
+                          margin: "0 10px",
+                          borderRadius: "8px",
+                          border: "none",
+                          backgroundColor: currentPage === 1 ? "#0066cc" : "white",
+                          color: currentPage === 1 ? "white" : "#0066cc",
+                          cursor: "pointer",
+                          transition: "all 0.3s ease"
+                        }}
+                      >
+                        第1页
+                      </button>
+                      <button
+                        onClick={() => handlePageChange(2)}
+                        style={{
+                          padding: "10px 20px",
+                          margin: "0 10px",
+                          borderRadius: "8px",
+                          border: "none",
+                          backgroundColor: currentPage === 2 ? "#0066cc" : "white",
+                          color: currentPage === 2 ? "white" : "#0066cc",
+                          cursor: "pointer",
+                          transition: "all 0.3s ease"
+                        }}
+                      >
+                        第2页
+                      </button>
+                    </div>
+                  )}
+                </>
+              ) : (
+                <div style={{
+                  gridColumn: "1 / -1",
+                  textAlign: "center",
+                  padding: "60px 20px",
+                  backgroundColor: "#f9f9f9",
+                  borderRadius: "8px"
+                }}>
+                  <p style={{
+                    fontSize: "1.2rem",
+                    color: siteConfig.colors.textSecondary
+                  }}>
+                    没有找到匹配的案例
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+      <BackToTop />
+    </div>
+  )
+}
+
