@@ -20,52 +20,52 @@ interface CaseItem {
 
 // 案例数据
 const caseData: CaseItem[] = [
-  // 智慧医院案例
+  // 智慧医院案例 - 红色字体部分（第一页显示）
   {
     id: 1,
-    title: "四川大学华西医院",
-    location: "四川·成都",
-    system: "智能数字对讲系统",
+    title: "巴中市中医院",
+    location: "四川.巴中",
+    system: "医护对讲、信息发布",
     category: "hospital",
     image: "/images/info-center/yiyuan/case1.jpg"
   },
   {
     id: 2,
-    title: "成都中医药大学附属医院",
-    location: "四川·成都",
-    system: "医护呼叫系统",
+    title: "中国人民解放军902医院",
+    location: "安徽.蚌埠",
+    system: "医护对讲",
     category: "hospital",
     image: "/images/info-center/yiyuan/case2.jpg"
   },
   {
     id: 3,
-    title: "四川省人民医院",
-    location: "四川·成都",
-    system: "智慧病房系统",
+    title: "张北县妇幼保健院",
+    location: "河北.张家口张北",
+    system: "医护对讲",
     category: "hospital",
     image: "/images/info-center/yiyuan/case3.jpg"
   },
   {
     id: 4,
-    title: "西南医科大学附属医院",
-    location: "四川·泸州",
-    system: "护理管理系统",
+    title: "凉州妇女儿童医院",
+    location: "四川.凉山西昌",
+    system: "医护对讲、探视对讲、手术对讲、排队叫号",
     category: "hospital",
     image: "/images/info-center/yiyuan/case4.jpg"
   },
   {
     id: 5,
-    title: "绵阳市中心医院",
-    location: "四川·绵阳",
-    system: "智能数字对讲系统",
+    title: "绵竹县中医院",
+    location: "四川.德阳绵竹",
+    system: "医护对讲",
     category: "hospital",
     image: "/images/info-center/yiyuan/case5.jpg"
   },
   {
     id: 6,
-    title: "德阳市人民医院",
-    location: "四川·德阳",
-    system: "医护呼叫系统",
+    title: "阿里人民医院",
+    location: "西藏.阿里",
+    system: "医护对讲、排队叫号、地图导航、信息发布",
     category: "hospital",
     image: "/images/info-center/yiyuan/case6.jpg"
   },
