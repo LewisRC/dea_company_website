@@ -4,10 +4,12 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { BackToTop } from "@/components/ui/back-to-top"
 import { getProductName } from "@/config/product-names-i18n"
+import { usePageTitle } from "@/hooks/use-page-title"
 import Image from "next/image"
 import Link from "next/link"
 import { siteConfig } from "@/config/site-config"
 import { useI18n } from "@/lib/i18n-context"
+import { useEffect, useState } from "react"
 
 interface ProductItem {
   id: number;
@@ -20,10 +22,31 @@ interface ProductPageTemplateProps {
   titleKey: string;
   descriptionKey: string;
   products: ProductItem[];
+  pageTitleZh?: string;
+  pageTitleEn?: string;
 }
 
-export function ProductPageTemplate({ titleKey, descriptionKey, products }: ProductPageTemplateProps) {
+export function ProductPageTemplate({ titleKey, descriptionKey, products, pageTitleZh, pageTitleEn }: ProductPageTemplateProps) {
   const { t, language } = useI18n()
+  const [dynamicTitle, setDynamicTitle] = useState({ zh: '', en: '' })
+  
+  // 如果没有提供标题，则使用翻译的titleKey
+  useEffect(() => {
+    if (!pageTitleZh || !pageTitleEn) {
+      const title = t(titleKey)
+      setDynamicTitle({
+        zh: `${title} - 德视安科技`,
+        en: `${title} - Deshian Technology`
+      })
+    }
+  }, [titleKey, t, pageTitleZh, pageTitleEn])
+  
+  // 使用动态页面标题
+  usePageTitle(
+    pageTitleZh && pageTitleEn 
+      ? { zh: pageTitleZh, en: pageTitleEn }
+      : dynamicTitle
+  )
   
   return (
     <div className="relative min-h-screen">

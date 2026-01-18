@@ -14,6 +14,8 @@ export default function WirelessCallSystemPage() {
       titleKey="products.wirelessCallSystem"
       descriptionKey="products.wirelessCallSystemDesc"
       products={wirelessCallProducts}
+      pageTitleZh="无线呼叫系统 - 德视安科技"
+      pageTitleEn="Wireless Call System - Deshian Technology"
     />
   )
 }

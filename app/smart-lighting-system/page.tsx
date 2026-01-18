@@ -14,6 +14,8 @@ export default function SmartLightingSystemPage() {
       titleKey="products.smartLightingSystem"
       descriptionKey="products.smartLightingSystemDesc"
       products={smartLightingProducts}
+      pageTitleZh="智能照明系统 - 德视安科技"
+      pageTitleEn="Smart Lighting System - Deshian Technology"
     />
   )
 }

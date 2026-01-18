@@ -4,12 +4,19 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { BackToTop } from "@/components/ui/back-to-top"
 import { useI18n } from "@/lib/i18n-context"
+import { usePageTitle } from "@/hooks/use-page-title"
 import Image from "next/image"
 import { siteConfig } from "@/config/site-config"
 import { CheckCircle } from "lucide-react"
 
 export default function SmartCommunityPage() {
   const { t } = useI18n()
+  
+  // 动态页面标题
+  usePageTitle({
+    zh: '智慧社区解决方案 - 德视安科技',
+    en: 'Smart Community Solution - Deshian Technology'
+  })
 
   return (
     <>

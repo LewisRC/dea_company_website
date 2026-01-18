@@ -14,6 +14,8 @@ export default function IcuVisitIntercomPage() {
       titleKey="products.icuVisitIntercom"
       descriptionKey="products.icuVisitIntercomDesc"
       products={icuVisitProducts}
+      pageTitleZh="ICU探视对讲系统 - 德视安科技"
+      pageTitleEn="ICU Visit Intercom System - Deshian Technology"
     />
   )
 }

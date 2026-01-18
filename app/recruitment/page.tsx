@@ -5,16 +5,18 @@ import { Footer } from "@/components/layout/footer"
 import { BackToTop } from "@/components/ui/back-to-top"
 import { siteConfig } from "@/config/site-config"
 import { useI18n } from "@/lib/i18n-context"
+import { usePageTitle } from "@/hooks/use-page-title"
 import Link from "next/link"
 import { Briefcase } from "lucide-react"
-import { useEffect } from "react"
 
 export default function RecruitmentPage() {
   const { t, language } = useI18n()
   
-  useEffect(() => {
-    document.title = t('recruitment.positions') + " - " + t('footer.companyName')
-  }, [t])
+  // 动态页面标题
+  usePageTitle({
+    zh: '人才招聘 - 德视安科技',
+    en: 'Recruitment - Deshian Technology'
+  })
   
   return (
     <div className="relative min-h-screen">

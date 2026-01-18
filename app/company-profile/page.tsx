@@ -4,7 +4,7 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { BackToTop } from "@/components/ui/back-to-top"
 import { useI18n } from "@/lib/i18n-context"
-import { useEffect } from "react"
+import { usePageTitle } from "@/hooks/use-page-title"
 import { Building, Target, Lightbulb, Shield, Headset, Award, Globe, CheckCircle } from "lucide-react"
 import { siteConfig } from "@/config/site-config"
 import Image from "next/image"
@@ -12,9 +12,11 @@ import Image from "next/image"
 export default function CompanyProfilePage() {
   const { t } = useI18n()
   
-  useEffect(() => {
-    document.title = t('companyProfile.title') + " - 德视安"
-  }, [t])
+  // 动态页面标题
+  usePageTitle({
+    zh: '公司简介 - 德视安科技',
+    en: 'Company Profile - Deshian Technology'
+  })
 
   return (
     <>

@@ -14,6 +14,8 @@ export default function DigitalMedicalIntercomPage() {
       titleKey="products.digitalMedicalIntercom"
       descriptionKey="products.digitalMedicalIntercomDesc"
       products={digitalMedicalProducts}
+      pageTitleZh="数字医护对讲系统 - 德视安科技"
+      pageTitleEn="Digital Medical Intercom System - Deshian Technology"
     />
   )
 }

@@ -5,11 +5,17 @@ import { Footer } from "@/components/layout/footer"
 import { BackToTop } from "@/components/ui/back-to-top"
 import { siteConfig } from "@/config/site-config"
 import { useI18n } from "@/lib/i18n-context"
+import { usePageTitle } from "@/hooks/use-page-title"
 import { Lightbulb, Users, GraduationCap, Scale } from "lucide-react"
-import { useEffect } from "react"
 
 export default function TalentPhilosophyPage() {
   const { t, language } = useI18n()
+  
+  // 动态页面标题
+  usePageTitle({
+    zh: '人才理念 - 德视安科技',
+    en: 'Talent Philosophy - Deshian Technology'
+  })
   
   const philosophyCards = [
     { icon: Lightbulb, titleKey: "talentPhilosophy.innovation", descKey: "talentPhilosophy.innovationDesc" },

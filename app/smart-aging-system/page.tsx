@@ -14,6 +14,8 @@ export default function SmartAgingSystemPage() {
       titleKey="products.smartAgingSystem"
       descriptionKey="products.smartAgingSystemDesc"
       products={smartAgingProducts}
+      pageTitleZh="智慧康养系统 - 德视安科技"
+      pageTitleEn="Smart Aging System - Deshian Technology"
     />
   )
 }

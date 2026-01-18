@@ -6,6 +6,7 @@ import { BackToTop } from "@/components/ui/back-to-top"
 import { siteConfig } from "@/config/site-config"
 import { useI18n } from "@/lib/i18n-context"
 import { useState } from "react"
+import { usePageTitle } from "@/hooks/use-page-title"
 import Image from "next/image"
 
 // 案例数据类型
@@ -816,6 +817,13 @@ const caseDataEn: CaseItem[] = [
 
 export function InfoCenterPageTemplate() {
   const { t, language } = useI18n()
+  
+  // 动态页面标题
+  usePageTitle({
+    zh: '成功案例 - 德视安科技',
+    en: 'Success Cases - Deshian Technology'
+  })
+  
   const [activeFilter, setActiveFilter] = useState<string>("hospital")
   // 为每个标签单独跟踪分页状态
   const [currentPages, setCurrentPages] = useState<Record<string, number>>({
@@ -871,30 +879,66 @@ export function InfoCenterPageTemplate() {
         <main className="w-full">
           {/* 自定义样式 */}
           <style jsx global>{`
-            /* 案例卡片悬停效果 */
-            .case-card:hover {
-              transform: translateY(-15px) scale(1.02);
-              box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            /* 桌面端：卡片悬停效果 */
+            .case-card {
+              cursor: pointer;
             }
             
-            .case-card::before {
-              content: '';
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 6px;
-              background: linear-gradient(90deg, #0066cc, #00a8e8);
-              opacity: 0;
-              transition: opacity 0.3s ease;
+            @media (min-width: 768px) {
+              .case-card:hover {
+                transform: translateY(-15px) scale(1.02);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+              }
+              
+              .case-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 6px;
+                background: linear-gradient(90deg, #0066cc, #00a8e8);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+              }
+              
+              .case-card:hover::before {
+                opacity: 1;
+              }
+              
+              .case-card:hover .case-image img {
+                transform: scale(1.15) rotate(2deg);
+              }
+              
+              /* 桌面端网格布局 */
+              .cases-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 60px !important;
+                margin-top: 80px !important;
+              }
+              
+              .cases-grid-page2 {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 60px !important;
+                margin-top: 80px !important;
+              }
             }
             
-            .case-card:hover::before {
-              opacity: 1;
-            }
-            
-            .case-card:hover .case-image img {
-              transform: scale(1.15) rotate(2deg);
+            /* 移动端：简化悬停效果和网格布局 */
+            @media (max-width: 767px) {
+              .case-card:active {
+                transform: scale(0.98);
+              }
+              
+              .cases-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 20px !important;
+              }
+              
+              .cases-grid-page2 {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 15px !important;
+              }
             }
             
             .case-card:hover .case-system {
@@ -1028,11 +1072,11 @@ export function InfoCenterPageTemplate() {
                 <>
                   {/* 第一页样式 - 带图片和悬停效果 */}
                   {currentPages[activeFilter] === 1 && (
-                    <div style={{
+                    <div className="cases-grid" style={{
                       display: "grid",
-                      gridTemplateColumns: "repeat(3, 1fr)",
-                      gap: "60px",
-                      marginTop: "80px",
+                      gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                      gap: "30px",
+                      marginTop: "40px",
                       marginBottom: "60px"
                     }}>
                       {getCurrentPageCases().map((caseItem) => (
@@ -1049,21 +1093,27 @@ export function InfoCenterPageTemplate() {
                             border: "none"
                           }}
                         >
-                          <div className="case-image" style={{ height: "240px", overflow: "hidden", position: "relative" }}>
+                          <div className="case-image" style={{ 
+                            height: "200px",
+                            overflow: "hidden", 
+                            position: "relative" 
+                          }}>
                             <Image 
                               src={caseItem.image} 
                               alt={caseItem.title} 
                               width={400} 
-                              height={240} 
+                              height={200} 
                               className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
                               style={{ transition: "transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)" }}
                             />
                           </div>
-                          <div className="case-content" style={{ padding: "15px 25px" }}>
+                          <div className="case-content" style={{ 
+                            padding: "15px 20px"
+                          }}>
                             <h3 style={{ 
                               fontSize: "1rem",
                               color: "#051b33",
-                              marginBottom: "6px",
+                              marginBottom: "8px",
                               fontWeight: 700,
                               lineHeight: "1.4"
                             }}>{caseItem.title}</h3>
@@ -1071,12 +1121,13 @@ export function InfoCenterPageTemplate() {
                               color: "#555",
                               lineHeight: "1.5",
                               marginBottom: "8px",
-                              fontSize: "0.8rem"
+                              fontSize: "0.85rem"
                             }}>{caseItem.location}</p>
                             <p className="case-system" style={{ 
                               color: "#555",
                               opacity: 1,
-                              fontSize: "0.8rem"
+                              fontSize: "0.85rem",
+                              lineHeight: "1.5"
                             }}>{caseItem.system}</p>
                           </div>
                         </div>
@@ -1084,13 +1135,13 @@ export function InfoCenterPageTemplate() {
                     </div>
                   )}
                   
-                  {/* 第二页样式 - 与第一页保持一致 */}
+                  {/* 第二页样式 - 纯文字卡片 */}
                   {currentPages[activeFilter] === 2 && (
-                    <div style={{
+                    <div className="cases-grid-page2" style={{
                       display: "grid",
-                      gridTemplateColumns: "repeat(3, 1fr)",
-                      gap: "60px",
-                      marginTop: "80px",
+                      gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                      gap: "20px",
+                      marginTop: "40px",
                       marginBottom: "60px"
                     }}>
                       {getCurrentPageCases().map((caseItem) => (
@@ -1105,26 +1156,27 @@ export function InfoCenterPageTemplate() {
                             transition: "all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
                             position: "relative",
                             border: "none",
-                            padding: "25px"
+                            padding: "20px"
                           }}
                         >
                           <h3 style={{ 
                             fontSize: "1rem",
                             color: "#051b33",
-                            marginBottom: "6px",
+                            marginBottom: "8px",
                             fontWeight: 700,
                             lineHeight: "1.4"
                           }}>{caseItem.title}</h3>
                           <p style={{ 
                             color: "#555",
                             lineHeight: "1.5",
-                            marginBottom: "8px",
-                            fontSize: "0.8rem"
+                            marginBottom: "6px",
+                            fontSize: "0.85rem"
                           }}>{caseItem.location}</p>
                           <p className="case-system" style={{ 
                             color: "#555",
                             opacity: 1,
-                            fontSize: "0.8rem"
+                            fontSize: "0.85rem",
+                            lineHeight: "1.5"
                           }}>{caseItem.system}</p>
                         </div>
                       ))}

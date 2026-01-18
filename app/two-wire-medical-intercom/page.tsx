@@ -14,6 +14,8 @@ export default function TwoWireMedicalIntercomPage() {
       titleKey="products.twoWireMedicalIntercom"
       descriptionKey="products.twoWireMedicalIntercomDesc"
       products={twoWireMedicalProducts}
+      pageTitleZh="二线制医护对讲系统 - 德视安科技"
+      pageTitleEn="Two-Wire Medical Intercom System - Deshian Technology"
     />
   )
 }

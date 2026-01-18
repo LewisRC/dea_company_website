@@ -14,6 +14,8 @@ export default function QueuingSystemPage() {
       titleKey="products.queuingSystem"
       descriptionKey="products.queuingSystemDesc"
       products={queuingProducts}
+      pageTitleZh="排队叫号系统 - 德视安科技"
+      pageTitleEn="Queuing System - Deshian Technology"
     />
   )
 }

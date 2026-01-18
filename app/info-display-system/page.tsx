@@ -14,6 +14,8 @@ export default function InfoDisplaySystemPage() {
       titleKey="products.infoDisplaySystem"
       descriptionKey="products.infoDisplaySystemDesc"
       products={infoDisplayProducts}
+      pageTitleZh="信息发布系统 - 德视安科技"
+      pageTitleEn="Information Display System - Deshian Technology"
     />
   )
 }

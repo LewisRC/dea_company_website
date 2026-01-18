@@ -1,8 +1,17 @@
+"use client"
+
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { PageHeader } from "@/components/layout/page-header"
+import { usePageTitle } from "@/hooks/use-page-title"
 
 export default function CompanyPage() {
+  // 动态页面标题
+  usePageTitle({
+    zh: '公司简介 - 德视安科技',
+    en: 'Company Profile - Deshian Technology'
+  })
+  
   return (
     <main className="w-full">
       <Header />

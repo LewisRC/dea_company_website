@@ -6,11 +6,18 @@ import { BackToTop } from "@/components/ui/back-to-top"
 import Image from "next/image"
 import { siteConfig } from "@/config/site-config"
 import { useI18n } from "@/lib/i18n-context"
+import { usePageTitle } from "@/hooks/use-page-title"
 import { MessageSquare, Phone, Wifi, Syringe, UserCog, Clock, Ticket, Megaphone, CheckCircle } from "lucide-react"
 import { useEffect } from "react"
 
 export default function SmartHospitalPage() {
   const { t } = useI18n()
+  
+  // 动态页面标题
+  usePageTitle({
+    zh: '智慧医院解决方案 - 德视安科技',
+    en: 'Smart Hospital Solution - Deshian Technology'
+  })
   const features = [
     {
       icon: MessageSquare,

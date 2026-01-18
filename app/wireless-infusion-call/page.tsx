@@ -14,6 +14,8 @@ export default function WirelessInfusionCallPage() {
       titleKey="products.wirelessInfusionCall"
       descriptionKey="products.wirelessInfusionCallDesc"
       products={wirelessInfusionProducts}
+      pageTitleZh="无线输液呼叫系统 - 德视安科技"
+      pageTitleEn="Wireless Infusion Call System - Deshian Technology"
     />
   )
 }

@@ -14,6 +14,8 @@ export default function DigitalClockSystemPage() {
       titleKey="products.digitalClockSystem"
       descriptionKey="products.digitalClockSystemDesc"
       products={digitalClockProducts}
+      pageTitleZh="数字时钟系统 - 德视安科技"
+      pageTitleEn="Digital Clock System - Deshian Technology"
     />
   )
 }
