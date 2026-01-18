@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { siteConfig } from "@/config/site-config"
@@ -9,7 +9,18 @@ import { useI18n } from "@/lib/i18n-context"
 export function SolutionsSection() {
   const solutions = siteConfig.solutions || []
   const [hoveredBtn, setHoveredBtn] = useState<number | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
   const { t } = useI18n()
+
+  // 检测是否为移动端
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    window.addEventListener('resize', handleResize)
+    handleResize() // 设置初始值
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <section 
@@ -22,20 +33,24 @@ export function SolutionsSection() {
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {solutions.map((solution) => (
-            <div 
-              key={solution.id}
-              className="relative rounded-lg overflow-hidden h-[360px] cursor-pointer w-full m-0 transition-all duration-300 hover:-translate-y-[5px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
-            >
-              <div className="w-full h-full">
-                <Image
-                  src={solution.image}
-                  alt={solution.title}
-                  fill
-                  className="object-cover"
-                  style={{ transform: 'scale(1.05)' }}
-                />
-              </div>
+          {solutions.map((solution) => {
+            // 根据屏幕大小选择合适的图片
+            const imageUrl = isMobile && solution.imageMobile ? solution.imageMobile : solution.image
+            
+            return (
+              <div 
+                key={solution.id}
+                className="relative rounded-lg overflow-hidden h-[360px] cursor-pointer w-full m-0 transition-all duration-300 hover:-translate-y-[5px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
+              >
+                <div className="w-full h-full">
+                  <Image
+                    src={imageUrl}
+                    alt={solution.title}
+                    fill
+                    className="object-cover"
+                    style={{ transform: 'scale(1.05)' }}
+                  />
+                </div>
               <div 
                 className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-center p-5 text-white"
                 style={{
@@ -68,7 +83,7 @@ export function SolutionsSection() {
                 </Link>
               </div>
             </div>
-          ))}
+          )})}
         </div>
       </div>
     </section>

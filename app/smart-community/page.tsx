@@ -53,12 +53,12 @@ export default function SmartCommunityPage() {
               </div>
               <div className="flex-1">
                 <Image
-                  src="/images/solution/solution3/solution3.jpg"
+                  src="/images/solution/solution3/solution3.webp"
                   alt={t('smartCommunity.title')}
                   width={600}
                   height={400}
                   className="rounded-lg shadow-lg w-full"
-                  style={{ opacity: 1 }}
+                  style={{ opacity: 0.7 }}
                 />
               </div>
             </div>

@@ -53,12 +53,12 @@ export default function SmartBuildingPage() {
               </div>
               <div className="flex-1">
                 <Image
-                  src="/images/solution/solution4/solution4.jpg"
+                  src="/images/solution/solution4/solution4.webp"
                   alt={t('smartBuilding.title')}
                   width={600}
                   height={400}
                   className="rounded-lg shadow-lg w-full"
-                  style={{ opacity: 1 }}
+                  style={{ opacity: 0.7 }}
                 />
               </div>
             </div>

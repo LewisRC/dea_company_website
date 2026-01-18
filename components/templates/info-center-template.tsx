@@ -885,6 +885,11 @@ export function InfoCenterPageTemplate() {
             }
             
             @media (min-width: 768px) {
+              .case-card {
+                display: flex;
+                flex-direction: column;
+              }
+              
               .case-card:hover {
                 transform: translateY(-15px) scale(1.02);
                 box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
@@ -924,26 +929,77 @@ export function InfoCenterPageTemplate() {
               }
             }
             
-            /* 移动端：简化悬停效果和网格布局 */
+            /* 移动端：垂直布局，图片在上文字在下 */
             @media (max-width: 767px) {
+              .case-card {
+                display: flex !important;
+                flex-direction: column !important;
+              }
+              
               .case-card:active {
                 transform: scale(0.98);
               }
               
+              .case-card .case-image {
+                width: 100% !important;
+                height: 200px !important;
+              }
+              
+              .case-card .case-content {
+                padding: 15px 18px !important;
+              }
+              
               .cases-grid {
-                grid-template-columns: repeat(2, 1fr) !important;
+                grid-template-columns: repeat(1, 1fr) !important;
                 gap: 20px !important;
               }
               
               .cases-grid-page2 {
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 15px !important;
+                grid-template-columns: repeat(1, 1fr) !important;
+                gap: 18px !important;
+              }
+              
+              /* 移动端文字卡片 */
+              .cases-grid-page2 .case-card {
+                padding: 15px 18px !important;
+              }
+              
+              /* 移动端文字大小优化 */
+              .case-card h3 {
+                font-size: 1rem !important;
+                line-height: 1.4 !important;
+                margin-bottom: 8px !important;
+              }
+              
+              .case-card p {
+                font-size: 0.85rem !important;
+                line-height: 1.5 !important;
+                margin-bottom: 6px !important;
+              }
+              
+              .case-card .case-system {
+                font-size: 0.85rem !important;
               }
             }
             
             .case-card:hover .case-system {
               color: #0066cc !important;
               font-weight: 600 !important;
+            }
+            
+            /* 移动端按钮布局：2行2列 */
+            @media (max-width: 767px) {
+              .filter-buttons {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 10px !important;
+                padding: 0 15px;
+              }
+              
+              .filter-buttons button {
+                font-size: 0.9rem !important;
+                padding: 10px 8px !important;
+                width: 100% !important;
+              }
             }
           `}</style>
           
@@ -983,17 +1039,21 @@ export function InfoCenterPageTemplate() {
           <div className="container">
             {/* 筛选按钮 */}
             <div style={{
-              display: "flex",
-              flexWrap: "wrap",
+              display: "grid",
+              gridTemplateColumns: "repeat(4, 1fr)",
               gap: "12px",
               justifyContent: "center",
-              marginBottom: "40px"
-            }}>
+              marginBottom: "40px",
+              maxWidth: "800px",
+              margin: "0 auto 40px"
+            }}
+            className="filter-buttons"
+            >
               <button
                 onClick={() => handleFilter("hospital")}
                 style={{
-                  padding: "10px 20px",
-                  minWidth: "140px",
+                  padding: "10px 15px",
+                  width: "180px",
                   borderRadius: "8px",
                   border: "none",
                   backgroundColor: activeFilter === "hospital" ? siteConfig.colors.primary : "white",
@@ -1002,7 +1062,8 @@ export function InfoCenterPageTemplate() {
                   fontWeight: "500",
                   cursor: "pointer",
                   boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-                  transition: "all 0.3s ease"
+                  transition: "all 0.3s ease",
+                  whiteSpace: "nowrap"
                 }}
               >
                 {t("solutions.smartHospital")}
@@ -1010,8 +1071,8 @@ export function InfoCenterPageTemplate() {
               <button
                 onClick={() => handleFilter("elderly")}
                 style={{
-                  padding: "10px 20px",
-                  minWidth: "140px",
+                  padding: "10px 15px",
+                  width: "180px",
                   borderRadius: "8px",
                   border: "none",
                   backgroundColor: activeFilter === "elderly" ? siteConfig.colors.primary : "white",
@@ -1020,7 +1081,8 @@ export function InfoCenterPageTemplate() {
                   fontWeight: "500",
                   cursor: "pointer",
                   boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-                  transition: "all 0.3s ease"
+                  transition: "all 0.3s ease",
+                  whiteSpace: "nowrap"
                 }}
               >
                 {t("solutions.smartHealthcare")}
@@ -1028,8 +1090,8 @@ export function InfoCenterPageTemplate() {
               <button
                 onClick={() => handleFilter("building")}
                 style={{
-                  padding: "10px 20px",
-                  minWidth: "140px",
+                  padding: "10px 15px",
+                  width: "180px",
                   borderRadius: "8px",
                   border: "none",
                   backgroundColor: activeFilter === "building" ? siteConfig.colors.primary : "white",
@@ -1038,7 +1100,8 @@ export function InfoCenterPageTemplate() {
                   fontWeight: "500",
                   cursor: "pointer",
                   boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-                  transition: "all 0.3s ease"
+                  transition: "all 0.3s ease",
+                  whiteSpace: "nowrap"
                 }}
               >
                 {t("solutions.smartBuilding")}
@@ -1046,8 +1109,8 @@ export function InfoCenterPageTemplate() {
               <button
                 onClick={() => handleFilter("community")}
                 style={{
-                  padding: "10px 20px",
-                  minWidth: "140px",
+                  padding: "10px 15px",
+                  width: "180px",
                   borderRadius: "8px",
                   border: "none",
                   backgroundColor: activeFilter === "community" ? siteConfig.colors.primary : "white",
@@ -1056,7 +1119,8 @@ export function InfoCenterPageTemplate() {
                   fontWeight: "500",
                   cursor: "pointer",
                   boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-                  transition: "all 0.3s ease"
+                  transition: "all 0.3s ease",
+                  whiteSpace: "nowrap"
                 }}
               >
                 {t("solutions.smartCommunity")}
