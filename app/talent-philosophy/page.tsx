@@ -30,10 +30,6 @@ export default function TalentPhilosophyPage() {
     { titleKey: "talentPhilosophy.professionalism", descKey: "talentPhilosophy.professionalismDesc" },
     { titleKey: "talentPhilosophy.innovationValue", descKey: "talentPhilosophy.innovationValueDesc" }
   ]
-  
-  useEffect(() => {
-    document.title = t('talentPhilosophy.title') + " - 德视安"
-  }, [t])
 
   return (
     <div className="relative min-h-screen">

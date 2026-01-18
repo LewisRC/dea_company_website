@@ -8,7 +8,6 @@ import { siteConfig } from "@/config/site-config"
 import { useI18n } from "@/lib/i18n-context"
 import { usePageTitle } from "@/hooks/use-page-title"
 import { Heart, CheckCircle } from "lucide-react"
-import { useEffect } from "react"
 
 export default function SmartHealthcarePage() {
   const { t } = useI18n()
@@ -42,10 +41,6 @@ export default function SmartHealthcarePage() {
     { image: "/images/solution/solution2/lngy.jpeg", key: "smartHealthcare.app3" },
     { image: "/images/solution/solution2/sqylzx.jpeg", key: "smartHealthcare.app4" }
   ]
-  
-  useEffect(() => {
-    document.title = t('smartHealthcare.title') + " - 德视安"
-  }, [t])
 
   return (
     <div className="relative min-h-screen">

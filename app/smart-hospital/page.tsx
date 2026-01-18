@@ -8,7 +8,6 @@ import { siteConfig } from "@/config/site-config"
 import { useI18n } from "@/lib/i18n-context"
 import { usePageTitle } from "@/hooks/use-page-title"
 import { MessageSquare, Phone, Wifi, Syringe, UserCog, Clock, Ticket, Megaphone, CheckCircle } from "lucide-react"
-import { useEffect } from "react"
 
 export default function SmartHospitalPage() {
   const { t } = useI18n()
@@ -94,11 +93,6 @@ export default function SmartHospitalPage() {
     { image: "/images/solution/solution1/sq.jpeg", key: "smartHospital.app3" },
     { image: "/images/solution/solution1/kf.jpeg", key: "smartHospital.app4" }
   ]
-  
-  // 动态更新页面标题
-  useEffect(() => {
-    document.title = t('smartHospital.title') + " - 德视安"
-  }, [t])
 
   return (
     <div className="relative min-h-screen">
