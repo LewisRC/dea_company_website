@@ -238,7 +238,7 @@ const caseData: CaseItem[] = [
     id: 27,
     title: "AI数字创智元",
     location: "四川.成都金牛",
-    system: "智能照明",
+    system: "智能照明、能源管理",
     category: "building",
     image: "/images/info-center/jianzhu/case14.jpg"
   },
@@ -302,7 +302,7 @@ const caseData: CaseItem[] = [
   // 智慧社区案例 - 第一页显示（前6个案例）
   {
     id: 35,
-    title: "南山两河茗景",
+    title: "南山两河峯景",
     location: "四川.成都金牛",
     system: "智能家居",
     category: "community",
