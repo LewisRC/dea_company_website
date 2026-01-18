@@ -658,7 +658,7 @@ const caseDataEn: CaseItem[] = [
     location: "Sichuan.Chengdu Jinjiang",
     system: "Building Intercom, Network, Monitoring Access Control",
     category: "building",
-    image: "/images/info-center/jianzhu/case1.jpg"
+    image: "/images/info-center/jianzhu/case13.jpg"
   },
   {
     id: 31,
@@ -666,7 +666,7 @@ const caseDataEn: CaseItem[] = [
     location: "Sichuan.Ziyang Yanjiang",
     system: "Building Intercom, Network, Monitoring",
     category: "building",
-    image: "/images/info-center/jianzhu/case2.jpg"
+    image: "/images/info-center/jianzhu/case13.jpg"
   },
   {
     id: 32,
@@ -674,7 +674,7 @@ const caseDataEn: CaseItem[] = [
     location: "Sichuan.Bazhong",
     system: "Hotel Guest Room Control, Building Intercom",
     category: "building",
-    image: "/images/info-center/jianzhu/case3.jpg"
+    image: "/images/info-center/jianzhu/case14.jpg"
   },
   {
     id: 33,
@@ -682,7 +682,7 @@ const caseDataEn: CaseItem[] = [
     location: "Sichuan.Leshan",
     system: "Building Intercom, Network, Monitoring",
     category: "building",
-    image: "/images/info-center/jianzhu/case4.jpg"
+    image: "/images/info-center/jianzhu/case15.jpg"
   },
   {
     id: 34,
@@ -690,7 +690,7 @@ const caseDataEn: CaseItem[] = [
     location: "Sichuan.Guangyuan",
     system: "Building Intercom, Network, Monitoring Access Control",
     category: "building",
-    image: "/images/info-center/jianzhu/case5.jpg"
+    image: "/images/info-center/jianzhu/case16.jpg"
   },
   {
     id: 35,
@@ -698,7 +698,7 @@ const caseDataEn: CaseItem[] = [
     location: "Sichuan.Liangshan Yuexi",
     system: "Building Intercom, Network",
     category: "building",
-    image: "/images/info-center/jianzhu/case6.jpg"
+    image: "/images/info-center/jianzhu/case17.jpg"
   },
   {
     id: 36,
@@ -706,7 +706,7 @@ const caseDataEn: CaseItem[] = [
     location: "Sichuan.Mianyang Fucheng",
     system: "Building Intercom, Network, Monitoring",
     category: "building",
-    image: "/images/info-center/jianzhu/case7.jpg"
+    image: "/images/info-center/jianzhu/case18.jpg"
   },
   {
     id: 37,
@@ -714,7 +714,7 @@ const caseDataEn: CaseItem[] = [
     location: "Sichuan.Guangyuan Shizhong",
     system: "Building Intercom, Network, Monitoring",
     category: "building",
-    image: "/images/info-center/jianzhu/case8.jpg"
+    image: "/images/info-center/jianzhu/case13.jpg"
   },
   {
     id: 38,
@@ -722,7 +722,7 @@ const caseDataEn: CaseItem[] = [
     location: "Sichuan.Kangding",
     system: "Campus Intercom, Network, Monitoring Access Control",
     category: "building",
-    image: "/images/info-center/jianzhu/case9.jpg"
+    image: "/images/info-center/jianzhu/case14.jpg"
   },
   {
     id: 39,
@@ -730,7 +730,7 @@ const caseDataEn: CaseItem[] = [
     location: "Sichuan.Chengdu",
     system: "Campus Intercom, Network, Monitoring",
     category: "building",
-    image: "/images/info-center/jianzhu/case10.jpg"
+    image: "/images/info-center/jianzhu/case15.jpg"
   },
   {
     id: 40,
@@ -738,7 +738,7 @@ const caseDataEn: CaseItem[] = [
     location: "Sichuan.Chengdu",
     system: "Campus Intercom, Network, Monitoring",
     category: "building",
-    image: "/images/info-center/jianzhu/case11.jpg"
+    image: "/images/info-center/jianzhu/case16.jpg"
   },
   {
     id: 41,
@@ -746,7 +746,7 @@ const caseDataEn: CaseItem[] = [
     location: "Sichuan.Meishan",
     system: "Campus Intercom, Network, Monitoring",
     category: "building",
-    image: "/images/info-center/jianzhu/case12.jpg"
+    image: "/images/info-center/jianzhu/case17.jpg"
   },
   // 智慧社区案例 - 第一页显示（前6个案例）
   {
