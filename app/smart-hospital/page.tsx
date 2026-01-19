@@ -131,7 +131,7 @@ export default function SmartHospitalPage() {
             </div>
             <div className="flex-1 min-w-[300px]">
               <Image
-                src="/images/solution/solution1/solution1.jpg"
+                src="/images/solution/solution1/solution1.webp"
                 alt="智慧医院解决方案概述"
                 width={600}
                 height={400}
