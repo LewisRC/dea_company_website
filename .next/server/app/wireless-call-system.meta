@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/wireless-call-system/layout,_N_T_/wireless-call-system/page,_N_T_/wireless-call-system"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/wireless-call-system/__PAGE__",
+    "/wireless-call-system",
+    "/_index",
+    "/_head"
+  ]
+}

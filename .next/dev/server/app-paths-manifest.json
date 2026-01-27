@@ -1,0 +1,10 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/carousels/route": "app/api/carousels/route.js",
+  "/digital-medical-intercom/page": "app/digital-medical-intercom/page.js",
+  "/info-center/page": "app/info-center/page.js",
+  "/page": "app/page.js",
+  "/smart-building/page": "app/smart-building/page.js",
+  "/smart-healthcare/page": "app/smart-healthcare/page.js",
+  "/smart-hospital/page": "app/smart-hospital/page.js"
+}

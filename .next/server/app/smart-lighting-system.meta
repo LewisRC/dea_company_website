@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/smart-lighting-system/layout,_N_T_/smart-lighting-system/page,_N_T_/smart-lighting-system"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/smart-lighting-system/__PAGE__",
+    "/smart-lighting-system",
+    "/_index",
+    "/_head"
+  ]
+}

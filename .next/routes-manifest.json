@@ -1,0 +1,299 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/api/admin/carousels/[id]",
+      "regex": "^/api/admin/carousels/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/admin/carousels/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/admin/cases/[id]",
+      "regex": "^/api/admin/cases/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/admin/cases/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/admin/products/[id]",
+      "regex": "^/api/admin/products/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/admin/products/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/product/[id]",
+      "regex": "^/product/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/product/(?<nxtPid>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/about/company",
+      "regex": "^/about/company(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about/company(?:/)?$"
+    },
+    {
+      "page": "/about/history",
+      "regex": "^/about/history(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about/history(?:/)?$"
+    },
+    {
+      "page": "/admin",
+      "regex": "^/admin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin(?:/)?$"
+    },
+    {
+      "page": "/admin/carousels",
+      "regex": "^/admin/carousels(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/carousels(?:/)?$"
+    },
+    {
+      "page": "/admin/cases",
+      "regex": "^/admin/cases(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/cases(?:/)?$"
+    },
+    {
+      "page": "/admin/change-password",
+      "regex": "^/admin/change\\-password(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/change\\-password(?:/)?$"
+    },
+    {
+      "page": "/admin/products",
+      "regex": "^/admin/products(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/products(?:/)?$"
+    },
+    {
+      "page": "/api/admin/carousels",
+      "regex": "^/api/admin/carousels(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/carousels(?:/)?$"
+    },
+    {
+      "page": "/api/admin/cases",
+      "regex": "^/api/admin/cases(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/cases(?:/)?$"
+    },
+    {
+      "page": "/api/admin/products",
+      "regex": "^/api/admin/products(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/products(?:/)?$"
+    },
+    {
+      "page": "/api/admin/upload",
+      "regex": "^/api/admin/upload(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/upload(?:/)?$"
+    },
+    {
+      "page": "/api/carousels",
+      "regex": "^/api/carousels(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/carousels(?:/)?$"
+    },
+    {
+      "page": "/api/cases",
+      "regex": "^/api/cases(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/cases(?:/)?$"
+    },
+    {
+      "page": "/company-profile",
+      "regex": "^/company\\-profile(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/company\\-profile(?:/)?$"
+    },
+    {
+      "page": "/contact-us",
+      "regex": "^/contact\\-us(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact\\-us(?:/)?$"
+    },
+    {
+      "page": "/digital-clock-system",
+      "regex": "^/digital\\-clock\\-system(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/digital\\-clock\\-system(?:/)?$"
+    },
+    {
+      "page": "/digital-medical-intercom",
+      "regex": "^/digital\\-medical\\-intercom(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/digital\\-medical\\-intercom(?:/)?$"
+    },
+    {
+      "page": "/icu-visit-intercom",
+      "regex": "^/icu\\-visit\\-intercom(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/icu\\-visit\\-intercom(?:/)?$"
+    },
+    {
+      "page": "/info-center",
+      "regex": "^/info\\-center(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/info\\-center(?:/)?$"
+    },
+    {
+      "page": "/info-display-system",
+      "regex": "^/info\\-display\\-system(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/info\\-display\\-system(?:/)?$"
+    },
+    {
+      "page": "/products/digital-intercom",
+      "regex": "^/products/digital\\-intercom(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/products/digital\\-intercom(?:/)?$"
+    },
+    {
+      "page": "/queuing-system",
+      "regex": "^/queuing\\-system(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/queuing\\-system(?:/)?$"
+    },
+    {
+      "page": "/recruitment",
+      "regex": "^/recruitment(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/recruitment(?:/)?$"
+    },
+    {
+      "page": "/smart-aging-system",
+      "regex": "^/smart\\-aging\\-system(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/smart\\-aging\\-system(?:/)?$"
+    },
+    {
+      "page": "/smart-building",
+      "regex": "^/smart\\-building(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/smart\\-building(?:/)?$"
+    },
+    {
+      "page": "/smart-community",
+      "regex": "^/smart\\-community(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/smart\\-community(?:/)?$"
+    },
+    {
+      "page": "/smart-healthcare",
+      "regex": "^/smart\\-healthcare(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/smart\\-healthcare(?:/)?$"
+    },
+    {
+      "page": "/smart-hospital",
+      "regex": "^/smart\\-hospital(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/smart\\-hospital(?:/)?$"
+    },
+    {
+      "page": "/smart-lighting-system",
+      "regex": "^/smart\\-lighting\\-system(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/smart\\-lighting\\-system(?:/)?$"
+    },
+    {
+      "page": "/solutions/hospital",
+      "regex": "^/solutions/hospital(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/solutions/hospital(?:/)?$"
+    },
+    {
+      "page": "/talent-philosophy",
+      "regex": "^/talent\\-philosophy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/talent\\-philosophy(?:/)?$"
+    },
+    {
+      "page": "/two-wire-medical-intercom",
+      "regex": "^/two\\-wire\\-medical\\-intercom(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/two\\-wire\\-medical\\-intercom(?:/)?$"
+    },
+    {
+      "page": "/wireless-call-system",
+      "regex": "^/wireless\\-call\\-system(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/wireless\\-call\\-system(?:/)?$"
+    },
+    {
+      "page": "/wireless-infusion-call",
+      "regex": "^/wireless\\-infusion\\-call(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/wireless\\-infusion\\-call(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

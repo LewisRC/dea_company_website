@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[92122,["/_next/static/chunks/9a29a30ea52a47d2.js","/_next/static/chunks/6cf083a71ae61751.js","/_next/static/chunks/0b2f723ed6d3697f.js","/_next/static/chunks/49c9716ce7faae06.js"],"ProductPageTemplate"]
+3:I[88839,["/_next/static/chunks/c110596349083d46.js","/_next/static/chunks/62f34688882905f0.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"vUeIrW7vILvGQpozfBdJ6","rsc":["$","$1","c",{"children":[["$","$L2",null,{"titleKey":"products.infoDisplaySystem","descriptionKey":"products.infoDisplaySystemDesc","products":[{"id":61,"name":"43寸智能一体机(立式)","image":"/images/info-display/product61.jpg","href":"/product/61"},{"id":62,"name":"43寸智能一体机(卧式)","image":"/images/info-display/product62.jpg","href":"/product/62"}],"pageTitleZh":"信息发布系统 - 德视安科技","pageTitleEn":"Information Display System - Deshian Technology"}],[["$","script","script-0",{"src":"/_next/static/chunks/6cf083a71ae61751.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/0b2f723ed6d3697f.js","async":true}],["$","script","script-2",{"src":"/_next/static/chunks/49c9716ce7faae06.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

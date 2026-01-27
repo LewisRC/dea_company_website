@@ -1,0 +1,3 @@
+{
+  "/api/admin/carousels/[id]/route": "app/api/admin/carousels/[id]/route.js"
+}

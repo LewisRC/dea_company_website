@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 52, "column": 0}, "map": {"version":3,"sources":["file:///Users/lewis.liu/Work/web_dev/code/app/api/carousels/route.ts"],"sourcesContent":["import { NextResponse } from 'next/server'\nimport { PrismaClient } from '@prisma/client'\n\nconst prisma = new PrismaClient()\n\n// 获取所有启用的轮播图（公开API）\nexport async function GET() {\n  try {\n    const carousels = await prisma.carousel.findMany({\n      where: { isActive: true },\n      orderBy: { order: 'asc' }\n    })\n    return NextResponse.json(carousels)\n  } catch (error) {\n    console.error('Failed to fetch carousels:', error)\n    // 返回空数组而不是错误对象，避免前端 map 报错\n    return NextResponse.json([])\n  }\n}\n\n"],"names":[],"mappings":";;;;AAAA;AACA;;;AAEA,MAAM,SAAS,IAAI,6IAAY;AAGxB,eAAe;IACpB,IAAI;QACF,MAAM,YAAY,MAAM,OAAO,QAAQ,CAAC,QAAQ,CAAC;YAC/C,OAAO;gBAAE,UAAU;YAAK;YACxB,SAAS;gBAAE,OAAO;YAAM;QAC1B;QACA,OAAO,gJAAY,CAAC,IAAI,CAAC;IAC3B,EAAE,OAAO,OAAO;QACd,QAAQ,KAAK,CAAC,8BAA8B;QAC5C,2BAA2B;QAC3B,OAAO,gJAAY,CAAC,IAAI,CAAC,EAAE;IAC7B;AACF","debugId":null}}]
+}

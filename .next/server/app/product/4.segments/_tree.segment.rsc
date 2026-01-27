@@ -1,0 +1,3 @@
+:HL["/_next/static/chunks/02f618abee17012e.css","style"]
+:HL["https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css","style",{"crossOrigin":"anonymous"}]
+0:{"buildId":"vUeIrW7vILvGQpozfBdJ6","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"product","paramType":null,"paramKey":"product","hasRuntimePrefetch":false,"slots":{"children":{"name":"id","paramType":"d","paramKey":"4","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

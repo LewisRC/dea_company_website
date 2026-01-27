@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/icu-visit-intercom/layout,_N_T_/icu-visit-intercom/page,_N_T_/icu-visit-intercom"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/icu-visit-intercom/__PAGE__",
+    "/icu-visit-intercom",
+    "/_index",
+    "/_head"
+  ]
+}
