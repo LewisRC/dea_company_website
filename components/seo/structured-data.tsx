@@ -5,10 +5,10 @@ export function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "成都德视安科技有限公司",
-    "alternateName": ["德视安", "德视安科技", "Deshian", "Deshian Technology"],
+    "alternateName": ["DSA", "DSA德视安", "德视安", "德视安科技", "Deshian", "Deshian Technology", "DSA Deshian"],
     "url": "https://www.dsakj.com",
     "logo": "https://www.dsakj.com/images/logo2-1.png",
-    "description": "德视安科技是领先的智能化系统解决方案提供商，专注于楼宇对讲、医护对讲、智慧社区等领域",
+    "description": "DSA德视安科技是领先的智能化系统解决方案提供商，专注于楼宇对讲、医护对讲、智慧社区等领域",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "成都",
@@ -28,10 +28,10 @@ export function StructuredData() {
   const websiteData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "德视安科技",
-    "alternateName": "德视安",
+    "name": "DSA德视安科技",
+    "alternateName": ["DSA", "DSA德视安", "德视安", "德视安科技"],
     "url": "https://www.dsakj.com",
-    "description": "德视安科技官方网站 - 智能化全场景解决方案提供商",
+    "description": "DSA德视安科技官方网站 - 智能化全场景解决方案提供商",
     "inLanguage": "zh-CN",
     "potentialAction": {
       "@type": "SearchAction",

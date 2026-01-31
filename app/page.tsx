@@ -11,8 +11,8 @@ import { usePageTitle } from "@/hooks/use-page-title"
 export default function Home() {
   // 动态页面标题
   usePageTitle({
-    zh: '德视安 - 智能化全场景解决方案提供商',
-    en: 'Deshian - Intelligent Solution Provider'
+    zh: 'DSA德视安 - 智能化全场景解决方案提供商',
+    en: 'DSA Deshian - Intelligent Solution Provider'
   })
 
   return (
