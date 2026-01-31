@@ -1,0 +1,10 @@
+# 允许所有搜索引擎抓取
+User-agent: *
+Allow: /
+
+# 百度专用
+User-agent: Baiduspider
+Allow: /
+
+# Sitemap位置
+Sitemap: https://www.dsakj.com/sitemap.xml
